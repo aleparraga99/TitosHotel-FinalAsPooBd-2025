@@ -1,0 +1,125 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tito_s_Hotel.Models
+{
+    public class Pasajero
+    {
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public string apellido { get; set; }
+        public int telefono { get; set; }
+        public int dni { get; set; }
+        public string correo { get; set; }
+        public bool estado { get; set ; }
+
+        public Pasajero() {
+            this.estado = true;
+        }
+        public Pasajero(int id)
+        {
+            this.estado = true;
+            this.id = id;
+        }
+        public Pasajero(int id, string nombre)
+        {
+            this.estado = true;
+            this.id = id;
+            this.nombre = nombre;
+        }
+        public Pasajero(int id, string nombre, string apellido)
+        {
+            this.estado = true;
+            this.id = id;
+            this.nombre = nombre;
+            this.apellido = apellido;
+        }
+        public Pasajero(int id, string nombre, string apellido, int telefono)
+        {
+            this.estado = true;
+            this.id = id;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.telefono = telefono;
+        }
+        public Pasajero(int id, string nombre, string apellido, int telefono, int dni)
+        {
+            this.estado = true;
+            this.id = id;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.telefono = telefono;
+            this.dni = dni;
+        }
+        public Pasajero(int id, string nombre, string apellido, int telefono, int dni, string correo)
+        {
+            this.estado = true;
+            this.id = id;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.telefono = telefono;
+            this.dni = dni;
+            this.correo = correo;
+        }
+
+        public override string ToString()
+        {
+            string auxEstado;
+            if (this.estado)
+            {
+                auxEstado = "Activa";
+            }
+            else
+            {
+                auxEstado = "Inactiva";
+            }
+            return $"^[{nombre} {apellido}][{dni}][{telefono}][{correo}][{auxEstado}]";
+        }
+
+        public bool Equals(Pasajero oPasajero)
+        {
+            if (this == oPasajero)
+            {
+                return true;
+            }
+            if (oPasajero == null)
+            {
+                return false;
+            }
+            if (this.GetType != oPasajero.GetType)
+            {
+                return false;
+            }
+            Pasajero aux = (Pasajero)oPasajero;
+
+            if (this.nombre != aux.nombre)
+            {
+                return false;
+            }
+            if (this.apellido != aux.apellido)
+            {
+                return false;
+            }
+            if (this.telefono != aux.telefono)
+            {
+                return false;
+            }
+            if (this.dni != aux.dni)
+            {
+                return false;
+            }
+            if (this.correo.Equals(aux.correo) == false)
+            {
+                return false;
+            }
+            return true;
+
+        }
+    }
+}
+
+
+
