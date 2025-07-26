@@ -15,7 +15,20 @@ namespace Tito_s_Hotel.Models
         public float precio { get; set; }
         public bool estado { get; set; }
 
-        public Habitacion() {
+        //Métodos de comportamiento
+        public int calcularCapacidad()
+        {
+            var capacidadPersonas = camasSingle;
+            if (camaDoble)
+            {
+                capacidadPersonas += 2;
+            }
+            return capacidadPersonas;
+        }
+
+        //Constructores
+        public Habitacion()
+        {
 
             this.estado = true;
         }
@@ -55,6 +68,7 @@ namespace Tito_s_Hotel.Models
             this.precio = precio;
         }
 
+        //ToString
         public override string ToString()
         {
             string auxEstado;
@@ -69,6 +83,7 @@ namespace Tito_s_Hotel.Models
             return $"[Habitacion número {numero}][Camas single:{camasSingle}][Cama doble:{camaDoble}][Precio:{precio}][Estado:{auxEstado}]";
         }
 
+        //Equals
         public bool Equals(Habitacion oHabitacion)
         {
             if (this == oHabitacion)

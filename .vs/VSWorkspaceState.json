@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Controllers",
-    "\\DAOs"
+    "\\DAOs",
+    "\\Models"
   ],
-  "SelectedNode": "\\Controllers\\ControllerPasajero.cs",
+  "SelectedNode": "\\Models\\Habitacion.cs",
   "PreviewInSolutionExplorer": false
 }
