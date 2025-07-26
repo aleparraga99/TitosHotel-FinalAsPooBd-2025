@@ -12,7 +12,7 @@ namespace Tito_s_Hotel.DAOs
 {
     internal class DaoHabitacion : IDao
     {
-        //Singlenton
+        //SINGLENTON
         private static DaoHabitacion instanciaDaoHabitacion;
         private DaoHabitacion()
         {
@@ -26,6 +26,54 @@ namespace Tito_s_Hotel.DAOs
             return instanciaDaoHabitacion;
         }
 
+        //Métodos de comportamiento
+        public List<Habitacion> filtrarPorCapacidad(int capacidadRequerida)
+        {
+            List<Habitacion> todasLasHabitaciones = buscarTodasLashabitaciones();
+            List<Habitacion> habitacionesFiltradasPorCapacidad = new List<Habitacion>();
+            foreach (int i = 0; i < todasLasHabitaciones.Count; i++)
+            {
+                Habitacion h = todasLasHabitaciones[i];
+                int capacidad = h.calcularCapacidad();
+                if (capacidad == capacidadRequerida)
+                {
+                    habitacionesFiltradasPorCapacidad.Add(h);
+                }
+            }
+            return habitacionesFiltradasPorCapacidad;
+        }
+        public List<Habitacion> filtrarPorDisponibilidad(DateTime checkInRequerido, DateTime checkOutRequerido)
+        {
+            List<Habitacion> habitacionesDisponiblesDentroDeUnPeriodo = new List<Habitacion>();
+            using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
+            {
+                string query = "SELECT * FROM Habitacion h WHERE NOT EXISTS (SELECT 1 FROM Reserva r  WHERE r.HabitacionId = h.Id AND r.CheckIn <= @CheckOutRequerido AND r.CheckOut > @CheckInRequerido);";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                comando.Parameters.AddWithValue("@CheckInRequerido", checkInRequerido);
+                comando.Parameters.AddWithValue("@CheckOutRequerido", checkOutRequerido);
+                conexion.Open();
+                SqlDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read()) {
+                    Habitacion habitacion = new Habitacion
+                    {
+                        id = lector.GetInt32(0),
+                        numero = lector.GetInt32(1),
+                        camasSingle = lector.GetInt32(2),
+                        camaDoble = lector.GetBoolean(3),
+                        precio = (float)lector.GetDouble(4),
+                        estado = lector.GetBoolean(5)
+                    };
+                    habitacionesDisponiblesDentroDeUnPeriodo.Add(habitacion);
+                }
+            }
+            return habitacionesDisponiblesDentroDeUnPeriodo;
+        }
+        public List<Habitacion> verDisponibilidadDeHabitacionesDentroDeUnPeriodoYCapacidad(List<Habitacion> filtrarPorCapacidad, List<Habitacion> filtrarPorDisponibilidad) {
+            List<Habitacion> habitacionesDisponiblesParaPeriodoConsultado = filtrarPorCapacidad.Intersect(filtrarPorDisponibilidad).ToList();
+            return habitacionesDisponiblesParaPeriodoConsultado;
+        }
+        
         //CRUD
         public void crear(Habitacion oHabitacion)
         {

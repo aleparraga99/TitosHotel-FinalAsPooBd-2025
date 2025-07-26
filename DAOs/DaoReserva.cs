@@ -11,6 +11,7 @@ namespace Tito_s_Hotel.DAOs
 {
     internal class DaoReserva
     {
+        //SINGLENTON
         private static DaoReserva instanciaDaoReserva;
         private DaoReserva()
         {
@@ -24,7 +25,10 @@ namespace Tito_s_Hotel.DAOs
             return instanciaDaoReserva;
         }
 
-
+        //Metodos de comportamiento
+       
+       
+        //CRUD
         public void crear(Reserva oReserva)
         {
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
