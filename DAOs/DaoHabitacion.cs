@@ -13,9 +13,7 @@ namespace Tito_s_Hotel.DAOs
     internal class DaoHabitacion : IDao
     {
         //Singlenton
-
         private static DaoHabitacion instanciaDaoHabitacion;
-
         private DaoHabitacion()
         {
         }
@@ -27,6 +25,8 @@ namespace Tito_s_Hotel.DAOs
             }
             return instanciaDaoHabitacion;
         }
+
+        //CRUD
         public void crear(Habitacion oHabitacion)
         {
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())

@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Controllers",
     "\\DAOs",
     "\\Models"
   ],
-  "SelectedNode": "\\Models\\Habitacion.cs",
+  "SelectedNode": "\\DAOs\\DaoHabitacion.cs",
   "PreviewInSolutionExplorer": false
 }
