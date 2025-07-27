@@ -9,10 +9,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Equipo\\Desktop\\Tito\u00B4s Hotel\\Tito\u00B4s Hotel\\DAOs\\DaoReserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DAOs\\DaoReserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Equipo\\Desktop\\Tito\u00B4s Hotel\\Tito\u00B4s Hotel\\Controllers\\ControllerHabitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\ControllerHabitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,22 +28,9 @@
               "RelativeDocumentMoniker": "DAOs\\DaoHabitacion.cs",
               "ToolTip": "C:\\Users\\Equipo\\Desktop\\Tito\u00B4s Hotel\\Tito\u00B4s Hotel\\DAOs\\DaoHabitacion.cs",
               "RelativeToolTip": "DAOs\\DaoHabitacion.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAABFAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowJEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-26T20:13:20.216Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ControllerHabitacion.cs",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\Tito\u00B4s Hotel\\Tito\u00B4s Hotel\\Controllers\\ControllerHabitacion.cs",
-              "RelativeDocumentMoniker": "Controllers\\ControllerHabitacion.cs",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\Tito\u00B4s Hotel\\Tito\u00B4s Hotel\\Controllers\\ControllerHabitacion.cs",
-              "RelativeToolTip": "Controllers\\ControllerHabitacion.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACkAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T20:12:51.786Z",
               "EditorCaption": ""
             },
             {
@@ -58,7 +41,7 @@
               "RelativeDocumentMoniker": "DAOs\\DaoReserva.cs",
               "ToolTip": "C:\\Users\\Equipo\\Desktop\\Tito\u00B4s Hotel\\Tito\u00B4s Hotel\\DAOs\\DaoReserva.cs",
               "RelativeToolTip": "DAOs\\DaoReserva.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACcAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-26T19:58:37.254Z",
               "EditorCaption": ""
