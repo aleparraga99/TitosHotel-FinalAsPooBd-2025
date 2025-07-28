@@ -34,7 +34,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(103, 61);
+            button1.Location = new Point(125, 68);
             button1.Name = "button1";
             button1.Size = new Size(90, 23);
             button1.TabIndex = 0;
@@ -44,7 +44,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(47, 20);
+            label1.Location = new Point(65, 30);
             label1.Name = "label1";
             label1.Size = new Size(213, 15);
             label1.TabIndex = 1;
@@ -54,7 +54,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(308, 118);
+            ClientSize = new Size(338, 130);
             Controls.Add(label1);
             Controls.Add(button1);
             Name = "confirmacionDeHabitacinoGuardadaView";

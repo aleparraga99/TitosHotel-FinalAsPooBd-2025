@@ -16,5 +16,10 @@ namespace Tito_s_Hotel.Views
         {
             InitializeComponent();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
