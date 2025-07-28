@@ -17,7 +17,7 @@ namespace Tito_s_Hotel.Models
         public float adelanto { get; set; }
         public bool estado { get; set; }
 
-
+        //Constructores
         public Reserva() {
             this.estado = true;
         }
@@ -78,6 +78,7 @@ namespace Tito_s_Hotel.Models
             this.adelanto = adelanto;
         }
 
+        //ToString
         public string ToString(Pasajero oPasajero, Habitacion oHabitacion)
         {
             string auxEstado;
@@ -92,6 +93,7 @@ namespace Tito_s_Hotel.Models
             return $"[Reserva numero {numReserva}][Check In: {checkIn}][Check Out: {checkOut}][Pasajero:{oPasajero.ToString}][Habitacion:{oHabitacion.ToString}][Adelanto:{adelanto}][Estado: {auxEstado}]";
         }
 
+        //Equals
         public bool equals(Reserva oReserva)
         {
             if (this == oReserva)

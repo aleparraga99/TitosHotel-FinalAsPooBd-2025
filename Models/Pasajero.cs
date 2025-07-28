@@ -15,7 +15,8 @@ namespace Tito_s_Hotel.Models
         public int dni { get; set; }
         public string correo { get; set; }
         public bool estado { get; set ; }
-
+        
+        //Constructores
         public Pasajero() {
             this.estado = true;
         }
@@ -65,6 +66,7 @@ namespace Tito_s_Hotel.Models
             this.correo = correo;
         }
 
+        //ToString
         public override string ToString()
         {
             string auxEstado;
@@ -79,6 +81,7 @@ namespace Tito_s_Hotel.Models
             return $"^[{nombre} {apellido}][{dni}][{telefono}][{correo}][{auxEstado}]";
         }
 
+        //Equals
         public bool Equals(Pasajero oPasajero)
         {
             if (this == oPasajero)

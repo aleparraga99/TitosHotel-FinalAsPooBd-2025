@@ -25,9 +25,6 @@ namespace Tito_s_Hotel.DAOs
             return instanciaDaoReserva;
         }
 
-        //Metodos de comportamiento
-       
-       
         //CRUD
         public void crear(Reserva oReserva)
         {

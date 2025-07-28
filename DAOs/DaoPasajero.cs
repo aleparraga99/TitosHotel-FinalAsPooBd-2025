@@ -12,6 +12,7 @@ namespace Tito_s_Hotel.DAOs
 {
     public class DaoPasajero : IDao
     {
+        //SINGLENTON
         private static DaoPasajero instanciaDaoPasajero;
         private DaoPasajero()
         {
@@ -27,6 +28,7 @@ namespace Tito_s_Hotel.DAOs
             return instanciaDaoPasajero;
         }
 
+        //CRUD
         public void crear(Pasajero oPasajero) {
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
