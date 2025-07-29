@@ -28,20 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button2 = new Button();
+            buttonVerDisponibilidad = new Button();
             label1 = new Label();
             button1 = new Button();
-            comboBox1 = new ComboBox();
+            dataGridViewListaDeReservas = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewListaDeReservas).BeginInit();
             SuspendLayout();
             // 
-            // button2
+            // buttonVerDisponibilidad
             // 
-            button2.Location = new Point(386, 207);
-            button2.Name = "button2";
-            button2.Size = new Size(135, 23);
-            button2.TabIndex = 7;
-            button2.Text = "Ver disponibilidad";
-            button2.UseVisualStyleBackColor = true;
+            buttonVerDisponibilidad.Location = new Point(375, 207);
+            buttonVerDisponibilidad.Name = "buttonVerDisponibilidad";
+            buttonVerDisponibilidad.Size = new Size(135, 23);
+            buttonVerDisponibilidad.TabIndex = 7;
+            buttonVerDisponibilidad.Text = "Ver disponibilidad";
+            buttonVerDisponibilidad.UseVisualStyleBackColor = true;
+            buttonVerDisponibilidad.Click += buttonVerDisponibilidad_Click;
             // 
             // label1
             // 
@@ -61,34 +63,36 @@
             button1.Text = "Nueva reserva";
             button1.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // dataGridViewListaDeReservas
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(138, 113);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(300, 23);
-            comboBox1.TabIndex = 4;
+            dataGridViewListaDeReservas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewListaDeReservas.Location = new Point(78, 53);
+            dataGridViewListaDeReservas.Name = "dataGridViewListaDeReservas";
+            dataGridViewListaDeReservas.Size = new Size(432, 132);
+            dataGridViewListaDeReservas.TabIndex = 8;
             // 
             // viewGeneral
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(590, 285);
-            Controls.Add(button2);
+            Controls.Add(dataGridViewListaDeReservas);
+            Controls.Add(buttonVerDisponibilidad);
             Controls.Add(label1);
             Controls.Add(button1);
-            Controls.Add(comboBox1);
             Name = "viewGeneral";
             Text = "viewGeneral";
+            Load += viewGeneral_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewListaDeReservas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button2;
+        private Button buttonVerDisponibilidad;
         private Label label1;
         private Button button1;
-        private ComboBox comboBox1;
+        private DataGridView dataGridViewListaDeReservas;
     }
 }

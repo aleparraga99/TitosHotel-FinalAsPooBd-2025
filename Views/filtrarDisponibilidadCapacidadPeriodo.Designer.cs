@@ -34,7 +34,9 @@
             label3 = new Label();
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
-            button1 = new Button();
+            buttonBuscar = new Button();
+            dataGridViewListaDeHabitacionesDisponibles = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewListaDeHabitacionesDisponibles).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -61,6 +63,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(37, 23);
             textBox1.TabIndex = 2;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label3
             // 
@@ -85,21 +88,31 @@
             dateTimePicker2.Size = new Size(212, 23);
             dateTimePicker2.TabIndex = 5;
             // 
-            // button1
+            // buttonBuscar
             // 
-            button1.Location = new Point(152, 192);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 6;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            buttonBuscar.Location = new Point(298, 356);
+            buttonBuscar.Name = "buttonBuscar";
+            buttonBuscar.Size = new Size(75, 23);
+            buttonBuscar.TabIndex = 6;
+            buttonBuscar.Text = "Buscar";
+            buttonBuscar.UseVisualStyleBackColor = true;
+            buttonBuscar.Click += buttonBuscar_Click;
+            // 
+            // dataGridViewListaDeHabitacionesDisponibles
+            // 
+            dataGridViewListaDeHabitacionesDisponibles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewListaDeHabitacionesDisponibles.Location = new Point(46, 184);
+            dataGridViewListaDeHabitacionesDisponibles.Name = "dataGridViewListaDeHabitacionesDisponibles";
+            dataGridViewListaDeHabitacionesDisponibles.Size = new Size(284, 150);
+            dataGridViewListaDeHabitacionesDisponibles.TabIndex = 7;
             // 
             // filtrarDisponibilidadCapacidadPeriodo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(385, 227);
-            Controls.Add(button1);
+            ClientSize = new Size(385, 391);
+            Controls.Add(dataGridViewListaDeHabitacionesDisponibles);
+            Controls.Add(buttonBuscar);
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
             Controls.Add(label3);
@@ -108,6 +121,7 @@
             Controls.Add(label1);
             Name = "filtrarDisponibilidadCapacidadPeriodo";
             Text = "filtrarDisponibilidadCapacidadPeriodo";
+            ((System.ComponentModel.ISupportInitialize)dataGridViewListaDeHabitacionesDisponibles).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -120,6 +134,7 @@
         private Label label3;
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
-        private Button button1;
+        private Button buttonBuscar;
+        private DataGridView dataGridViewListaDeHabitacionesDisponibles;
     }
 }
