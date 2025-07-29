@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tito_s_Hotel.Views
+namespace Tito_s_Hotel
 {
-    public partial class ViewReserva : Form
+    public partial class viewGeneral : Form
     {
-        public ViewReserva()
+        public viewGeneral()
         {
             InitializeComponent();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

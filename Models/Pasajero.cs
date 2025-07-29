@@ -65,7 +65,6 @@ namespace Tito_s_Hotel.Models
             this.dni = dni;
             this.correo = correo;
         }
-
         public Pasajero(string nombre, string apellido, int telefono, int dni, string correo)
         {
             this.estado = true;

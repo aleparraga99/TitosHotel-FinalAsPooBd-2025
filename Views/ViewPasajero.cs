@@ -16,5 +16,13 @@ namespace Tito_s_Hotel.Views
         {
             InitializeComponent();
         }
+        private void ViewPasajero_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            labelIntCantidadDeDias.Text = $"{labelIntCantidadDeDias}";
+        }
     }
 }

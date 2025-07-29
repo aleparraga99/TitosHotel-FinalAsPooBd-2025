@@ -28,154 +28,290 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
+            labelNombre = new Label();
+            labelApellido = new Label();
+            labelDni = new Label();
+            labelTelefono = new Label();
+            labelCorreo = new Label();
+            textBoxStringNombre = new TextBox();
+            textBoxStringApellido = new TextBox();
+            textBoxIntDni = new TextBox();
+            textBoxIntTelefono = new TextBox();
+            textBoxStringCorreo = new TextBox();
+            buttonGuardar = new Button();
+            buttonCancelar = new Button();
+            labelStringHabitacion = new Label();
+            textBoxHabitacion = new TextBox();
+            labelDateCheckIn = new Label();
+            labelDateCheckOut = new Label();
+            dateTimePickerChekIn = new DateTimePicker();
+            dateTimePickerCheckOut = new DateTimePicker();
+            labelStringAdelanto = new Label();
+            textBoxIntAdelanto = new TextBox();
+            labelStringDiasTotales = new Label();
+            label11 = new Label();
+            textBoxFloatTotalDeEstadia = new TextBox();
+            labelIntCantidadDeDias = new Label();
             SuspendLayout();
             // 
-            // label1
+            // labelNombre
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(56, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(54, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Nombre:";
+            labelNombre.AutoSize = true;
+            labelNombre.Location = new Point(40, 32);
+            labelNombre.Name = "labelNombre";
+            labelNombre.Size = new Size(54, 15);
+            labelNombre.TabIndex = 0;
+            labelNombre.Text = "Nombre:";
             // 
-            // label2
+            // labelApellido
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(56, 59);
-            label2.Name = "label2";
-            label2.Size = new Size(54, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Apellido:";
+            labelApellido.AutoSize = true;
+            labelApellido.Location = new Point(40, 67);
+            labelApellido.Name = "labelApellido";
+            labelApellido.Size = new Size(54, 15);
+            labelApellido.TabIndex = 1;
+            labelApellido.Text = "Apellido:";
             // 
-            // label3
+            // labelDni
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(56, 90);
-            label3.Name = "label3";
-            label3.Size = new Size(30, 15);
-            label3.TabIndex = 2;
-            label3.Text = "DNI:";
+            labelDni.AutoSize = true;
+            labelDni.Location = new Point(40, 98);
+            labelDni.Name = "labelDni";
+            labelDni.Size = new Size(30, 15);
+            labelDni.TabIndex = 2;
+            labelDni.Text = "DNI:";
             // 
-            // label4
+            // labelTelefono
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(55, 120);
-            label4.Name = "label4";
-            label4.Size = new Size(55, 15);
-            label4.TabIndex = 3;
-            label4.Text = "Teléfono:";
+            labelTelefono.AutoSize = true;
+            labelTelefono.Location = new Point(39, 128);
+            labelTelefono.Name = "labelTelefono";
+            labelTelefono.Size = new Size(55, 15);
+            labelTelefono.TabIndex = 3;
+            labelTelefono.Text = "Teléfono:";
             // 
-            // label5
+            // labelCorreo
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(56, 150);
-            label5.Name = "label5";
-            label5.Size = new Size(46, 15);
-            label5.TabIndex = 4;
-            label5.Text = "Correo:";
+            labelCorreo.AutoSize = true;
+            labelCorreo.Location = new Point(40, 158);
+            labelCorreo.Name = "labelCorreo";
+            labelCorreo.Size = new Size(46, 15);
+            labelCorreo.TabIndex = 4;
+            labelCorreo.Text = "Correo:";
             // 
-            // textBox1
+            // textBoxStringNombre
             // 
-            textBox1.Location = new Point(116, 21);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 5;
+            textBoxStringNombre.Location = new Point(100, 29);
+            textBoxStringNombre.Name = "textBoxStringNombre";
+            textBoxStringNombre.Size = new Size(100, 23);
+            textBoxStringNombre.TabIndex = 5;
             // 
-            // textBox2
+            // textBoxStringApellido
             // 
-            textBox2.Location = new Point(116, 56);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 6;
+            textBoxStringApellido.Location = new Point(100, 64);
+            textBoxStringApellido.Name = "textBoxStringApellido";
+            textBoxStringApellido.Size = new Size(100, 23);
+            textBoxStringApellido.TabIndex = 6;
             // 
-            // textBox3
+            // textBoxIntDni
             // 
-            textBox3.Location = new Point(116, 83);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 7;
+            textBoxIntDni.Location = new Point(100, 91);
+            textBoxIntDni.Name = "textBoxIntDni";
+            textBoxIntDni.Size = new Size(100, 23);
+            textBoxIntDni.TabIndex = 7;
             // 
-            // textBox4
+            // textBoxIntTelefono
             // 
-            textBox4.Location = new Point(116, 112);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 8;
+            textBoxIntTelefono.Location = new Point(100, 120);
+            textBoxIntTelefono.Name = "textBoxIntTelefono";
+            textBoxIntTelefono.Size = new Size(100, 23);
+            textBoxIntTelefono.TabIndex = 8;
             // 
-            // textBox5
+            // textBoxStringCorreo
             // 
-            textBox5.Location = new Point(116, 150);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 9;
+            textBoxStringCorreo.Location = new Point(100, 158);
+            textBoxStringCorreo.Name = "textBoxStringCorreo";
+            textBoxStringCorreo.Size = new Size(100, 23);
+            textBoxStringCorreo.TabIndex = 9;
             // 
-            // button1
+            // buttonGuardar
             // 
-            button1.Location = new Point(29, 208);
-            button1.Name = "button1";
-            button1.Size = new Size(81, 43);
-            button1.TabIndex = 10;
-            button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
+            buttonGuardar.Location = new Point(148, 232);
+            buttonGuardar.Name = "buttonGuardar";
+            buttonGuardar.Size = new Size(81, 43);
+            buttonGuardar.TabIndex = 10;
+            buttonGuardar.Text = "Guardar";
+            buttonGuardar.UseVisualStyleBackColor = true;
+            buttonGuardar.Click += buttonGuardar_Click;
             // 
-            // button2
+            // buttonCancelar
             // 
-            button2.Location = new Point(156, 208);
-            button2.Name = "button2";
-            button2.Size = new Size(89, 43);
-            button2.TabIndex = 11;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            buttonCancelar.Location = new Point(275, 232);
+            buttonCancelar.Name = "buttonCancelar";
+            buttonCancelar.Size = new Size(89, 43);
+            buttonCancelar.TabIndex = 11;
+            buttonCancelar.Text = "Cancelar";
+            buttonCancelar.UseVisualStyleBackColor = true;
+            // 
+            // labelStringHabitacion
+            // 
+            labelStringHabitacion.AutoSize = true;
+            labelStringHabitacion.Location = new Point(253, 35);
+            labelStringHabitacion.Name = "labelStringHabitacion";
+            labelStringHabitacion.Size = new Size(68, 15);
+            labelStringHabitacion.TabIndex = 12;
+            labelStringHabitacion.Text = "Habitación:";
+            // 
+            // textBoxHabitacion
+            // 
+            textBoxHabitacion.Location = new Point(318, 32);
+            textBoxHabitacion.Name = "textBoxHabitacion";
+            textBoxHabitacion.Size = new Size(46, 23);
+            textBoxHabitacion.TabIndex = 13;
+            // 
+            // labelDateCheckIn
+            // 
+            labelDateCheckIn.AutoSize = true;
+            labelDateCheckIn.Location = new Point(256, 72);
+            labelDateCheckIn.Name = "labelDateCheckIn";
+            labelDateCheckIn.Size = new Size(56, 15);
+            labelDateCheckIn.TabIndex = 14;
+            labelDateCheckIn.Text = "Check In:";
+            // 
+            // labelDateCheckOut
+            // 
+            labelDateCheckOut.AutoSize = true;
+            labelDateCheckOut.Location = new Point(256, 99);
+            labelDateCheckOut.Name = "labelDateCheckOut";
+            labelDateCheckOut.Size = new Size(66, 15);
+            labelDateCheckOut.TabIndex = 15;
+            labelDateCheckOut.Text = "Check Out:";
+            // 
+            // dateTimePickerChekIn
+            // 
+            dateTimePickerChekIn.Location = new Point(318, 67);
+            dateTimePickerChekIn.Name = "dateTimePickerChekIn";
+            dateTimePickerChekIn.Size = new Size(200, 23);
+            dateTimePickerChekIn.TabIndex = 16;
+            // 
+            // dateTimePickerCheckOut
+            // 
+            dateTimePickerCheckOut.Location = new Point(321, 96);
+            dateTimePickerCheckOut.Name = "dateTimePickerCheckOut";
+            dateTimePickerCheckOut.Size = new Size(200, 23);
+            dateTimePickerCheckOut.TabIndex = 17;
+            // 
+            // labelStringAdelanto
+            // 
+            labelStringAdelanto.AutoSize = true;
+            labelStringAdelanto.Location = new Point(256, 158);
+            labelStringAdelanto.Name = "labelStringAdelanto";
+            labelStringAdelanto.Size = new Size(67, 15);
+            labelStringAdelanto.TabIndex = 18;
+            labelStringAdelanto.Text = "Adelanto: $";
+            // 
+            // textBoxIntAdelanto
+            // 
+            textBoxIntAdelanto.Location = new Point(321, 155);
+            textBoxIntAdelanto.Name = "textBoxIntAdelanto";
+            textBoxIntAdelanto.Size = new Size(67, 23);
+            textBoxIntAdelanto.TabIndex = 19;
+            // 
+            // labelStringDiasTotales
+            // 
+            labelStringDiasTotales.AutoSize = true;
+            labelStringDiasTotales.Location = new Point(401, 192);
+            labelStringDiasTotales.Name = "labelStringDiasTotales";
+            labelStringDiasTotales.Size = new Size(70, 15);
+            labelStringDiasTotales.TabIndex = 20;
+            labelStringDiasTotales.Text = "Días totales:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(253, 128);
+            label11.Name = "label11";
+            label11.Size = new Size(100, 15);
+            label11.TabIndex = 22;
+            label11.Text = "Total de estadía: $";
+            // 
+            // textBoxFloatTotalDeEstadia
+            // 
+            textBoxFloatTotalDeEstadia.Location = new Point(359, 126);
+            textBoxFloatTotalDeEstadia.Name = "textBoxFloatTotalDeEstadia";
+            textBoxFloatTotalDeEstadia.Size = new Size(67, 23);
+            textBoxFloatTotalDeEstadia.TabIndex = 23;
+            // 
+            // labelIntCantidadDeDias
+            // 
+            labelIntCantidadDeDias.AutoSize = true;
+            labelIntCantidadDeDias.Location = new Point(468, 192);
+            labelIntCantidadDeDias.Name = "labelIntCantidadDeDias";
+            labelIntCantidadDeDias.Size = new Size(12, 15);
+            labelIntCantidadDeDias.TabIndex = 24;
+            labelIntCantidadDeDias.Text = "-";
             // 
             // ViewPasajero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(268, 264);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            ClientSize = new Size(530, 297);
+            Controls.Add(labelIntCantidadDeDias);
+            Controls.Add(textBoxFloatTotalDeEstadia);
+            Controls.Add(label11);
+            Controls.Add(labelStringDiasTotales);
+            Controls.Add(textBoxIntAdelanto);
+            Controls.Add(labelStringAdelanto);
+            Controls.Add(dateTimePickerCheckOut);
+            Controls.Add(dateTimePickerChekIn);
+            Controls.Add(labelDateCheckOut);
+            Controls.Add(labelDateCheckIn);
+            Controls.Add(textBoxHabitacion);
+            Controls.Add(labelStringHabitacion);
+            Controls.Add(buttonCancelar);
+            Controls.Add(buttonGuardar);
+            Controls.Add(textBoxStringCorreo);
+            Controls.Add(textBoxIntTelefono);
+            Controls.Add(textBoxIntDni);
+            Controls.Add(textBoxStringApellido);
+            Controls.Add(textBoxStringNombre);
+            Controls.Add(labelCorreo);
+            Controls.Add(labelTelefono);
+            Controls.Add(labelDni);
+            Controls.Add(labelApellido);
+            Controls.Add(labelNombre);
             Name = "ViewPasajero";
             Text = "ViewPasajero";
+            Load += ViewPasajero_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private Button button1;
-        private Button button2;
+        private Label labelNombre;
+        private Label labelApellido;
+        private Label labelDni;
+        private Label labelTelefono;
+        private Label labelCorreo;
+        private TextBox textBoxStringNombre;
+        private TextBox textBoxStringApellido;
+        private TextBox textBoxIntDni;
+        private TextBox textBoxIntTelefono;
+        private TextBox textBoxStringCorreo;
+        private Button buttonGuardar;
+        private Button buttonCancelar;
+        private Label labelStringHabitacion;
+        private TextBox textBoxHabitacion;
+        private Label labelDateCheckIn;
+        private Label labelDateCheckOut;
+        private DateTimePicker dateTimePickerChekIn;
+        private DateTimePicker dateTimePickerCheckOut;
+        private Label labelStringAdelanto;
+        private TextBox textBoxIntAdelanto;
+        private Label labelStringDiasTotales;
+        private Label label11;
+        private TextBox textBoxFloatTotalDeEstadia;
+        private Label labelIntCantidadDeDias;
     }
 }
