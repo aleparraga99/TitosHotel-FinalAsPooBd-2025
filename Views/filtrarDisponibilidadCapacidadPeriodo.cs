@@ -38,5 +38,10 @@ namespace Tito_s_Hotel
             oDaoHabitacion.filtrarPorDisponibilidad(chekInRequerido, checkOutRequerido);
             dataGridViewListaDeHabitacionesDisponibles.DataSource = oDaoHabitacion.verDisponibilidadDeHabitacionesDentroDeUnPeriodoYCapacidad;
         }
+
+        private void buttonVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

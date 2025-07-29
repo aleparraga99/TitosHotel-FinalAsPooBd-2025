@@ -36,13 +36,14 @@
             dateTimePicker2 = new DateTimePicker();
             buttonBuscar = new Button();
             dataGridViewListaDeHabitacionesDisponibles = new DataGridView();
+            buttonVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListaDeHabitacionesDisponibles).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(46, 61);
+            label1.Location = new Point(44, 28);
             label1.Name = "label1";
             label1.Size = new Size(66, 15);
             label1.TabIndex = 0;
@@ -51,7 +52,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(46, 100);
+            label2.Location = new Point(44, 67);
             label2.Name = "label2";
             label2.Size = new Size(56, 15);
             label2.TabIndex = 1;
@@ -59,16 +60,15 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(118, 58);
+            textBox1.Location = new Point(116, 25);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(37, 23);
             textBox1.TabIndex = 2;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(46, 147);
+            label3.Location = new Point(44, 114);
             label3.Name = "label3";
             label3.Size = new Size(66, 15);
             label3.TabIndex = 3;
@@ -76,21 +76,21 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(108, 94);
+            dateTimePicker1.Location = new Point(106, 61);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(210, 23);
             dateTimePicker1.TabIndex = 4;
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(118, 141);
+            dateTimePicker2.Location = new Point(116, 108);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(212, 23);
             dateTimePicker2.TabIndex = 5;
             // 
             // buttonBuscar
             // 
-            buttonBuscar.Location = new Point(298, 356);
+            buttonBuscar.Location = new Point(276, 323);
             buttonBuscar.Name = "buttonBuscar";
             buttonBuscar.Size = new Size(75, 23);
             buttonBuscar.TabIndex = 6;
@@ -101,16 +101,27 @@
             // dataGridViewListaDeHabitacionesDisponibles
             // 
             dataGridViewListaDeHabitacionesDisponibles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewListaDeHabitacionesDisponibles.Location = new Point(46, 184);
+            dataGridViewListaDeHabitacionesDisponibles.Location = new Point(23, 151);
             dataGridViewListaDeHabitacionesDisponibles.Name = "dataGridViewListaDeHabitacionesDisponibles";
-            dataGridViewListaDeHabitacionesDisponibles.Size = new Size(284, 150);
+            dataGridViewListaDeHabitacionesDisponibles.Size = new Size(338, 150);
             dataGridViewListaDeHabitacionesDisponibles.TabIndex = 7;
+            // 
+            // buttonVolver
+            // 
+            buttonVolver.Location = new Point(25, 323);
+            buttonVolver.Name = "buttonVolver";
+            buttonVolver.Size = new Size(75, 23);
+            buttonVolver.TabIndex = 8;
+            buttonVolver.Text = "Volver";
+            buttonVolver.UseVisualStyleBackColor = true;
+            buttonVolver.Click += buttonVolver_Click;
             // 
             // filtrarDisponibilidadCapacidadPeriodo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(385, 391);
+            ClientSize = new Size(385, 364);
+            Controls.Add(buttonVolver);
             Controls.Add(dataGridViewListaDeHabitacionesDisponibles);
             Controls.Add(buttonBuscar);
             Controls.Add(dateTimePicker2);
@@ -136,5 +147,6 @@
         private DateTimePicker dateTimePicker2;
         private Button buttonBuscar;
         private DataGridView dataGridViewListaDeHabitacionesDisponibles;
+        private Button buttonVolver;
     }
 }
