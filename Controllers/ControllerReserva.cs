@@ -10,32 +10,33 @@ namespace Tito_s_Hotel.Controllers
 {
     public class ControllerReserva
     {
+        //SINGLENTON
         private DaoReserva oDaoReserva;
         public ControllerReserva()
         {
-            this.oDaoReserva = new DaoReserva();
+            ControllerReserva oDaoReserva = new ControllerReserva();
         }
 
-        public void crear(int numReserva, DateTime checkIn, DateTime checkOut, float adelanto, Habitacion oHabitacion, Pasajero oPasajero)
+        //CRUD
+        public void crear(int numReserva, DateTime checkIn, DateTime checkOut,Pasajero oPasajero, Habitacion oHabitacion, float adelanto)
         {
-            Reserva oReserva = new Reserva(numReserva, checkIn, checkOut, adelanto, oHabitacion, oPasajero);
+            Reserva oReserva = new Reserva(numReserva, checkIn, checkOut, oPasajero, oHabitacion, adelanto);
             oDaoReserva.crear(oReserva);
         }
-        public void modificar(int numReserva, DateTime checkIn, DateTime checkOut, float adelanto, Habitacion oHabitacion, Pasajero oPasajero)
+        public void modificar(int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion, float adelanto)
         {
-            Reserva oReserva = new Reserva(numReserva, checkIn, checkOut, adelanto, oHabitacion, oPasajero);
+            Reserva oReserva = new Reserva(numReserva, checkIn, checkOut, oPasajero, oHabitacion, adelanto);
             oDaoReserva.modificar(oReserva);
         }
-        public void eliminar(int numReserva, DateTime checkIn, DateTime checkOut, float adelanto, Habitacion oHabitacion, Pasajero oPasajero)
+        public void eliminar(int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion, float adelanto)
         {
-            Reserva oReserva = new Reserva(numReserva, checkIn, checkOut, adelanto, oHabitacion, oPasajero);
+            Reserva oReserva = new Reserva(numReserva, checkIn, checkOut, oPasajero, oHabitacion, adelanto);
             oDaoReserva.eliminar(oReserva);
         }
-        public void buscarTodasLasReservas(int numReserva, DateTime checkIn, DateTime checkOut, float adelanto, Habitacion oHabitacion, Pasajero oPasajero)
+        public void buscarTodasLasReservas(int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion, float adelanto)
         {
-            Reserva oReserva = new Reserva(numReserva, checkIn, checkOut, adelanto, oHabitacion, oPasajero);
-            oDaoReserva.BuscarTodasLasReservas(oReserva);
+            Reserva oReserva = new Reserva(numReserva, checkIn, checkOut, oPasajero, oHabitacion, adelanto);
+            oDaoReserva.BuscarTodasLasReservas();
         }
-
     }
 }

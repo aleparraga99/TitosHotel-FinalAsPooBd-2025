@@ -67,7 +67,6 @@ namespace Tito_s_Hotel.Models
             this.camaDoble = camaDoble;
             this.precio = precio;
         }
-
         public Habitacion(int numero, int camasSingle, bool camaDoble, float precio)
         {
             this.estado = true;

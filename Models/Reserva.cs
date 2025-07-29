@@ -77,6 +77,17 @@ namespace Tito_s_Hotel.Models
             this.oHabitacion = oHabitacion;
             this.adelanto = adelanto;
         }
+        public Reserva(int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion, float adelanto)
+        {
+            this.estado = true;
+            this.numReserva = numReserva;
+            this.checkIn = checkIn;
+            this.checkOut = checkOut;
+            this.oPasajero = oPasajero;
+            this.oHabitacion = oHabitacion;
+            this.adelanto = adelanto;
+        }
+
 
         //ToString
         public string ToString(Pasajero oPasajero, Habitacion oHabitacion)

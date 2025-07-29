@@ -12,7 +12,6 @@ namespace Tito_s_Hotel.Controllers
     {
         //SINGLENTON
         private DaoHabitacion oDaoHabitacion;
-        private DaoReserva oDaoReserva;
         public ControllerHabitacion()
         {
             ControllerHabitacion oDaoHabitacion = new ControllerHabitacion();
