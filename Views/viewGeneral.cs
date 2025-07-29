@@ -25,7 +25,7 @@ namespace Tito_s_Hotel
         {
             buttonEliminar.Enabled = false;
             buttonModificar.Enabled = false;
-            dataGridViewListaDeReservas.DataSource = oDaoReserva.BuscarTodasLasReservas();
+           // dataGridViewListaDeReservas.DataSource = oDaoReserva.BuscarTodasLasReservas();
         }
         private void seleccionDeFilaDataGridViewListaDeReservas(object sender, EventArgs e)
         {
@@ -50,7 +50,7 @@ namespace Tito_s_Hotel
         {
             if (dataGridViewListaDeReservas.SelectedRows.Count > 0) {
                 Reserva reservaSeleccionada = (Reserva)dataGridViewListaDeReservas.SelectedRows[0].DataBoundItem;
-                confirmarEliminacionDeReserva ventana = new confirmarEliminacionDeReserva();
+                confirmarEliminacionDeReserva ventana = new confirmarEliminacionDeReserva(reservaSeleccionada);
                 ventana.ShowDialog();
             }
         }
