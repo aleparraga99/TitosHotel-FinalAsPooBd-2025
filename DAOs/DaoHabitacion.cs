@@ -31,7 +31,7 @@ namespace Tito_s_Hotel.DAOs
         {
             List<Habitacion> todasLasHabitaciones = buscarTodasLashabitaciones();
             List<Habitacion> habitacionesFiltradasPorCapacidad = new List<Habitacion>();
-            foreach (int i = 0; i < todasLasHabitaciones.Count; i++)
+            for(int i = 0; i < todasLasHabitaciones.Count; i++)
             {
                 Habitacion h = todasLasHabitaciones[i];
                 int capacidad = h.calcularCapacidad();
