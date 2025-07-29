@@ -66,6 +66,17 @@ namespace Tito_s_Hotel.Models
             this.correo = correo;
         }
 
+        public Pasajero(string nombre, string apellido, int telefono, int dni, string correo)
+        {
+            this.estado = true;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.telefono = telefono;
+            this.dni = dni;
+            this.correo = correo;
+        }
+
+
         //ToString
         public override string ToString()
         {

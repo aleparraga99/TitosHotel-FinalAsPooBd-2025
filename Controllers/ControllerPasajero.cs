@@ -13,7 +13,7 @@ namespace Tito_s_Hotel.Controllers
         private DaoPasajero oDaoPasajero;
         public ControllerPasajero()
         {
-            oDaoPasajero = new DaoPasajero;
+           ControllerPasajero oDaoPasajero = new ControllerPasajero();
         }
 
         public void crear(string nombre, string apellido, int telefono, int dni, string correo)
@@ -34,7 +34,7 @@ namespace Tito_s_Hotel.Controllers
         public void buscarTodasLosPasajeros(string nombre, string apellido, int telefono, int dni, string correo)
         {
             Pasajero oPasajero = new Pasajero(nombre, apellido, telefono, dni, correo);
-            oDaoPasajero.buscarTodosLosPasajeros(oPasajero);
+            oDaoPasajero.buscarTodosLosPasajeros();
         }
 
     }

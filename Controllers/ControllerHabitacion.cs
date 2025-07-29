@@ -10,19 +10,21 @@ namespace Tito_s_Hotel.Controllers
 {
     public class ControllerHabitacion
     {
-        //Implementación del patrón SINGLENTON
+        //SINGLENTON
         private DaoHabitacion oDaoHabitacion;
         private DaoReserva oDaoReserva;
         public ControllerHabitacion()
         {
-            oDaoHabitacion = new DaoHabitacion();
+            ControllerHabitacion oDaoHabitacion = new ControllerHabitacion();
         }
 
         //CRUD
         public void crear(int numero, int camasSingle, bool camaDoble, float precio)
         {
             Habitacion oHabitacion = new Habitacion(numero, camasSingle, camaDoble, precio);
-            oDaoHabitacion.crear(oHabitacion);
+            oDaoHabitacion.crear(oHabitacion); 
+            // se tuvo que crear un nuevo constructor que no reciba id. 
+            //seguramente se tendrá que hacer lo mismo para el resto de modelos
         }
         public void modificar(int numero, int camasSingle, bool camaDoble, float precio)
         {
@@ -37,7 +39,7 @@ namespace Tito_s_Hotel.Controllers
         public List<Habitacion> buscarTodasLasHabitaciones(int numero, int camasSingle, bool camaDoble, float precio)
         {
             Habitacion oHabitacion = new Habitacion(numero, camasSingle, camaDoble, precio);
-            List<Habitacion> todasLasHabitaciones = oDaoHabitacion.buscarTodasLashabitaciones(oHabitacion);
+            List<Habitacion> todasLasHabitaciones = oDaoHabitacion.buscarTodasLashabitaciones();//prestar mas atencion a los argumentos correspondientes de los metodos
             return todasLasHabitaciones;
         }
 

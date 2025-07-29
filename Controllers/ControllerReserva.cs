@@ -13,7 +13,7 @@ namespace Tito_s_Hotel.Controllers
         private DaoReserva oDaoReserva;
         public ControllerReserva()
         {
-            oDaoReserva = new DaoReserva;
+            this.oDaoReserva = new DaoReserva();
         }
 
         public void crear(int numReserva, DateTime checkIn, DateTime checkOut, float adelanto, Habitacion oHabitacion, Pasajero oPasajero)
