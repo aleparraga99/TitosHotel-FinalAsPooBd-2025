@@ -34,6 +34,7 @@
             dataGridViewListaDeReservas = new DataGridView();
             buttonModificar = new Button();
             buttonEliminar = new Button();
+            buttonAgregarHabitacion = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListaDeReservas).BeginInit();
             SuspendLayout();
             // 
@@ -93,11 +94,22 @@
             buttonEliminar.UseVisualStyleBackColor = true;
             buttonEliminar.Click += buttonEliminar_Click;
             // 
+            // buttonAgregarHabitacion
+            // 
+            buttonAgregarHabitacion.Location = new Point(69, 248);
+            buttonAgregarHabitacion.Name = "buttonAgregarHabitacion";
+            buttonAgregarHabitacion.Size = new Size(137, 23);
+            buttonAgregarHabitacion.TabIndex = 11;
+            buttonAgregarHabitacion.Text = "Agregar habitacion";
+            buttonAgregarHabitacion.UseVisualStyleBackColor = true;
+            buttonAgregarHabitacion.Click += buttonAgregarHabitacion_Click;
+            // 
             // viewGeneral
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(590, 285);
+            Controls.Add(buttonAgregarHabitacion);
             Controls.Add(buttonEliminar);
             Controls.Add(buttonModificar);
             Controls.Add(dataGridViewListaDeReservas);
@@ -120,5 +132,6 @@
         private DataGridView dataGridViewListaDeReservas;
         private Button buttonModificar;
         private Button buttonEliminar;
+        private Button buttonAgregarHabitacion;
     }
 }

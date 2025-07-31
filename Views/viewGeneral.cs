@@ -19,7 +19,7 @@ namespace Tito_s_Hotel
         private DaoReserva oDaoReserva;
         private ViewPasajero oViewPasajero;
         private List<Reserva> listaDeReservasEnDataGridView = new List<Reserva>();
-        
+
         public viewGeneral()
         {
             InitializeComponent();
@@ -33,11 +33,12 @@ namespace Tito_s_Hotel
             {
                 dataGridViewListaDeReservas.DataSource = oDaoReserva.BuscarTodasLasReservas();
             }
-            else {
+            else
+            {
                 dataGridViewListaDeReservas.DataSource = null;
             }
         }
-        
+
         private void seleccionDeFilaDataGridViewListaDeReservas(object sender, EventArgs e)
         {
             if (dataGridViewListaDeReservas.SelectedRows.Count > 0)
@@ -70,6 +71,12 @@ namespace Tito_s_Hotel
         private void button1_Click(object sender, EventArgs e)
         {
             ViewPasajero ventana = new ViewPasajero();
+            ventana.ShowDialog();
+        }
+
+        private void buttonAgregarHabitacion_Click(object sender, EventArgs e)
+        {
+            ViewHabitacion ventana = new ViewHabitacion();
             ventana.ShowDialog();
         }
     }

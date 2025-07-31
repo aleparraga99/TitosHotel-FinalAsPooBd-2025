@@ -48,7 +48,7 @@ namespace Tito_s_Hotel.Views
             int adelanto = int.Parse(textBoxIntAdelanto.Text);
 
            
-            
+            //Se construye el objeto Pasajero
             Pasajero nuevoPasajero = new Pasajero()
             {
                 nombre = nombre,
@@ -58,11 +58,13 @@ namespace Tito_s_Hotel.Views
                 correo = correo,
             };
 
+            //Se crea el nuevo pasajero
             oDaoPasajero.crear(nuevoPasajero);
 
             //Se le envia el numero de habitacion al DAO para que la busque
             Habitacion habitacionEncontrada = oDaoHabitacion.buscarHabitacionPorNumero(numeroDeHabitacion);
 
+            //Se construye el objeto Reserva
             Reserva nuevaReserva = new Reserva()
             {
                 checkIn = checkIn,
@@ -71,7 +73,15 @@ namespace Tito_s_Hotel.Views
                 oHabitacion = habitacionEncontrada,
                 adelanto = adelanto,
             };
+
+            //Se crea la nueva reserva Reserva
             oDaoReserva.crear(nuevaReserva);
+
+
+            //Se abre una ventana para informar que se guardó la reserva
+            confirmacionDeReservaGuardadaView ventana = new confirmacionDeReservaGuardadaView();
+            ventana.Show();
+
 
             this.Close();
         }

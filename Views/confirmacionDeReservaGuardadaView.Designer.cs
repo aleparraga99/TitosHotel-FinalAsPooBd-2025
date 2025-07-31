@@ -1,6 +1,6 @@
-﻿namespace Tito_s_Hotel
+﻿namespace Tito_s_Hotel.Views
 {
-    partial class confirmacionDePasajeroGuardadoView
+    partial class confirmacionDeReservaGuardadaView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,44 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
+            buttonOk = new Button();
             label1 = new Label();
-            button1 = new Button();
             SuspendLayout();
+            // 
+            // buttonOk
+            // 
+            buttonOk.Location = new Point(75, 63);
+            buttonOk.Name = "buttonOk";
+            buttonOk.Size = new Size(75, 23);
+            buttonOk.TabIndex = 3;
+            buttonOk.Text = "Ok";
+            buttonOk.UseVisualStyleBackColor = true;
+            buttonOk.Click += buttonOk_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(51, 23);
+            label1.Location = new Point(12, 26);
             label1.Name = "label1";
-            label1.Size = new Size(198, 15);
-            label1.TabIndex = 3;
-            label1.Text = "El pasajero se guardó correctamente";
+            label1.Size = new Size(213, 15);
+            label1.TabIndex = 2;
+            label1.Text = "La habitacion se guardo correctamente";
             // 
-            // button1
-            // 
-            button1.Location = new Point(127, 62);
-            button1.Name = "button1";
-            button1.Size = new Size(90, 23);
-            button1.TabIndex = 2;
-            button1.Text = "OK";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // confirmacionDePasajeroGuardadoView
+            // confirmacionDeReservaGuardadaView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(344, 119);
+            ClientSize = new Size(255, 114);
+            Controls.Add(buttonOk);
             Controls.Add(label1);
-            Controls.Add(button1);
-            Name = "confirmacionDePasajeroGuardadoView";
-            Text = "confirmacionDePasajeroGuardadoView";
+            Name = "confirmacionDeReservaGuardadaView";
+            Text = "confirmacionDeReservaGuardadaView";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private Button buttonOk;
         private Label label1;
-        private Button button1;
     }
 }

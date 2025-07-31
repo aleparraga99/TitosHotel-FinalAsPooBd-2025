@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tito_s_Hotel
+namespace Tito_s_Hotel.Views
 {
-    public partial class confirmacionDeHabitacinoGuardadaView : Form
+    public partial class confirmacionDeReservaGuardadaView : Form
     {
-        public confirmacionDeHabitacinoGuardadaView()
+        public confirmacionDeReservaGuardadaView()
         {
             InitializeComponent();
         }
 
-        private void confirmacionDeHabitacinoGuardadaView_Load(object sender, EventArgs e)
+        private void buttonOk_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

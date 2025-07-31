@@ -29,5 +29,11 @@ namespace Tito_s_Hotel.Views
             ViewPasajero ventana = new ViewPasajero();
             ventana.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ViewHabitacion ventana = new ViewHabitacion();
+            ventana.ShowDialog();
+        }
     }
 }

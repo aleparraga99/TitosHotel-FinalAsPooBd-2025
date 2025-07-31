@@ -22,6 +22,7 @@ namespace Tito_s_Hotel
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
+           
             int capacidadRequerida;
             if (!int.TryParse(textBox1.Text, out capacidadRequerida)) //Captura la capacidad
             {
@@ -31,11 +32,13 @@ namespace Tito_s_Hotel
                     return;
                 }
             }
+
+            //Se capturan las fechas
             DateTime chekInRequerido = dateTimePicker1.Value;
             DateTime checkOutRequerido = dateTimePicker2.Value;
 
           
-
+            //Se filtran las habitaciones solicitadas y se muestran el el dataGridView
             oDaoHabitacion.filtrarPorCapacidad(capacidadRequerida);
             oDaoHabitacion.filtrarPorDisponibilidad(chekInRequerido, checkOutRequerido);
             dataGridViewListaDeHabitacionesDisponibles.DataSource = oDaoHabitacion.verDisponibilidadDeHabitacionesDentroDeUnPeriodoYCapacidad;

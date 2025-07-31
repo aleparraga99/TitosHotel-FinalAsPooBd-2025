@@ -31,21 +31,21 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
+            textBoxNumero = new TextBox();
             label4 = new Label();
-            textBox2 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            groupBox1 = new GroupBox();
-            radioButton4 = new RadioButton();
-            radioButton3 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
-            groupBox2 = new GroupBox();
-            radioButton6 = new RadioButton();
-            radioButton5 = new RadioButton();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
+            textBoxPrecioPorNoche = new TextBox();
+            buttonGuardar = new Button();
+            buttonCancelar = new Button();
+            groupBoxCamasSingle = new GroupBox();
+            radioButtonCamasSingle3 = new RadioButton();
+            radioButtonCamasSingle2 = new RadioButton();
+            radioButtonCamasSingle1 = new RadioButton();
+            radioButtonCamasSingle0 = new RadioButton();
+            groupBoxCamaDoble = new GroupBox();
+            radioButtonCamaDoble1 = new RadioButton();
+            radioButtonCamaDoble0 = new RadioButton();
+            groupBoxCamasSingle.SuspendLayout();
+            groupBoxCamaDoble.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -56,7 +56,6 @@
             label1.Size = new Size(54, 15);
             label1.TabIndex = 0;
             label1.Text = "Número:";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -66,7 +65,6 @@
             label2.Size = new Size(81, 15);
             label2.TabIndex = 1;
             label2.Text = "Camas Single:";
-            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -77,12 +75,12 @@
             label3.TabIndex = 2;
             label3.Text = "Precio por noche: $";
             // 
-            // textBox1
+            // textBoxNumero
             // 
-            textBox1.Location = new Point(69, 29);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(52, 23);
-            textBox1.TabIndex = 3;
+            textBoxNumero.Location = new Point(69, 29);
+            textBoxNumero.Name = "textBoxNumero";
+            textBoxNumero.Size = new Size(52, 23);
+            textBoxNumero.TabIndex = 3;
             // 
             // label4
             // 
@@ -93,141 +91,142 @@
             label4.TabIndex = 4;
             label4.Text = "Cama Doble:";
             // 
-            // textBox2
+            // textBoxPrecioPorNoche
             // 
-            textBox2.Location = new Point(127, 84);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(71, 23);
-            textBox2.TabIndex = 5;
+            textBoxPrecioPorNoche.Location = new Point(127, 84);
+            textBoxPrecioPorNoche.Name = "textBoxPrecioPorNoche";
+            textBoxPrecioPorNoche.Size = new Size(71, 23);
+            textBoxPrecioPorNoche.TabIndex = 5;
             // 
-            // button1
+            // buttonGuardar
             // 
-            button1.Location = new Point(92, 170);
-            button1.Name = "button1";
-            button1.Size = new Size(106, 44);
-            button1.TabIndex = 6;
-            button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
+            buttonGuardar.Location = new Point(92, 170);
+            buttonGuardar.Name = "buttonGuardar";
+            buttonGuardar.Size = new Size(106, 44);
+            buttonGuardar.TabIndex = 6;
+            buttonGuardar.Text = "Guardar";
+            buttonGuardar.UseVisualStyleBackColor = true;
+            buttonGuardar.Click += buttonGuardar_Click;
             // 
-            // button2
+            // buttonCancelar
             // 
-            button2.Location = new Point(301, 170);
-            button2.Name = "button2";
-            button2.Size = new Size(106, 44);
-            button2.TabIndex = 7;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            buttonCancelar.Location = new Point(301, 170);
+            buttonCancelar.Name = "buttonCancelar";
+            buttonCancelar.Size = new Size(106, 44);
+            buttonCancelar.TabIndex = 7;
+            buttonCancelar.Text = "Cancelar";
+            buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.Click += buttonCancelar_Click;
             // 
-            // groupBox1
+            // groupBoxCamasSingle
             // 
-            groupBox1.Controls.Add(radioButton4);
-            groupBox1.Controls.Add(radioButton3);
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Controls.Add(radioButton1);
-            groupBox1.Location = new Point(318, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(176, 46);
-            groupBox1.TabIndex = 14;
-            groupBox1.TabStop = false;
-            groupBox1.Enter += groupBox1_Enter;
+            groupBoxCamasSingle.Controls.Add(radioButtonCamasSingle3);
+            groupBoxCamasSingle.Controls.Add(radioButtonCamasSingle2);
+            groupBoxCamasSingle.Controls.Add(radioButtonCamasSingle1);
+            groupBoxCamasSingle.Controls.Add(radioButtonCamasSingle0);
+            groupBoxCamasSingle.Location = new Point(318, 12);
+            groupBoxCamasSingle.Name = "groupBoxCamasSingle";
+            groupBoxCamasSingle.Size = new Size(176, 46);
+            groupBoxCamasSingle.TabIndex = 14;
+            groupBoxCamasSingle.TabStop = false;
             // 
-            // radioButton4
+            // radioButtonCamasSingle3
             // 
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(138, 16);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(31, 19);
-            radioButton4.TabIndex = 15;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "3";
-            radioButton4.UseVisualStyleBackColor = true;
+            radioButtonCamasSingle3.AutoSize = true;
+            radioButtonCamasSingle3.Location = new Point(138, 16);
+            radioButtonCamasSingle3.Name = "radioButtonCamasSingle3";
+            radioButtonCamasSingle3.Size = new Size(31, 19);
+            radioButtonCamasSingle3.TabIndex = 15;
+            radioButtonCamasSingle3.TabStop = true;
+            radioButtonCamasSingle3.Text = "3";
+            radioButtonCamasSingle3.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // radioButtonCamasSingle2
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(101, 16);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(31, 19);
-            radioButton3.TabIndex = 14;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "2";
-            radioButton3.UseVisualStyleBackColor = true;
+            radioButtonCamasSingle2.AutoSize = true;
+            radioButtonCamasSingle2.Location = new Point(101, 16);
+            radioButtonCamasSingle2.Name = "radioButtonCamasSingle2";
+            radioButtonCamasSingle2.Size = new Size(31, 19);
+            radioButtonCamasSingle2.TabIndex = 14;
+            radioButtonCamasSingle2.TabStop = true;
+            radioButtonCamasSingle2.Text = "2";
+            radioButtonCamasSingle2.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonCamasSingle1
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(54, 15);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(31, 19);
-            radioButton2.TabIndex = 13;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "1";
-            radioButton2.UseVisualStyleBackColor = true;
+            radioButtonCamasSingle1.AutoSize = true;
+            radioButtonCamasSingle1.Location = new Point(54, 15);
+            radioButtonCamasSingle1.Name = "radioButtonCamasSingle1";
+            radioButtonCamasSingle1.Size = new Size(31, 19);
+            radioButtonCamasSingle1.TabIndex = 13;
+            radioButtonCamasSingle1.TabStop = true;
+            radioButtonCamasSingle1.Text = "1";
+            radioButtonCamasSingle1.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioButtonCamasSingle0
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(7, 14);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(31, 19);
-            radioButton1.TabIndex = 12;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "0";
-            radioButton1.UseVisualStyleBackColor = true;
+            radioButtonCamasSingle0.AutoSize = true;
+            radioButtonCamasSingle0.Location = new Point(7, 14);
+            radioButtonCamasSingle0.Name = "radioButtonCamasSingle0";
+            radioButtonCamasSingle0.Size = new Size(31, 19);
+            radioButtonCamasSingle0.TabIndex = 12;
+            radioButtonCamasSingle0.TabStop = true;
+            radioButtonCamasSingle0.Text = "0";
+            radioButtonCamasSingle0.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // groupBoxCamaDoble
             // 
-            groupBox2.Controls.Add(radioButton6);
-            groupBox2.Controls.Add(radioButton5);
-            groupBox2.Location = new Point(312, 64);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(91, 45);
-            groupBox2.TabIndex = 15;
-            groupBox2.TabStop = false;
+            groupBoxCamaDoble.Controls.Add(radioButtonCamaDoble1);
+            groupBoxCamaDoble.Controls.Add(radioButtonCamaDoble0);
+            groupBoxCamaDoble.Location = new Point(312, 64);
+            groupBoxCamaDoble.Name = "groupBoxCamaDoble";
+            groupBoxCamaDoble.Size = new Size(91, 45);
+            groupBoxCamaDoble.TabIndex = 15;
+            groupBoxCamaDoble.TabStop = false;
             // 
-            // radioButton6
+            // radioButtonCamaDoble1
             // 
-            radioButton6.AutoSize = true;
-            radioButton6.Location = new Point(51, 17);
-            radioButton6.Name = "radioButton6";
-            radioButton6.Size = new Size(31, 19);
-            radioButton6.TabIndex = 15;
-            radioButton6.TabStop = true;
-            radioButton6.Text = "1";
-            radioButton6.UseVisualStyleBackColor = true;
+            radioButtonCamaDoble1.AutoSize = true;
+            radioButtonCamaDoble1.Location = new Point(51, 17);
+            radioButtonCamaDoble1.Name = "radioButtonCamaDoble1";
+            radioButtonCamaDoble1.Size = new Size(31, 19);
+            radioButtonCamaDoble1.TabIndex = 15;
+            radioButtonCamaDoble1.TabStop = true;
+            radioButtonCamaDoble1.Text = "1";
+            radioButtonCamaDoble1.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // radioButtonCamaDoble0
             // 
-            radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(4, 16);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(31, 19);
-            radioButton5.TabIndex = 14;
-            radioButton5.TabStop = true;
-            radioButton5.Text = "0";
-            radioButton5.UseVisualStyleBackColor = true;
+            radioButtonCamaDoble0.AutoSize = true;
+            radioButtonCamaDoble0.Location = new Point(4, 16);
+            radioButtonCamaDoble0.Name = "radioButtonCamaDoble0";
+            radioButtonCamaDoble0.Size = new Size(31, 19);
+            radioButtonCamaDoble0.TabIndex = 14;
+            radioButtonCamaDoble0.TabStop = true;
+            radioButtonCamaDoble0.Text = "0";
+            radioButtonCamaDoble0.UseVisualStyleBackColor = true;
             // 
             // ViewHabitacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(524, 241);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
+            Controls.Add(groupBoxCamaDoble);
+            Controls.Add(groupBoxCamasSingle);
+            Controls.Add(buttonCancelar);
+            Controls.Add(buttonGuardar);
+            Controls.Add(textBoxPrecioPorNoche);
             Controls.Add(label4);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxNumero);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "ViewHabitacion";
             Text = "ViewHabitacion";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            groupBoxCamasSingle.ResumeLayout(false);
+            groupBoxCamasSingle.PerformLayout();
+            groupBoxCamaDoble.ResumeLayout(false);
+            groupBoxCamaDoble.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -237,18 +236,18 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox textBoxNumero;
         private Label label4;
-        private TextBox textBox2;
-        private Button button1;
-        private Button button2;
-        private GroupBox groupBox1;
-        private RadioButton radioButton4;
-        private RadioButton radioButton3;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
-        private GroupBox groupBox2;
-        private RadioButton radioButton6;
-        private RadioButton radioButton5;
+        private TextBox textBoxPrecioPorNoche;
+        private Button buttonGuardar;
+        private Button buttonCancelar;
+        private GroupBox groupBoxCamasSingle;
+        private RadioButton radioButtonCamasSingle3;
+        private RadioButton radioButtonCamasSingle2;
+        private RadioButton radioButtonCamasSingle1;
+        private RadioButton radioButtonCamasSingle0;
+        private GroupBox groupBoxCamaDoble;
+        private RadioButton radioButtonCamaDoble1;
+        private RadioButton radioButtonCamaDoble0;
     }
 }
