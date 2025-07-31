@@ -21,55 +21,51 @@ namespace Tito_s_Hotel.Models
         public Reserva() {
             this.estado = true;
         }
-        public Reserva(int id)
+       
+        public Reserva( int numReserva)
         {
             this.estado = true;
-            this.id = id;
-        }
-        public Reserva(int id, int numReserva)
-        {
-            this.estado = true;
-            this.id = id;
+        
             this.numReserva = numReserva;
         }
-        public Reserva(int id, int numReserva, DateTime checkIn)
+        public Reserva( int numReserva, DateTime checkIn)
         {
             this.estado = true;
-            this.id = id;
+         
             this.numReserva = numReserva;
             this.checkIn = checkIn;
         }
-        public Reserva(int id, int numReserva, DateTime checkIn, DateTime checkOut)
+        public Reserva( int numReserva, DateTime checkIn, DateTime checkOut)
         {
             this.estado = true;
-            this.id = id;
+          
             this.numReserva = numReserva;
             this.checkIn = checkIn;
             this.checkOut = checkOut;
         }
-        public Reserva(int id, int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero)
+        public Reserva( int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero)
         {
             this.estado = true;
-            this.id = id;
+         
             this.numReserva = numReserva;
             this.checkIn = checkIn;
             this.checkOut = checkOut;
             this.oPasajero = oPasajero;
         }
-        public Reserva(int id, int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion)
+        public Reserva( int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion)
         {
             this.estado = true;
-            this.id = id;
+           
             this.numReserva = numReserva;
             this.checkIn = checkIn;
             this.checkOut = checkOut;
             this.oPasajero = oPasajero;
             this.oHabitacion = oHabitacion;
         }
-        public Reserva(int id, int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion, float adelanto)
+        public Reserva( int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion, float adelanto)
         {
             this.estado = true;
-            this.id = id;
+            
             this.numReserva = numReserva;
             this.checkIn = checkIn;
             this.checkOut = checkOut;
@@ -77,16 +73,7 @@ namespace Tito_s_Hotel.Models
             this.oHabitacion = oHabitacion;
             this.adelanto = adelanto;
         }
-        public Reserva(int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion, float adelanto)
-        {
-            this.estado = true;
-            this.numReserva = numReserva;
-            this.checkIn = checkIn;
-            this.checkOut = checkOut;
-            this.oPasajero = oPasajero;
-            this.oHabitacion = oHabitacion;
-            this.adelanto = adelanto;
-        }
+        
 
 
         //ToString

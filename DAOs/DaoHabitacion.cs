@@ -1,5 +1,7 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -51,7 +53,10 @@ namespace Tito_s_Hotel.DAOs
                 SqlCommand comando = new SqlCommand(query, conexion);
                 comando.Parameters.AddWithValue("@CheckInRequerido", checkInRequerido);
                 comando.Parameters.AddWithValue("@CheckOutRequerido", checkOutRequerido);
-                conexion.Open();
+                if (conexion.State == ConnectionState.Closed)
+                {
+                    conexion.Open();
+                }
                 SqlDataReader lector = comando.ExecuteReader();
 
                 while (lector.Read()) {
@@ -81,7 +86,10 @@ namespace Tito_s_Hotel.DAOs
             {
                 string query = "INSERT INTO Habitacion (Numero, CamasSingle, CamaDoble, Precio, Estado) VALUES (@Numero, @CamasSingle, @CamaDoble, @Precio, 1)";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                conexion.Open();
+                if (conexion.State == ConnectionState.Closed)
+                {
+                    conexion.Open();
+                }
                 comando.Parameters.AddWithValue("@Numero", oHabitacion.numero);
                 comando.Parameters.AddWithValue("@CamasSingle", oHabitacion.camasSingle);
                 comando.Parameters.AddWithValue("@CamaDoble", oHabitacion.camaDoble);
@@ -96,7 +104,10 @@ namespace Tito_s_Hotel.DAOs
             {
                 string query = "UPDATE Habitacion SET numero  = @numero, camasSingle = @camasSingle, camaDoble = @camaDoble, precio = @precio WHERE Id_habitacion = @id;";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                conexion.Open();
+                if (conexion.State == ConnectionState.Closed)
+                {
+                    conexion.Open();
+                }
                 comando.Parameters.AddWithValue("@numero", oHabitacion.numero);
                 comando.Parameters.AddWithValue("@camasSingle", oHabitacion.camasSingle);
                 comando.Parameters.AddWithValue("@camaDoble", oHabitacion.camaDoble);
@@ -111,9 +122,41 @@ namespace Tito_s_Hotel.DAOs
             {
                 string query = "UPDATE Habitacion SET Estado = 0 WHERE Id_habitacion = @id;";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                conexion.Open();
+                if (conexion.State == ConnectionState.Closed)
+                {
+                    conexion.Open();
+                }
                 comando.Parameters.AddWithValue("@id", oHabitacion.id);
                 comando.ExecuteNonQuery();
+            }
+        }
+        public Habitacion buscarHabitacionPorNumero(int numeroDeHabitacion) {
+            using (SqlConnection conexion = BDTitosHotel.obtenerConexion()) {
+                string query = $"SELECT * FROM Habitacion WHERE Numero = @Numero;";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                if (conexion.State == ConnectionState.Closed) {
+                    conexion.Open();
+                }
+                using (SqlDataReader reader = comando.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        Habitacion habitacionEnconrada = new Habitacion()
+                        {
+                            id = reader.GetInt32(reader.GetOrdinal("Id")),
+                            numero = reader.GetInt32(reader.GetOrdinal("Numero")),
+                            camasSingle = reader.GetInt32(reader.GetOrdinal("CamasSingle")),
+                            camaDoble = reader.GetBoolean(reader.GetOrdinal("CamaDoble")),
+                            precio = reader.GetFloat(reader.GetOrdinal("Precio")),
+                            estado = reader.GetBoolean(reader.GetOrdinal("Estado"))
+                        };
+                        return habitacionEnconrada;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }  
             }
         }
         public List<Habitacion> buscarTodasLashabitaciones()
@@ -123,7 +166,10 @@ namespace Tito_s_Hotel.DAOs
             {
                 string query = "SELECT * FROM Habitacion WHERE Estado = 1";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                conexion.Open();
+                if (conexion.State == ConnectionState.Closed)
+                {
+                    conexion.Open();
+                }
                 SqlDataReader lector = comando.ExecuteReader();
 
                 while (lector.Read())

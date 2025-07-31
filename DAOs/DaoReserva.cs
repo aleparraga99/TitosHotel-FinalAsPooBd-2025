@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -32,7 +33,10 @@ namespace Tito_s_Hotel.DAOs
             {
                 string query = "INSERT INTO Reserva (NumeroReserva, CheckIn, CheckOut, Adelanto, Id_habitacion, Id_pasajero, Estado) VALUES (@NumeroReserva, @CheckIn, @CheckOut, @Adelanto, @Id_habitacion, @Id_pasajero, 1)";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                conexion.Open();
+                if (conexion.State == ConnectionState.Closed)
+                {
+                    conexion.Open();
+                }
                 comando.Parameters.AddWithValue("@NumeroReserva", oReserva.numReserva);
                 comando.Parameters.AddWithValue("@CheckIn", oReserva.checkIn);
                 comando.Parameters.AddWithValue("@CheckOut", oReserva.checkOut);
@@ -49,7 +53,10 @@ namespace Tito_s_Hotel.DAOs
             {
                 string query = "UPDATE Reserva SET NumeroReserva  = @NumeroReserva, CheckIn = @CheckIn, CheckOut = @CheckOut, Adelanto = @Adelanto, Id_habitacion = @Id_habitacion, Id_pasajero = @Id_pasajero WHERE Id_reserva = @id;";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                conexion.Open();
+                if (conexion.State == ConnectionState.Closed)
+                {
+                    conexion.Open();
+                }
                 comando.Parameters.AddWithValue("@NumeroReserva", oReserva.numReserva);
                 comando.Parameters.AddWithValue("@CheckIn", oReserva.checkIn);
                 comando.Parameters.AddWithValue("@CheckOut", oReserva.checkOut);
@@ -66,7 +73,10 @@ namespace Tito_s_Hotel.DAOs
             {
                 string query = "UPDATE Reserva SET Estado = 0 WHERE Id_Reserva = @id;";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                conexion.Open();
+                if (conexion.State == ConnectionState.Closed)
+                { 
+                    conexion.Open(); 
+                }
                 comando.Parameters.AddWithValue("@id", oReserva.id);
                 comando.ExecuteNonQuery();
             }
@@ -78,7 +88,10 @@ namespace Tito_s_Hotel.DAOs
             {
                 string query = "SELECT * FROM Reserva WHERE Estado = 1";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                conexion.Open();
+                if(conexion.State == ConnectionState.Closed) {
+                    conexion.Open(); 
+                }
+               
                 SqlDataReader lector = comando.ExecuteReader();
 
                 while (lector.Read())
@@ -99,5 +112,6 @@ namespace Tito_s_Hotel.DAOs
             }
             return listaDeReservas;
         }
+        
     }
 }

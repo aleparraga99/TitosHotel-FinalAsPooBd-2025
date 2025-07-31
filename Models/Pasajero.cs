@@ -11,8 +11,8 @@ namespace Tito_s_Hotel.Models
         public int id { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
-        public int telefono { get; set; }
         public int dni { get; set; }
+        public int telefono { get; set; }
         public string correo { get; set; }
         public bool estado { get; set ; }
         
@@ -20,60 +20,48 @@ namespace Tito_s_Hotel.Models
         public Pasajero() {
             this.estado = true;
         }
-        public Pasajero(int id)
+       
+        public Pasajero( string nombre)
         {
             this.estado = true;
-            this.id = id;
-        }
-        public Pasajero(int id, string nombre)
-        {
-            this.estado = true;
-            this.id = id;
+       
             this.nombre = nombre;
         }
-        public Pasajero(int id, string nombre, string apellido)
+        public Pasajero( string nombre, string apellido)
         {
             this.estado = true;
-            this.id = id;
+           
             this.nombre = nombre;
             this.apellido = apellido;
         }
-        public Pasajero(int id, string nombre, string apellido, int telefono)
+        public Pasajero( string nombre, string apellido, int telefono)
         {
             this.estado = true;
-            this.id = id;
+           
             this.nombre = nombre;
             this.apellido = apellido;
             this.telefono = telefono;
         }
-        public Pasajero(int id, string nombre, string apellido, int telefono, int dni)
+        public Pasajero(string nombre, string apellido, int telefono, int dni)
         {
             this.estado = true;
-            this.id = id;
+            
             this.nombre = nombre;
             this.apellido = apellido;
             this.telefono = telefono;
             this.dni = dni;
-        }
-        public Pasajero(int id, string nombre, string apellido, int telefono, int dni, string correo)
-        {
-            this.estado = true;
-            this.id = id;
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.telefono = telefono;
-            this.dni = dni;
-            this.correo = correo;
         }
         public Pasajero(string nombre, string apellido, int telefono, int dni, string correo)
         {
             this.estado = true;
+           
             this.nombre = nombre;
             this.apellido = apellido;
             this.telefono = telefono;
             this.dni = dni;
             this.correo = correo;
         }
+     
 
 
         //ToString

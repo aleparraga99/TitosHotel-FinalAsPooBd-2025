@@ -50,7 +50,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(253, 18);
+            label1.Location = new Point(232, 21);
             label1.Name = "label1";
             label1.Size = new Size(67, 15);
             label1.TabIndex = 6;
@@ -64,6 +64,7 @@
             button1.TabIndex = 5;
             button1.Text = "Nueva reserva";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // dataGridViewListaDeReservas
             // 

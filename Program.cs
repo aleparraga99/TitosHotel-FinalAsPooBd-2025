@@ -1,3 +1,8 @@
+using System.Drawing.Text;
+using Tito_s_Hotel.DAOs;
+using Tito_s_Hotel.Models;
+using Tito_s_Hotel.Views;
+
 namespace Tito_s_Hotel
 {
     internal static class Program
@@ -8,10 +13,16 @@ namespace Tito_s_Hotel
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            DaoReserva oDaoReserva = DaoReserva.GetDaoReserva();
+            List<Reserva> oReservas = oDaoReserva.BuscarTodasLasReservas();
             ApplicationConfiguration.Initialize();
-            Application.Run(new viewGeneral());
+            if (oReservas.Count > 0)
+            {
+                Application.Run(new viewGeneral());
+            }
+            else {
+                Application.Run(new viewGeneral2());
+            }
         }
     }
 }

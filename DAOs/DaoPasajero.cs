@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -34,7 +35,10 @@ namespace Tito_s_Hotel.DAOs
             {
                 string query = "INSERT INTO Pasajero (Nombre, Apellido, Telefono, DNI, Correo, Estado) VALUES (@Nombre, @Apellido, @Telefono, @DNI, @Correo, 1)";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                conexion.Open();
+                if (conexion.State == ConnectionState.Closed)
+                {
+                    conexion.Open();
+                }
                 comando.Parameters.AddWithValue("@Nombre", oPasajero.nombre);
                 comando.Parameters.AddWithValue("@Apellido", oPasajero.apellido);
                 comando.Parameters.AddWithValue("@Telefono", oPasajero.telefono);
@@ -48,7 +52,10 @@ namespace Tito_s_Hotel.DAOs
             {
                 string query = "UPDATE Pasajero SET Nombre  = @Nombre, Apellido = @Apellido, Telefono = @Telefono, Dni = @DNI, Correo = @Correo WHERE Id_pasajero = @id;";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                conexion.Open();
+                if (conexion.State == ConnectionState.Closed)
+                {
+                    conexion.Open();
+                }
                 comando.Parameters.AddWithValue("@Nombre", oPasajero.nombre);
                 comando.Parameters.AddWithValue("@Apellido", oPasajero.apellido);
                 comando.Parameters.AddWithValue("@Telefono", oPasajero.telefono);
@@ -65,7 +72,10 @@ namespace Tito_s_Hotel.DAOs
             {
                 string query = "UPDATE Pasajero SET Estado = 0 WHERE Id_pasajero = @id;";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                conexion.Open();
+                if (conexion.State == ConnectionState.Closed)
+                {
+                    conexion.Open();
+                }
                 comando.Parameters.AddWithValue("@id", oPasajero.id);
                 comando.ExecuteNonQuery();
             }
@@ -77,7 +87,10 @@ namespace Tito_s_Hotel.DAOs
             {
                 string query = "SELECT * FROM Pasajero WHERE Estado = 1";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                conexion.Open();
+                if (conexion.State == ConnectionState.Closed)
+                {
+                    conexion.Open();
+                }
                 SqlDataReader lector = comando.ExecuteReader();
 
                 while (lector.Read())

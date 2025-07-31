@@ -34,6 +34,8 @@ namespace Tito_s_Hotel
             DateTime chekInRequerido = dateTimePicker1.Value;
             DateTime checkOutRequerido = dateTimePicker2.Value;
 
+          
+
             oDaoHabitacion.filtrarPorCapacidad(capacidadRequerida);
             oDaoHabitacion.filtrarPorDisponibilidad(chekInRequerido, checkOutRequerido);
             dataGridViewListaDeHabitacionesDisponibles.DataSource = oDaoHabitacion.verDisponibilidadDeHabitacionesDentroDeUnPeriodoYCapacidad;

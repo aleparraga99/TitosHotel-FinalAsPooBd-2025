@@ -48,10 +48,6 @@
             dateTimePickerCheckOut = new DateTimePicker();
             labelStringAdelanto = new Label();
             textBoxIntAdelanto = new TextBox();
-            labelStringDiasTotales = new Label();
-            label11 = new Label();
-            textBoxFloatTotalDeEstadia = new TextBox();
-            labelIntCantidadDeDias = new Label();
             SuspendLayout();
             // 
             // labelNombre
@@ -152,6 +148,7 @@
             buttonCancelar.TabIndex = 11;
             buttonCancelar.Text = "Cancelar";
             buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.Click += buttonCancelar_Click;
             // 
             // labelStringHabitacion
             // 
@@ -172,7 +169,7 @@
             // labelDateCheckIn
             // 
             labelDateCheckIn.AutoSize = true;
-            labelDateCheckIn.Location = new Point(256, 72);
+            labelDateCheckIn.Location = new Point(256, 81);
             labelDateCheckIn.Name = "labelDateCheckIn";
             labelDateCheckIn.Size = new Size(56, 15);
             labelDateCheckIn.TabIndex = 14;
@@ -181,7 +178,7 @@
             // labelDateCheckOut
             // 
             labelDateCheckOut.AutoSize = true;
-            labelDateCheckOut.Location = new Point(256, 99);
+            labelDateCheckOut.Location = new Point(256, 108);
             labelDateCheckOut.Name = "labelDateCheckOut";
             labelDateCheckOut.Size = new Size(66, 15);
             labelDateCheckOut.TabIndex = 15;
@@ -189,22 +186,22 @@
             // 
             // dateTimePickerChekIn
             // 
-            dateTimePickerChekIn.Location = new Point(318, 67);
+            dateTimePickerChekIn.Location = new Point(318, 76);
             dateTimePickerChekIn.Name = "dateTimePickerChekIn";
-            dateTimePickerChekIn.Size = new Size(200, 23);
+            dateTimePickerChekIn.Size = new Size(216, 23);
             dateTimePickerChekIn.TabIndex = 16;
             // 
             // dateTimePickerCheckOut
             // 
-            dateTimePickerCheckOut.Location = new Point(321, 96);
+            dateTimePickerCheckOut.Location = new Point(321, 105);
             dateTimePickerCheckOut.Name = "dateTimePickerCheckOut";
-            dateTimePickerCheckOut.Size = new Size(200, 23);
+            dateTimePickerCheckOut.Size = new Size(213, 23);
             dateTimePickerCheckOut.TabIndex = 17;
             // 
             // labelStringAdelanto
             // 
             labelStringAdelanto.AutoSize = true;
-            labelStringAdelanto.Location = new Point(256, 158);
+            labelStringAdelanto.Location = new Point(256, 161);
             labelStringAdelanto.Name = "labelStringAdelanto";
             labelStringAdelanto.Size = new Size(67, 15);
             labelStringAdelanto.TabIndex = 18;
@@ -212,54 +209,16 @@
             // 
             // textBoxIntAdelanto
             // 
-            textBoxIntAdelanto.Location = new Point(321, 155);
+            textBoxIntAdelanto.Location = new Point(321, 158);
             textBoxIntAdelanto.Name = "textBoxIntAdelanto";
             textBoxIntAdelanto.Size = new Size(67, 23);
             textBoxIntAdelanto.TabIndex = 19;
-            // 
-            // labelStringDiasTotales
-            // 
-            labelStringDiasTotales.AutoSize = true;
-            labelStringDiasTotales.Location = new Point(401, 192);
-            labelStringDiasTotales.Name = "labelStringDiasTotales";
-            labelStringDiasTotales.Size = new Size(70, 15);
-            labelStringDiasTotales.TabIndex = 20;
-            labelStringDiasTotales.Text = "Días totales:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(253, 128);
-            label11.Name = "label11";
-            label11.Size = new Size(100, 15);
-            label11.TabIndex = 22;
-            label11.Text = "Total de estadía: $";
-            // 
-            // textBoxFloatTotalDeEstadia
-            // 
-            textBoxFloatTotalDeEstadia.Location = new Point(359, 126);
-            textBoxFloatTotalDeEstadia.Name = "textBoxFloatTotalDeEstadia";
-            textBoxFloatTotalDeEstadia.Size = new Size(67, 23);
-            textBoxFloatTotalDeEstadia.TabIndex = 23;
-            // 
-            // labelIntCantidadDeDias
-            // 
-            labelIntCantidadDeDias.AutoSize = true;
-            labelIntCantidadDeDias.Location = new Point(468, 192);
-            labelIntCantidadDeDias.Name = "labelIntCantidadDeDias";
-            labelIntCantidadDeDias.Size = new Size(12, 15);
-            labelIntCantidadDeDias.TabIndex = 24;
-            labelIntCantidadDeDias.Text = "-";
             // 
             // ViewPasajero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(530, 297);
-            Controls.Add(labelIntCantidadDeDias);
-            Controls.Add(textBoxFloatTotalDeEstadia);
-            Controls.Add(label11);
-            Controls.Add(labelStringDiasTotales);
+            ClientSize = new Size(564, 297);
             Controls.Add(textBoxIntAdelanto);
             Controls.Add(labelStringAdelanto);
             Controls.Add(dateTimePickerCheckOut);
@@ -309,9 +268,5 @@
         private DateTimePicker dateTimePickerCheckOut;
         private Label labelStringAdelanto;
         private TextBox textBoxIntAdelanto;
-        private Label labelStringDiasTotales;
-        private Label label11;
-        private TextBox textBoxFloatTotalDeEstadia;
-        private Label labelIntCantidadDeDias;
     }
 }

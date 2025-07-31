@@ -90,7 +90,7 @@
             // 
             // buttonBuscar
             // 
-            buttonBuscar.Location = new Point(276, 323);
+            buttonBuscar.Location = new Point(55, 323);
             buttonBuscar.Name = "buttonBuscar";
             buttonBuscar.Size = new Size(75, 23);
             buttonBuscar.TabIndex = 6;
@@ -108,7 +108,7 @@
             // 
             // buttonVolver
             // 
-            buttonVolver.Location = new Point(25, 323);
+            buttonVolver.Location = new Point(253, 323);
             buttonVolver.Name = "buttonVolver";
             buttonVolver.Size = new Size(75, 23);
             buttonVolver.TabIndex = 8;
