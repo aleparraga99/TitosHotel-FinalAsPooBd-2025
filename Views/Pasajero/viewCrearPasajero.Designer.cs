@@ -1,6 +1,6 @@
 ﻿namespace Tito_s_Hotel.Views
 {
-    partial class ViewPasajero
+    partial class viewCrearPasajero
     {
         /// <summary>
         /// Required designer variable.
@@ -40,20 +40,12 @@
             textBoxStringCorreo = new TextBox();
             buttonGuardar = new Button();
             buttonCancelar = new Button();
-            labelStringHabitacion = new Label();
-            textBoxHabitacion = new TextBox();
-            labelDateCheckIn = new Label();
-            labelDateCheckOut = new Label();
-            dateTimePickerChekIn = new DateTimePicker();
-            dateTimePickerCheckOut = new DateTimePicker();
-            labelStringAdelanto = new Label();
-            textBoxIntAdelanto = new TextBox();
             SuspendLayout();
             // 
             // labelNombre
             // 
             labelNombre.AutoSize = true;
-            labelNombre.Location = new Point(40, 32);
+            labelNombre.Location = new Point(67, 34);
             labelNombre.Name = "labelNombre";
             labelNombre.Size = new Size(54, 15);
             labelNombre.TabIndex = 0;
@@ -62,7 +54,7 @@
             // labelApellido
             // 
             labelApellido.AutoSize = true;
-            labelApellido.Location = new Point(40, 67);
+            labelApellido.Location = new Point(67, 69);
             labelApellido.Name = "labelApellido";
             labelApellido.Size = new Size(54, 15);
             labelApellido.TabIndex = 1;
@@ -71,7 +63,7 @@
             // labelDni
             // 
             labelDni.AutoSize = true;
-            labelDni.Location = new Point(40, 98);
+            labelDni.Location = new Point(67, 100);
             labelDni.Name = "labelDni";
             labelDni.Size = new Size(30, 15);
             labelDni.TabIndex = 2;
@@ -80,7 +72,7 @@
             // labelTelefono
             // 
             labelTelefono.AutoSize = true;
-            labelTelefono.Location = new Point(39, 128);
+            labelTelefono.Location = new Point(66, 130);
             labelTelefono.Name = "labelTelefono";
             labelTelefono.Size = new Size(55, 15);
             labelTelefono.TabIndex = 3;
@@ -89,7 +81,7 @@
             // labelCorreo
             // 
             labelCorreo.AutoSize = true;
-            labelCorreo.Location = new Point(40, 158);
+            labelCorreo.Location = new Point(67, 160);
             labelCorreo.Name = "labelCorreo";
             labelCorreo.Size = new Size(46, 15);
             labelCorreo.TabIndex = 4;
@@ -97,42 +89,42 @@
             // 
             // textBoxStringNombre
             // 
-            textBoxStringNombre.Location = new Point(100, 29);
+            textBoxStringNombre.Location = new Point(127, 31);
             textBoxStringNombre.Name = "textBoxStringNombre";
             textBoxStringNombre.Size = new Size(100, 23);
             textBoxStringNombre.TabIndex = 5;
             // 
             // textBoxStringApellido
             // 
-            textBoxStringApellido.Location = new Point(100, 64);
+            textBoxStringApellido.Location = new Point(127, 66);
             textBoxStringApellido.Name = "textBoxStringApellido";
             textBoxStringApellido.Size = new Size(100, 23);
             textBoxStringApellido.TabIndex = 6;
             // 
             // textBoxIntDni
             // 
-            textBoxIntDni.Location = new Point(100, 91);
+            textBoxIntDni.Location = new Point(127, 93);
             textBoxIntDni.Name = "textBoxIntDni";
             textBoxIntDni.Size = new Size(100, 23);
             textBoxIntDni.TabIndex = 7;
             // 
             // textBoxIntTelefono
             // 
-            textBoxIntTelefono.Location = new Point(100, 120);
+            textBoxIntTelefono.Location = new Point(127, 122);
             textBoxIntTelefono.Name = "textBoxIntTelefono";
             textBoxIntTelefono.Size = new Size(100, 23);
             textBoxIntTelefono.TabIndex = 8;
             // 
             // textBoxStringCorreo
             // 
-            textBoxStringCorreo.Location = new Point(100, 158);
+            textBoxStringCorreo.Location = new Point(127, 160);
             textBoxStringCorreo.Name = "textBoxStringCorreo";
             textBoxStringCorreo.Size = new Size(100, 23);
             textBoxStringCorreo.TabIndex = 9;
             // 
             // buttonGuardar
             // 
-            buttonGuardar.Location = new Point(148, 232);
+            buttonGuardar.Location = new Point(39, 222);
             buttonGuardar.Name = "buttonGuardar";
             buttonGuardar.Size = new Size(81, 43);
             buttonGuardar.TabIndex = 10;
@@ -142,7 +134,7 @@
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Location = new Point(275, 232);
+            buttonCancelar.Location = new Point(172, 232);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(89, 43);
             buttonCancelar.TabIndex = 11;
@@ -150,83 +142,11 @@
             buttonCancelar.UseVisualStyleBackColor = true;
             buttonCancelar.Click += buttonCancelar_Click;
             // 
-            // labelStringHabitacion
-            // 
-            labelStringHabitacion.AutoSize = true;
-            labelStringHabitacion.Location = new Point(253, 35);
-            labelStringHabitacion.Name = "labelStringHabitacion";
-            labelStringHabitacion.Size = new Size(68, 15);
-            labelStringHabitacion.TabIndex = 12;
-            labelStringHabitacion.Text = "Habitación:";
-            // 
-            // textBoxHabitacion
-            // 
-            textBoxHabitacion.Location = new Point(318, 32);
-            textBoxHabitacion.Name = "textBoxHabitacion";
-            textBoxHabitacion.Size = new Size(46, 23);
-            textBoxHabitacion.TabIndex = 13;
-            // 
-            // labelDateCheckIn
-            // 
-            labelDateCheckIn.AutoSize = true;
-            labelDateCheckIn.Location = new Point(256, 81);
-            labelDateCheckIn.Name = "labelDateCheckIn";
-            labelDateCheckIn.Size = new Size(56, 15);
-            labelDateCheckIn.TabIndex = 14;
-            labelDateCheckIn.Text = "Check In:";
-            // 
-            // labelDateCheckOut
-            // 
-            labelDateCheckOut.AutoSize = true;
-            labelDateCheckOut.Location = new Point(256, 108);
-            labelDateCheckOut.Name = "labelDateCheckOut";
-            labelDateCheckOut.Size = new Size(66, 15);
-            labelDateCheckOut.TabIndex = 15;
-            labelDateCheckOut.Text = "Check Out:";
-            // 
-            // dateTimePickerChekIn
-            // 
-            dateTimePickerChekIn.Location = new Point(318, 76);
-            dateTimePickerChekIn.Name = "dateTimePickerChekIn";
-            dateTimePickerChekIn.Size = new Size(216, 23);
-            dateTimePickerChekIn.TabIndex = 16;
-            // 
-            // dateTimePickerCheckOut
-            // 
-            dateTimePickerCheckOut.Location = new Point(321, 105);
-            dateTimePickerCheckOut.Name = "dateTimePickerCheckOut";
-            dateTimePickerCheckOut.Size = new Size(213, 23);
-            dateTimePickerCheckOut.TabIndex = 17;
-            // 
-            // labelStringAdelanto
-            // 
-            labelStringAdelanto.AutoSize = true;
-            labelStringAdelanto.Location = new Point(256, 161);
-            labelStringAdelanto.Name = "labelStringAdelanto";
-            labelStringAdelanto.Size = new Size(67, 15);
-            labelStringAdelanto.TabIndex = 18;
-            labelStringAdelanto.Text = "Adelanto: $";
-            // 
-            // textBoxIntAdelanto
-            // 
-            textBoxIntAdelanto.Location = new Point(321, 158);
-            textBoxIntAdelanto.Name = "textBoxIntAdelanto";
-            textBoxIntAdelanto.Size = new Size(67, 23);
-            textBoxIntAdelanto.TabIndex = 19;
-            // 
-            // ViewPasajero
+            // viewCrearPasajero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(564, 297);
-            Controls.Add(textBoxIntAdelanto);
-            Controls.Add(labelStringAdelanto);
-            Controls.Add(dateTimePickerCheckOut);
-            Controls.Add(dateTimePickerChekIn);
-            Controls.Add(labelDateCheckOut);
-            Controls.Add(labelDateCheckIn);
-            Controls.Add(textBoxHabitacion);
-            Controls.Add(labelStringHabitacion);
+            ClientSize = new Size(312, 285);
             Controls.Add(buttonCancelar);
             Controls.Add(buttonGuardar);
             Controls.Add(textBoxStringCorreo);
@@ -239,7 +159,7 @@
             Controls.Add(labelDni);
             Controls.Add(labelApellido);
             Controls.Add(labelNombre);
-            Name = "ViewPasajero";
+            Name = "viewCrearPasajero";
             Text = "ViewPasajero";
             Load += ViewPasajero_Load;
             ResumeLayout(false);
@@ -260,13 +180,5 @@
         private TextBox textBoxStringCorreo;
         private Button buttonGuardar;
         private Button buttonCancelar;
-        private Label labelStringHabitacion;
-        private TextBox textBoxHabitacion;
-        private Label labelDateCheckIn;
-        private Label labelDateCheckOut;
-        private DateTimePicker dateTimePickerChekIn;
-        private DateTimePicker dateTimePickerCheckOut;
-        private Label labelStringAdelanto;
-        private TextBox textBoxIntAdelanto;
     }
 }

@@ -12,10 +12,10 @@ using Tito_s_Hotel.Models;
 
 namespace Tito_s_Hotel.Views
 {
-    public partial class ViewHabitacion : Form
+    public partial class viewCrearHabitacion : Form
     {
         DaoHabitacion oDaoHabitacion = DaoHabitacion.GetDaoHabitacion();
-        public ViewHabitacion()
+        public viewCrearHabitacion()
         {
             InitializeComponent();
         }

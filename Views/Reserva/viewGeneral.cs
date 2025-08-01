@@ -11,13 +11,14 @@ using Tito_s_Hotel.Controllers;
 using Tito_s_Hotel.DAOs;
 using Tito_s_Hotel.Models;
 using Tito_s_Hotel.Views;
+using Tito_s_Hotel.Views.Pasajero;
 
 namespace Tito_s_Hotel
 {
     public partial class viewGeneral : Form
     {
         private DaoReserva oDaoReserva;
-        private ViewPasajero oViewPasajero;
+        private viewCrearPasajero oViewPasajero;
         private List<Reserva> listaDeReservasEnDataGridView = new List<Reserva>();
 
         public viewGeneral()
@@ -68,15 +69,26 @@ namespace Tito_s_Hotel
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        public Reserva reservaModidicada { get; private set; }
+        private void buttonModificar_Click(object sender, EventArgs e)
         {
-            ViewPasajero ventana = new ViewPasajero();
+            Reserva reservaSeleccionada = (Reserva)dataGridViewListaDeReservas.SelectedRows[0].DataBoundItem;
+            oDaoReserva.modificar(reservaSeleccionada);
+            modificarReservaView ventana = new modificarReservaView();
             ventana.ShowDialog();
         }
 
-        private void buttonAgregarHabitacion_Click(object sender, EventArgs e)
+        private void buttonHabitaciones_Click(object sender, EventArgs e)
         {
-            ViewHabitacion ventana = new ViewHabitacion();
+            viewHabitacion ventana = new viewHabitacion();
+            ventana.ShowDialog();
+        }
+
+        private void buttonPasajeros_Click(object sender, EventArgs e)
+        {
+            viewPasajero ventana = new viewPasajero();
             ventana.ShowDialog();
         }
     }

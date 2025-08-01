@@ -1,6 +1,6 @@
 ﻿namespace Tito_s_Hotel.Views
 {
-    partial class ViewHabitacion
+    partial class viewCrearHabitacion
     {
         /// <summary>
         /// Required designer variable.

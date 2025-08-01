@@ -13,13 +13,13 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Tito_s_Hotel.Views
 {
-    public partial class ViewPasajero : Form
+    public partial class viewCrearPasajero : Form
     {
 
         DaoPasajero oDaoPasajero = DaoPasajero.GetDaoPasajero();
         DaoHabitacion oDaoHabitacion = DaoHabitacion.GetDaoHabitacion();
         DaoReserva oDaoReserva = DaoReserva.GetDaoReserva();
-        public ViewPasajero()
+        public viewCrearPasajero()
         {
             InitializeComponent();
         }

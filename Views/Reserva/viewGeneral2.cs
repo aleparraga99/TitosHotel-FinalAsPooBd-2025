@@ -26,13 +26,13 @@ namespace Tito_s_Hotel.Views
 
         private void button1NuevaReserva2_Click(object sender, EventArgs e)
         {
-            ViewPasajero ventana = new ViewPasajero();
+            viewCrearPasajero ventana = new viewCrearPasajero();
             ventana.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ViewHabitacion ventana = new ViewHabitacion();
+            viewCrearHabitacion ventana = new viewCrearHabitacion();
             ventana.ShowDialog();
         }
     }
