@@ -91,5 +91,15 @@ namespace Tito_s_Hotel
             viewPasajero ventana = new viewPasajero();
             ventana.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonNuevaReserva_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

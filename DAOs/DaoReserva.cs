@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tito_s_Hotel.Conexion;
 using Tito_s_Hotel.Models;
+using Tito_s_Hotel.Views.viewsExcepciones;
 
 namespace Tito_s_Hotel.DAOs
 {
@@ -88,10 +89,18 @@ namespace Tito_s_Hotel.DAOs
             {
                 string query = "SELECT * FROM Reserva WHERE Estado = 1";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                if(conexion.State == ConnectionState.Closed) {
-                    conexion.Open(); 
+                if (conexion.State == ConnectionState.Closed)
+                {
+                    try
+                    {
+                        conexion.Open();
+                    }
+                    catch
+                    {
+                        excepcionConexionBaseDeDatos ventana = new excepcionConexionBaseDeDatos();
+                    }
                 }
-               
+
                 SqlDataReader lector = comando.ExecuteReader();
 
                 while (lector.Read())

@@ -32,13 +32,14 @@
             label1 = new Label();
             buttonVerDisponibilidad2 = new Button();
             button1 = new Button();
+            buttonAgregarPasajero = new Button();
             SuspendLayout();
             // 
             // button1NuevaReserva2
             // 
-            button1NuevaReserva2.Location = new Point(143, 80);
+            button1NuevaReserva2.Location = new Point(37, 67);
             button1NuevaReserva2.Name = "button1NuevaReserva2";
-            button1NuevaReserva2.Size = new Size(121, 23);
+            button1NuevaReserva2.Size = new Size(123, 23);
             button1NuevaReserva2.TabIndex = 6;
             button1NuevaReserva2.Text = "Nueva reserva";
             button1NuevaReserva2.UseVisualStyleBackColor = true;
@@ -47,7 +48,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(178, 20);
+            label1.Location = new Point(64, 26);
             label1.Name = "label1";
             label1.Size = new Size(67, 15);
             label1.TabIndex = 7;
@@ -55,9 +56,9 @@
             // 
             // buttonVerDisponibilidad2
             // 
-            buttonVerDisponibilidad2.Location = new Point(129, 122);
+            buttonVerDisponibilidad2.Location = new Point(37, 96);
             buttonVerDisponibilidad2.Name = "buttonVerDisponibilidad2";
-            buttonVerDisponibilidad2.Size = new Size(135, 23);
+            buttonVerDisponibilidad2.Size = new Size(123, 23);
             buttonVerDisponibilidad2.TabIndex = 8;
             buttonVerDisponibilidad2.Text = "Ver disponibilidad";
             buttonVerDisponibilidad2.UseVisualStyleBackColor = true;
@@ -65,19 +66,30 @@
             // 
             // button1
             // 
-            button1.Location = new Point(129, 151);
+            button1.Location = new Point(37, 125);
             button1.Name = "button1";
-            button1.Size = new Size(138, 23);
+            button1.Size = new Size(123, 23);
             button1.TabIndex = 9;
             button1.Text = "Agregar habitacion";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // buttonAgregarPasajero
+            // 
+            buttonAgregarPasajero.Location = new Point(37, 154);
+            buttonAgregarPasajero.Name = "buttonAgregarPasajero";
+            buttonAgregarPasajero.Size = new Size(123, 23);
+            buttonAgregarPasajero.TabIndex = 10;
+            buttonAgregarPasajero.Text = "Agregar pasajero";
+            buttonAgregarPasajero.UseVisualStyleBackColor = true;
+            buttonAgregarPasajero.Click += buttonAgregarPasajero_Click;
+            // 
             // viewGeneral2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(438, 187);
+            ClientSize = new Size(208, 206);
+            Controls.Add(buttonAgregarPasajero);
             Controls.Add(button1);
             Controls.Add(buttonVerDisponibilidad2);
             Controls.Add(label1);
@@ -94,5 +106,6 @@
         private Label label1;
         private Button buttonVerDisponibilidad2;
         private Button button1;
+        private Button buttonAgregarPasajero;
     }
 }

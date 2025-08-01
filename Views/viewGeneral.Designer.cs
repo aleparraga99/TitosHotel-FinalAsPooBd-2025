@@ -30,19 +30,19 @@
         {
             buttonVerDisponibilidad = new Button();
             label1 = new Label();
-            button1 = new Button();
             dataGridViewListaDeReservas = new DataGridView();
             buttonModificar = new Button();
             buttonEliminar = new Button();
             buttonHabitaciones = new Button();
             buttonPasajeros = new Button();
             label2 = new Label();
+            buttonNuevaReserva = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListaDeReservas).BeginInit();
             SuspendLayout();
             // 
             // buttonVerDisponibilidad
             // 
-            buttonVerDisponibilidad.Location = new Point(12, 211);
+            buttonVerDisponibilidad.Location = new Point(12, 163);
             buttonVerDisponibilidad.Name = "buttonVerDisponibilidad";
             buttonVerDisponibilidad.Size = new Size(135, 23);
             buttonVerDisponibilidad.TabIndex = 7;
@@ -59,15 +59,6 @@
             label1.TabIndex = 6;
             label1.Text = "Tito´s Hotel";
             // 
-            // button1
-            // 
-            button1.Location = new Point(12, 153);
-            button1.Name = "button1";
-            button1.Size = new Size(103, 23);
-            button1.TabIndex = 5;
-            button1.Text = "Nueva reserva";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // dataGridViewListaDeReservas
             // 
             dataGridViewListaDeReservas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -78,7 +69,7 @@
             // 
             // buttonModificar
             // 
-            buttonModificar.Location = new Point(485, 239);
+            buttonModificar.Location = new Point(322, 239);
             buttonModificar.Name = "buttonModificar";
             buttonModificar.Size = new Size(75, 23);
             buttonModificar.TabIndex = 9;
@@ -88,7 +79,7 @@
             // 
             // buttonEliminar
             // 
-            buttonEliminar.Location = new Point(183, 239);
+            buttonEliminar.Location = new Point(198, 239);
             buttonEliminar.Name = "buttonEliminar";
             buttonEliminar.Size = new Size(75, 23);
             buttonEliminar.TabIndex = 10;
@@ -108,7 +99,7 @@
             // 
             // buttonPasajeros
             // 
-            buttonPasajeros.Location = new Point(21, 110);
+            buttonPasajeros.Location = new Point(21, 118);
             buttonPasajeros.Name = "buttonPasajeros";
             buttonPasajeros.Size = new Size(94, 23);
             buttonPasajeros.TabIndex = 13;
@@ -125,11 +116,22 @@
             label2.TabIndex = 14;
             label2.Text = "Lista de reservas";
             // 
+            // buttonNuevaReserva
+            // 
+            buttonNuevaReserva.Location = new Point(436, 239);
+            buttonNuevaReserva.Name = "buttonNuevaReserva";
+            buttonNuevaReserva.Size = new Size(115, 23);
+            buttonNuevaReserva.TabIndex = 15;
+            buttonNuevaReserva.Text = "Nueva reserva";
+            buttonNuevaReserva.UseVisualStyleBackColor = true;
+            buttonNuevaReserva.Click += buttonNuevaReserva_Click;
+            // 
             // viewGeneral
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(590, 285);
+            Controls.Add(buttonNuevaReserva);
             Controls.Add(label2);
             Controls.Add(buttonPasajeros);
             Controls.Add(buttonHabitaciones);
@@ -138,7 +140,6 @@
             Controls.Add(dataGridViewListaDeReservas);
             Controls.Add(buttonVerDisponibilidad);
             Controls.Add(label1);
-            Controls.Add(button1);
             Name = "viewGeneral";
             Text = "viewGeneral";
             Load += viewGeneral_Load;
@@ -151,12 +152,12 @@
 
         private Button buttonVerDisponibilidad;
         private Label label1;
-        private Button button1;
         private DataGridView dataGridViewListaDeReservas;
         private Button buttonModificar;
         private Button buttonEliminar;
         private Button buttonHabitaciones;
         private Button buttonPasajeros;
         private Label label2;
+        private Button buttonNuevaReserva;
     }
 }

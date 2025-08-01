@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tito_s_Hotel.DAOs;
 using Tito_s_Hotel.Models;
+using Tito_s_Hotel.Views.viewsPasajero;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Tito_s_Hotel.Views
@@ -42,14 +43,14 @@ namespace Tito_s_Hotel.Views
             int telefono = int.Parse(textBoxIntTelefono.Text);
             string correo = textBoxStringCorreo.Text;
 
-            int numeroDeHabitacion = int.Parse(textBoxHabitacion.Text);
+            /*int numeroDeHabitacion = int.Parse(textBoxHabitacion.Text);
             DateTime checkIn = dateTimePickerChekIn.Value;
             DateTime checkOut = dateTimePickerCheckOut.Value;
             int adelanto = int.Parse(textBoxIntAdelanto.Text);
-
+            */
            
             //Se construye el objeto Pasajero
-            Pasajero nuevoPasajero = new Pasajero()
+           Models.Pasajero nuevoPasajero = new Models.Pasajero()
             {
                 nombre = nombre,
                 apellido = apellido,
@@ -62,10 +63,10 @@ namespace Tito_s_Hotel.Views
             oDaoPasajero.crear(nuevoPasajero);
 
             //Se le envia el numero de habitacion al DAO para que la busque
-            Habitacion habitacionEncontrada = oDaoHabitacion.buscarHabitacionPorNumero(numeroDeHabitacion);
+            //Habitacion habitacionEncontrada = oDaoHabitacion.buscarHabitacionPorNumero(numeroDeHabitacion);
 
             //Se construye el objeto Reserva
-            Reserva nuevaReserva = new Reserva()
+            /*Reserva nuevaReserva = new Reserva()
             {
                 checkIn = checkIn,
                 checkOut = checkOut,
@@ -73,14 +74,14 @@ namespace Tito_s_Hotel.Views
                 oHabitacion = habitacionEncontrada,
                 adelanto = adelanto,
             };
-
+            */
             //Se crea la nueva reserva Reserva
-            oDaoReserva.crear(nuevaReserva);
+            //oDaoReserva.crear(nuevaReserva);
 
 
             //Se abre una ventana para informar que se guardó la reserva
-            confirmacionDeReservaGuardadaView ventana = new confirmacionDeReservaGuardadaView();
-            ventana.Show();
+            confirmacionDePasajeroGuardado ventana = new confirmacionDePasajeroGuardado();
+            ventana.ShowDialog();
 
 
             this.Close();

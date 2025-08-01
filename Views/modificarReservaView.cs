@@ -38,10 +38,9 @@ namespace Tito_s_Hotel.Views
             DateTime checkIn = dateTimePickerChekIn.Value;
             DateTime checkOut = dateTimePickerCheckOut.Value;
             int adelanto = int.Parse(textBoxIntAdelanto.Text);
-
-            private Reserva reservaModificada() { 
-                
         }
+
+            
             
     }
 }

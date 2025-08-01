@@ -134,7 +134,7 @@
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Location = new Point(172, 232);
+            buttonCancelar.Location = new Point(170, 222);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(89, 43);
             buttonCancelar.TabIndex = 11;

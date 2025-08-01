@@ -33,7 +33,7 @@ namespace Tito_s_Hotel.Views
             radioButtonCamasSingle2.Tag = 2;
             radioButtonCamasSingle3.Tag = 3;
 
-            //Tagas que identifican numericamente las opciones de cama doble
+            //Tags que identifican numericamente las opciones de cama doble
             radioButtonCamaDoble0.Tag = 0;
             radioButtonCamaDoble1.Tag = 1;
 
@@ -78,6 +78,7 @@ namespace Tito_s_Hotel.Views
             //Se abre una ventana de confirmacion. Deberia agregar una forma de validar 
             //si realmente se guardo para poder confirmarlo
             confirmacionDeHabitacionGuardadaView ventana = new confirmacionDeHabitacionGuardadaView();
+            ventana.ShowDialog();
 
             this.Close();
         }
