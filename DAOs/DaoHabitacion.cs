@@ -174,16 +174,23 @@ namespace Tito_s_Hotel.DAOs
 
                 while (lector.Read())
                 {
-                    Habitacion habitacion = new Habitacion
+                    try
                     {
-                        id = lector.GetInt32(0),
-                        numero = lector.GetInt32(1),
-                        camasSingle = lector.GetInt32(2),
-                        camaDoble = lector.GetBoolean(3),
-                        precio = lector.GetFloat(4),
-                        estado = lector.GetBoolean(5)
-                    };
-                    listaDeHabitaciones.Add(habitacion);
+                        Habitacion habitacion = new Habitacion
+                        {
+                            id = lector.GetInt32(0),
+                            numero = lector.GetInt32(1),
+                            camasSingle = lector.GetInt32(2),
+                            camaDoble = lector.GetBoolean(3),
+                            precio = lector.GetFloat(4),
+                            estado = lector.GetBoolean(5)
+                        };
+                     listaDeHabitaciones.Add(habitacion);
+                    }
+                    catch { 
+                    
+                        }
+                    
                 }
             }
             return listaDeHabitaciones;

@@ -95,17 +95,26 @@ namespace Tito_s_Hotel.DAOs
 
                 while (lector.Read())
                 {
-                    Pasajero pasajero = new Pasajero
+                    try
                     {
-                        id = lector.GetInt32(0),
-                        nombre = lector.GetString(1),
-                        apellido = lector.GetString(2),
-                        telefono = lector.GetInt32(3),
-                        dni = lector.GetInt32(4),
-                        correo = lector.GetString(5),
-                        estado = lector.GetBoolean(6)
-                    };
-                    listaDePasajeros.Add(pasajero);
+                        Pasajero pasajero = new Pasajero
+                        {
+                            id = lector.GetInt32(0),
+                            nombre = lector.GetString(1),
+                            apellido = lector.GetString(2),
+                            telefono = lector.GetInt32(3),
+                            dni = lector.GetInt32(4),
+                            correo = lector.GetString(5),
+                            estado = lector.GetBoolean(6)
+                        };
+
+                        listaDePasajeros.Add(pasajero);
+                    }
+                    catch { 
+                        
+                    }
+                   
+                    
                 }
             }
             return listaDePasajeros;
