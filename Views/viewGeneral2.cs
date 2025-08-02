@@ -17,8 +17,8 @@ namespace Tito_s_Hotel.Views
 {
     public partial class viewGeneral2 : Form
     {
-        private ControllerHabitacion oControllerHabitacion;
-        private ControllerPasajero oControllerPasajero;
+        ControllerHabitacion oControllerHabitacion = new ControllerHabitacion(); 
+        ControllerPasajero oControllerPasajero = new ControllerPasajero();
         public viewGeneral2()
         {
             InitializeComponent();

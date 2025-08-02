@@ -11,7 +11,7 @@ namespace Tito_s_Hotel.Controllers
     public class ControllerReserva
     {
         //SINGLENTON
-        private DaoReserva oDaoReserva;
+        private DaoReserva oDaoReserva = DaoReserva.GetDaoReserva();
         public ControllerReserva()
         {
             ControllerReserva oDaoReserva = new ControllerReserva();

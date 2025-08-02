@@ -11,10 +11,10 @@ namespace Tito_s_Hotel.Controllers
     public class ControllerPasajero
     {
         //SINGLENTON
-        private DaoPasajero oDaoPasajero;
+        private DaoPasajero oDaoPasajero = DaoPasajero.GetDaoPasajero();
         public ControllerPasajero()
         {
-            ControllerPasajero oDaoPasajero = new ControllerPasajero();
+           
         }
 
         //CRUD
