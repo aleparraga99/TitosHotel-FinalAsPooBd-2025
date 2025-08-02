@@ -44,7 +44,6 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(345, 192);
             dataGridView1.TabIndex = 0;
-       
             // 
             // buttonModificarHabitacion
             // 
@@ -63,6 +62,7 @@
             buttonEliminarHabitacion.TabIndex = 2;
             buttonEliminarHabitacion.Text = "Eliminar";
             buttonEliminarHabitacion.UseVisualStyleBackColor = true;
+            buttonEliminarHabitacion.Click += buttonEliminarHabitacion_Click;
             // 
             // label1
             // 

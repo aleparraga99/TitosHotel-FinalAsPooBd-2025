@@ -32,5 +32,10 @@ namespace Tito_s_Hotel.Views
         {
 
         }
+
+        private void buttonEliminarHabitacion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

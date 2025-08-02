@@ -29,21 +29,6 @@ namespace Tito_s_Hotel.DAOs
         }
 
         //Métodos de comportamiento
-        public List<Habitacion> filtrarPorCapacidad(int capacidadRequerida)
-        {
-            List<Habitacion> todasLasHabitaciones = buscarTodasLashabitaciones();
-            List<Habitacion> habitacionesFiltradasPorCapacidad = new List<Habitacion>();
-            for (int i = 0; i < todasLasHabitaciones.Count; i++)
-            {
-                Habitacion h = todasLasHabitaciones[i];
-                int capacidad = h.calcularCapacidad();
-                if (capacidad == capacidadRequerida)
-                {
-                    habitacionesFiltradasPorCapacidad.Add(h);
-                }
-            }
-            return habitacionesFiltradasPorCapacidad;
-        }
         public List<Habitacion> filtrarPorDisponibilidad(DateTime checkInRequerido, DateTime checkOutRequerido)
         {
             List<Habitacion> habitacionesDisponiblesDentroDeUnPeriodo = new List<Habitacion>();

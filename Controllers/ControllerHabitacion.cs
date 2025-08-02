@@ -20,9 +20,31 @@ namespace Tito_s_Hotel.Controllers
         }
 
         //Metodos de comportamiento
-        
-        
+        public List<Habitacion> filtrarPorCapacidad(int capacidadRequerida)
 
+        {
+            List<Habitacion> todasLasHabitaciones = oDaoHabitacion.buscarTodasLashabitaciones();
+            List<Habitacion> habitacionesFiltradasPorCapacidad = new List<Habitacion>();
+            for (int i = 0; i < todasLasHabitaciones.Count; i++)
+            {
+                Habitacion h = todasLasHabitaciones[i];
+                int capacidad = h.calcularCapacidad();
+                if (capacidad == capacidadRequerida)
+                {
+                    habitacionesFiltradasPorCapacidad.Add(h);
+                }
+            }
+            return habitacionesFiltradasPorCapacidad;
+        }
+        public List<Habitacion> filtrarHabitacionesPorDisponibilidad (DateTime checkInRequerido, DateTime checkOutRequerido) {
+           var listaHabitacionesFiltradasPorDisponibilidad = oDaoHabitacion.filtrarPorDisponibilidad(checkInRequerido, checkOutRequerido);
+           return listaHabitacionesFiltradasPorDisponibilidad;
+        }
+        public List<Habitacion> verDisponibilidad(List<Habitacion> filtrarPorCapacidad, List<Habitacion> filtrarHabitacionesPorDisponibilidad) {
+            var listaDehabitacionesDisponibles = oDaoHabitacion.verDisponibilidadDeHabitacionesDentroDeUnPeriodoYCapacidad(filtrarPorCapacidad, filtrarHabitacionesPorDisponibilidad);
+            return listaDehabitacionesDisponibles;
+        }
+       
         //CRUD
         public void crear(int numero, int camasSingle, bool camaDoble, float precio)
         {

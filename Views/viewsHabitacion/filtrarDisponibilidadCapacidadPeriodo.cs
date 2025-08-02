@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tito_s_Hotel.Controllers;
 using Tito_s_Hotel.DAOs;
 using Tito_s_Hotel.Models;
 using Tito_s_Hotel.Views;
@@ -16,12 +17,13 @@ namespace Tito_s_Hotel
     public partial class filtrarDisponibilidadCapacidadPeriodo : Form
     {
         private DaoHabitacion oDaoHabitacion;
+        private ControllerHabitacion oControllerHabitacion;
         public filtrarDisponibilidadCapacidadPeriodo()
         {
             InitializeComponent();
         }
 
-        private void buttonBuscar_Click(object sender, EventArgs e)
+        private void buttonBuscar_Click(object sender, EventArgs e) //En teoria a esto lo puedo encapsular a nivel de metodo
         {
             try
             {
@@ -43,20 +45,16 @@ namespace Tito_s_Hotel
 
 
                 //Se filtran las habitaciones solicitadas y se muestran el el dataGridView
-                oDaoHabitacion.filtrarPorCapacidad(capacidadRequerida);
-                oDaoHabitacion.filtrarPorDisponibilidad(chekInRequerido, checkOutRequerido);
-                dataGridViewListaDeHabitacionesDisponibles.DataSource = oDaoHabitacion.verDisponibilidadDeHabitacionesDentroDeUnPeriodoYCapacidad;
+                oControllerHabitacion.filtrarPorCapacidad(capacidadRequerida);
+                oControllerHabitacion.filtrarHabitacionesPorDisponibilidad(chekInRequerido, checkOutRequerido);
+                dataGridViewListaDeHabitacionesDisponibles.DataSource = oControllerHabitacion.verDisponibilidad;
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 excepcionNoHayHabitaciones ventana = new excepcionNoHayHabitaciones();
                 ventana.Show();
-            }
-             
-              
-            
-            
+            } 
         }
-
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             this.Close();
