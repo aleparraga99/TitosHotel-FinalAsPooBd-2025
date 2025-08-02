@@ -39,15 +39,15 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(147, 55);
+            dataGridView1.Location = new Point(37, 55);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(240, 150);
+            dataGridView1.Size = new Size(350, 150);
             dataGridView1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(221, 24);
+            label1.Location = new Point(159, 21);
             label1.Name = "label1";
             label1.Size = new Size(99, 15);
             label1.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // buttonModificarPasajero
             // 
-            buttonModificarPasajero.Location = new Point(159, 211);
+            buttonModificarPasajero.Location = new Point(37, 211);
             buttonModificarPasajero.Name = "buttonModificarPasajero";
             buttonModificarPasajero.Size = new Size(75, 23);
             buttonModificarPasajero.TabIndex = 2;
@@ -64,7 +64,7 @@
             // 
             // buttonEliminarPasajero
             // 
-            buttonEliminarPasajero.Location = new Point(296, 211);
+            buttonEliminarPasajero.Location = new Point(312, 211);
             buttonEliminarPasajero.Name = "buttonEliminarPasajero";
             buttonEliminarPasajero.Size = new Size(75, 23);
             buttonEliminarPasajero.TabIndex = 3;
@@ -73,11 +73,11 @@
             // 
             // buttonNuevoPasajero
             // 
-            buttonNuevoPasajero.Location = new Point(12, 252);
+            buttonNuevoPasajero.Location = new Point(134, 258);
             buttonNuevoPasajero.Name = "buttonNuevoPasajero";
-            buttonNuevoPasajero.Size = new Size(102, 23);
+            buttonNuevoPasajero.Size = new Size(124, 23);
             buttonNuevoPasajero.TabIndex = 4;
-            buttonNuevoPasajero.Text = "Nuevo Pasajero";
+            buttonNuevoPasajero.Text = "Agregar pasajero";
             buttonNuevoPasajero.UseVisualStyleBackColor = true;
             // 
             // viewPasajero

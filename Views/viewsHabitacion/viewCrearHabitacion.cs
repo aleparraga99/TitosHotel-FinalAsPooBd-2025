@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tito_s_Hotel.Controllers;
 using Tito_s_Hotel.DAOs;
 using Tito_s_Hotel.Models;
 
@@ -15,6 +16,7 @@ namespace Tito_s_Hotel.Views
     public partial class viewCrearHabitacion : Form
     {
         DaoHabitacion oDaoHabitacion = DaoHabitacion.GetDaoHabitacion();
+        ControllerHabitacion oControllerHabitacion;
         public viewCrearHabitacion()
         {
             InitializeComponent();
@@ -64,17 +66,8 @@ namespace Tito_s_Hotel.Views
                 }
             }
 
-            //Se construye el objeto Habitacion
-            Habitacion nuevaHabitacion = new Habitacion { 
-                numero = numero,
-                camasSingle = cantidadDeCamasSingle,
-                camaDoble = camaDoble,
-                precio = precioPorNoche,
-            };
-
-            //Se crea el objeto Habitacion
-            oDaoHabitacion.crear(nuevaHabitacion);
-
+            oControllerHabitacion.crear(numero, cantidadDeCamasSingle, camaDoble, precioPorNoche);
+                
             //Se abre una ventana de confirmacion. Deberia agregar una forma de validar 
             //si realmente se guardo para poder confirmarlo
             confirmacionDeHabitacionGuardadaView ventana = new confirmacionDeHabitacionGuardadaView();

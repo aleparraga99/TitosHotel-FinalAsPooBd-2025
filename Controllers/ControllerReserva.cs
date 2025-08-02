@@ -18,14 +18,15 @@ namespace Tito_s_Hotel.Controllers
         }
 
         //Metodos de comportamiento
-        public int CalcularDiasTotales(DateTime checkIn, DateTime checkOut) {
+        public int CalcularDiasTotales(DateTime checkIn, DateTime checkOut)
+        {
             TimeSpan diferencia = checkOut - checkIn;
             int cantidadDeDias = diferencia.Days;
             return cantidadDeDias;
         }
 
         //CRUD
-        public void crear(int numReserva, DateTime checkIn, DateTime checkOut,Pasajero oPasajero, Habitacion oHabitacion, float adelanto)
+        public void crear(int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion, float adelanto)
         {
             Reserva oReserva = new Reserva(numReserva, checkIn, checkOut, oPasajero, oHabitacion, adelanto);
             oDaoReserva.crear(oReserva);

@@ -14,13 +14,13 @@ namespace Tito_s_Hotel.Controllers
         private DaoPasajero oDaoPasajero;
         public ControllerPasajero()
         {
-           ControllerPasajero oDaoPasajero = new ControllerPasajero();
+            ControllerPasajero oDaoPasajero = new ControllerPasajero();
         }
 
         //CRUD
         public void crear(string nombre, string apellido, int telefono, int dni, string correo)
         {
-            Pasajero oPasajero = new Pasajero (nombre, apellido, telefono, dni, correo);
+            Pasajero oPasajero = new Pasajero(nombre, apellido, telefono, dni, correo);
             oDaoPasajero.crear(oPasajero);
         }
         public void modificar(string nombre, string apellido, int telefono, int dni, string correo)

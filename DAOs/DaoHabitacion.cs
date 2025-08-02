@@ -33,7 +33,7 @@ namespace Tito_s_Hotel.DAOs
         {
             List<Habitacion> todasLasHabitaciones = buscarTodasLashabitaciones();
             List<Habitacion> habitacionesFiltradasPorCapacidad = new List<Habitacion>();
-            for(int i = 0; i < todasLasHabitaciones.Count; i++)
+            for (int i = 0; i < todasLasHabitaciones.Count; i++)
             {
                 Habitacion h = todasLasHabitaciones[i];
                 int capacidad = h.calcularCapacidad();
@@ -59,7 +59,8 @@ namespace Tito_s_Hotel.DAOs
                 }
                 SqlDataReader lector = comando.ExecuteReader();
 
-                while (lector.Read()) {
+                while (lector.Read())
+                {
                     Habitacion habitacion = new Habitacion
                     {
                         id = lector.GetInt32(0),
@@ -74,11 +75,12 @@ namespace Tito_s_Hotel.DAOs
             }
             return habitacionesDisponiblesDentroDeUnPeriodo;
         }
-        public List<Habitacion> verDisponibilidadDeHabitacionesDentroDeUnPeriodoYCapacidad(List<Habitacion> filtrarPorCapacidad, List<Habitacion> filtrarPorDisponibilidad) {
+        public List<Habitacion> verDisponibilidadDeHabitacionesDentroDeUnPeriodoYCapacidad(List<Habitacion> filtrarPorCapacidad, List<Habitacion> filtrarPorDisponibilidad)
+        {
             List<Habitacion> habitacionesDisponiblesParaPeriodoConsultado = filtrarPorCapacidad.Intersect(filtrarPorDisponibilidad).ToList();
             return habitacionesDisponiblesParaPeriodoConsultado;
         }
-        
+
         //CRUD
         public void crear(Habitacion oHabitacion)
         {
@@ -130,11 +132,14 @@ namespace Tito_s_Hotel.DAOs
                 comando.ExecuteNonQuery();
             }
         }
-        public Habitacion buscarHabitacionPorNumero(int numeroDeHabitacion) {
-            using (SqlConnection conexion = BDTitosHotel.obtenerConexion()) {
+        public Habitacion buscarHabitacionPorNumero(int numeroDeHabitacion)
+        {
+            using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
+            {
                 string query = $"SELECT * FROM Habitacion WHERE Numero = @Numero;";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                if (conexion.State == ConnectionState.Closed) {
+                if (conexion.State == ConnectionState.Closed)
+                {
                     conexion.Open();
                 }
                 using (SqlDataReader reader = comando.ExecuteReader())
@@ -156,7 +161,7 @@ namespace Tito_s_Hotel.DAOs
                     {
                         return null;
                     }
-                }  
+                }
             }
         }
         public List<Habitacion> buscarTodasLashabitaciones()
@@ -164,11 +169,12 @@ namespace Tito_s_Hotel.DAOs
             List<Habitacion> listaDeHabitaciones = new List<Habitacion>();
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
-                string query = "SELECT * FROM Habitacion WHERE Estado = 1";
+                string query = "SELECT * FROM Habitacion WHERE Estado = 1;";
                 SqlCommand comando = new SqlCommand(query, conexion);
                 if (conexion.State == ConnectionState.Closed)
                 {
                     conexion.Open();
+
                 }
                 SqlDataReader lector = comando.ExecuteReader();
 
@@ -185,12 +191,13 @@ namespace Tito_s_Hotel.DAOs
                             precio = lector.GetFloat(4),
                             estado = lector.GetBoolean(5)
                         };
-                     listaDeHabitaciones.Add(habitacion);
+                        listaDeHabitaciones.Add(habitacion);
                     }
-                    catch { 
-                    
-                        }
-                    
+                    catch
+                    {
+
+                    }
+
                 }
             }
             return listaDeHabitaciones;

@@ -75,8 +75,8 @@ namespace Tito_s_Hotel.DAOs
                 string query = "UPDATE Reserva SET Estado = 0 WHERE Id_Reserva = @id;";
                 SqlCommand comando = new SqlCommand(query, conexion);
                 if (conexion.State == ConnectionState.Closed)
-                { 
-                    conexion.Open(); 
+                {
+                    conexion.Open();
                 }
                 comando.Parameters.AddWithValue("@id", oReserva.id);
                 comando.ExecuteNonQuery();
@@ -121,6 +121,6 @@ namespace Tito_s_Hotel.DAOs
             }
             return listaDeReservas;
         }
-        
+
     }
 }

@@ -39,6 +39,7 @@
             label4 = new Label();
             label5 = new Label();
             buttonGuardarReserva = new Button();
+            buttonCancelar = new Button();
             SuspendLayout();
             // 
             // textBox1
@@ -123,7 +124,7 @@
             // 
             // buttonGuardarReserva
             // 
-            buttonGuardarReserva.Location = new Point(110, 237);
+            buttonGuardarReserva.Location = new Point(43, 237);
             buttonGuardarReserva.Name = "buttonGuardarReserva";
             buttonGuardarReserva.Size = new Size(122, 23);
             buttonGuardarReserva.TabIndex = 10;
@@ -131,11 +132,22 @@
             buttonGuardarReserva.UseVisualStyleBackColor = true;
             buttonGuardarReserva.Click += buttonGuardarReserva_Click;
             // 
+            // buttonCancelar
+            // 
+            buttonCancelar.Location = new Point(257, 237);
+            buttonCancelar.Name = "buttonCancelar";
+            buttonCancelar.Size = new Size(75, 23);
+            buttonCancelar.TabIndex = 11;
+            buttonCancelar.Text = "Cancelar";
+            buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.Click += buttonCancelar_Click;
+            // 
             // viewCrearReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(368, 281);
+            Controls.Add(buttonCancelar);
             Controls.Add(buttonGuardarReserva);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -166,5 +178,6 @@
         private Label label4;
         private Label label5;
         private Button buttonGuardarReserva;
+        private Button buttonCancelar;
     }
 }

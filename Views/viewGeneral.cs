@@ -39,7 +39,6 @@ namespace Tito_s_Hotel
                 dataGridViewListaDeReservas.DataSource = null;
             }
         }
-
         private void seleccionDeFilaDataGridViewListaDeReservas(object sender, EventArgs e)
         {
             if (dataGridViewListaDeReservas.SelectedRows.Count > 0)
@@ -58,7 +57,6 @@ namespace Tito_s_Hotel
             filtrarDisponibilidadCapacidadPeriodo ventana = new filtrarDisponibilidadCapacidadPeriodo();
             ventana.ShowDialog();
         }
-
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             if (dataGridViewListaDeReservas.SelectedRows.Count > 0)
@@ -68,16 +66,12 @@ namespace Tito_s_Hotel
                 ventana.ShowDialog();
             }
         }
-
-
-
         public Reserva reservaModidicada { get; private set; }
         private void buttonModificar_Click(object sender, EventArgs e)
         {
             Reserva reservaSeleccionada = (Reserva)dataGridViewListaDeReservas.SelectedRows[0].DataBoundItem;
             oDaoReserva.modificar(reservaSeleccionada);
-            modificarReservaView ventana = new modificarReservaView();
-            ventana.ShowDialog();
+
         }
 
         private void buttonHabitaciones_Click(object sender, EventArgs e)
@@ -90,16 +84,6 @@ namespace Tito_s_Hotel
         {
             viewPasajero ventana = new viewPasajero();
             ventana.ShowDialog();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonNuevaReserva_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

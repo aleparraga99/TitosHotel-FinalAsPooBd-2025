@@ -14,30 +14,31 @@ namespace Tito_s_Hotel.Models
         public int dni { get; set; }
         public int telefono { get; set; }
         public string correo { get; set; }
-        public bool estado { get; set ; }
-        
+        public bool estado { get; set; }
+
         //Constructores
-        public Pasajero() {
-            this.estado = true;
-        }
-       
-        public Pasajero( string nombre)
+        public Pasajero()
         {
             this.estado = true;
-       
+        }
+
+        public Pasajero(string nombre)
+        {
+            this.estado = true;
+
             this.nombre = nombre;
         }
-        public Pasajero( string nombre, string apellido)
+        public Pasajero(string nombre, string apellido)
         {
             this.estado = true;
-           
+
             this.nombre = nombre;
             this.apellido = apellido;
         }
-        public Pasajero( string nombre, string apellido, int telefono)
+        public Pasajero(string nombre, string apellido, int telefono)
         {
             this.estado = true;
-           
+
             this.nombre = nombre;
             this.apellido = apellido;
             this.telefono = telefono;
@@ -45,7 +46,7 @@ namespace Tito_s_Hotel.Models
         public Pasajero(string nombre, string apellido, int telefono, int dni)
         {
             this.estado = true;
-            
+
             this.nombre = nombre;
             this.apellido = apellido;
             this.telefono = telefono;
@@ -54,14 +55,14 @@ namespace Tito_s_Hotel.Models
         public Pasajero(string nombre, string apellido, int telefono, int dni, string correo)
         {
             this.estado = true;
-           
+
             this.nombre = nombre;
             this.apellido = apellido;
             this.telefono = telefono;
             this.dni = dni;
             this.correo = correo;
         }
-     
+
 
 
         //ToString

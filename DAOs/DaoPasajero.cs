@@ -30,7 +30,8 @@ namespace Tito_s_Hotel.DAOs
         }
 
         //CRUD
-        public void crear(Pasajero oPasajero) {
+        public void crear(Pasajero oPasajero)
+        {
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
                 string query = "INSERT INTO Pasajero (Nombre, Apellido, Telefono, DNI, Correo, Estado) VALUES (@Nombre, @Apellido, @Telefono, @DNI, @Correo, 1)";
@@ -47,7 +48,8 @@ namespace Tito_s_Hotel.DAOs
                 comando.ExecuteNonQuery();
             }
         }
-        public void modificar(Pasajero oPasajero) {
+        public void modificar(Pasajero oPasajero)
+        {
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
                 string query = "UPDATE Pasajero SET Nombre  = @Nombre, Apellido = @Apellido, Telefono = @Telefono, Dni = @DNI, Correo = @Correo WHERE Id_pasajero = @id;";
@@ -66,7 +68,8 @@ namespace Tito_s_Hotel.DAOs
             }
 
         }
-        public void eliminar(Pasajero oPasajero) {
+        public void eliminar(Pasajero oPasajero)
+        {
 
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
@@ -80,12 +83,13 @@ namespace Tito_s_Hotel.DAOs
                 comando.ExecuteNonQuery();
             }
         }
-        public List<Pasajero> buscarTodosLosPasajeros() {
+        public List<Pasajero> buscarTodosLosPasajeros()
+        {
 
             List<Pasajero> listaDePasajeros = new List<Pasajero>();
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
-                string query = "SELECT * FROM Pasajero WHERE Estado = 1";
+                string query = "SELECT * FROM Pasajero WHERE Estado = 1;";
                 SqlCommand comando = new SqlCommand(query, conexion);
                 if (conexion.State == ConnectionState.Closed)
                 {
@@ -110,11 +114,12 @@ namespace Tito_s_Hotel.DAOs
 
                         listaDePasajeros.Add(pasajero);
                     }
-                    catch { 
-                        
+                    catch
+                    {
+
                     }
-                   
-                    
+
+
                 }
             }
             return listaDePasajeros;

@@ -21,5 +21,10 @@ namespace Tito_s_Hotel.Views.viewsReserva
         {
 
         }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

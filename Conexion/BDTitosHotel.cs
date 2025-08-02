@@ -14,7 +14,7 @@ namespace Tito_s_Hotel.Conexion
     public class BDTitosHotel
     {
         public static SqlConnection obtenerConexion()
-        { 
+        {
             SqlConnection conexion = new SqlConnection("Data source = DESKTOP-TQ8IRKU\\SQLEXPRESS; Initial Catalog = TitosHotel; Integrated security = true");
             if (conexion.State == ConnectionState.Closed)
             {
@@ -22,7 +22,8 @@ namespace Tito_s_Hotel.Conexion
                 {
                     conexion.Open();
                 }
-                catch {
+                catch
+                {
                     excepcionConexionBaseDeDatos ventana = new excepcionConexionBaseDeDatos();
                 }
             }

@@ -124,7 +124,6 @@
             buttonNuevaReserva.TabIndex = 15;
             buttonNuevaReserva.Text = "Nueva reserva";
             buttonNuevaReserva.UseVisualStyleBackColor = true;
-            buttonNuevaReserva.Click += buttonNuevaReserva_Click;
             // 
             // viewGeneral
             // 

@@ -33,36 +33,36 @@ namespace Tito_s_Hotel.Models
             this.estado = true;
         }
 
-        public Habitacion( int numero)
+        public Habitacion(int numero)
         {
             this.estado = true;
-       
+
             this.numero = numero;
         }
-        public Habitacion( int numero, int camasSingle)
+        public Habitacion(int numero, int camasSingle)
         {
             this.estado = true;
-            
+
             this.numero = numero;
             this.camasSingle = camasSingle;
         }
-        public Habitacion( int numero, int camasSingle, bool camaDoble)
+        public Habitacion(int numero, int camasSingle, bool camaDoble)
         {
             this.estado = true;
-           
+
             this.numero = numero;
             this.camasSingle = camasSingle;
             this.camaDoble = camaDoble;
         }
-        public Habitacion( int numero, int camasSingle, bool camaDoble, float precio)
+        public Habitacion(int numero, int camasSingle, bool camaDoble, float precio)
         {
-           
+
             this.numero = numero;
             this.camasSingle = camasSingle;
             this.camaDoble = camaDoble;
             this.precio = precio;
         }
-       
+
 
         //ToString
         public override string ToString()
