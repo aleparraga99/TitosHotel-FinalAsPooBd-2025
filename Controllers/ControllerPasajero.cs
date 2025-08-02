@@ -37,10 +37,10 @@ namespace Tito_s_Hotel.Controllers
             Pasajero pasajero = oDaoPasajero.buscarPasajeroPorDni(dni);
             return pasajero;
         }
-        public void buscarTodasLosPasajeros(string nombre, string apellido, int telefono, int dni, string correo)
+        public List<Pasajero> buscarTodosLosPasajeros()
         {
-            Pasajero oPasajero = new Pasajero(nombre, apellido, telefono, dni, correo);
-            oDaoPasajero.buscarTodosLosPasajeros();
+            List<Pasajero> listaDePasajeros = oDaoPasajero.buscarTodosLosPasajeros();
+            return listaDePasajeros;
         }
 
     }

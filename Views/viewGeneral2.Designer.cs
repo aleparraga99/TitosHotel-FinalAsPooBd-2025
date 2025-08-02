@@ -31,7 +31,7 @@
             button1NuevaReserva2 = new Button();
             label1 = new Label();
             buttonVerDisponibilidad2 = new Button();
-            button1 = new Button();
+            buttonAgregarHabitacion = new Button();
             buttonAgregarPasajero = new Button();
             SuspendLayout();
             // 
@@ -64,15 +64,14 @@
             buttonVerDisponibilidad2.UseVisualStyleBackColor = true;
             buttonVerDisponibilidad2.Click += buttonVerDisponibilidad2_Click;
             // 
-            // button1
+            // buttonAgregarHabitacion
             // 
-            button1.Location = new Point(37, 125);
-            button1.Name = "button1";
-            button1.Size = new Size(123, 23);
-            button1.TabIndex = 9;
-            button1.Text = "Agregar habitacion";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            buttonAgregarHabitacion.Location = new Point(37, 125);
+            buttonAgregarHabitacion.Name = "buttonAgregarHabitacion";
+            buttonAgregarHabitacion.Size = new Size(123, 23);
+            buttonAgregarHabitacion.TabIndex = 9;
+            buttonAgregarHabitacion.Text = "Agregar habitacion";
+            buttonAgregarHabitacion.UseVisualStyleBackColor = true;
             // 
             // buttonAgregarPasajero
             // 
@@ -90,7 +89,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(208, 206);
             Controls.Add(buttonAgregarPasajero);
-            Controls.Add(button1);
+            Controls.Add(buttonAgregarHabitacion);
             Controls.Add(buttonVerDisponibilidad2);
             Controls.Add(label1);
             Controls.Add(button1NuevaReserva2);
@@ -105,7 +104,7 @@
         private Button button1NuevaReserva2;
         private Label label1;
         private Button buttonVerDisponibilidad2;
-        private Button button1;
+        private Button buttonAgregarHabitacion;
         private Button buttonAgregarPasajero;
     }
 }
