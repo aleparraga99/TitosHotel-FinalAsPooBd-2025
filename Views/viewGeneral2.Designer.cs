@@ -72,6 +72,7 @@
             buttonAgregarHabitacion.TabIndex = 9;
             buttonAgregarHabitacion.Text = "Agregar habitacion";
             buttonAgregarHabitacion.UseVisualStyleBackColor = true;
+            buttonAgregarHabitacion.Click += buttonAgregarHabitacion_Click_1;
             // 
             // buttonAgregarPasajero
             // 

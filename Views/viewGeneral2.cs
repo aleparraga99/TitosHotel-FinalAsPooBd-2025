@@ -43,17 +43,16 @@ namespace Tito_s_Hotel.Views
                 excepcionPasajerosHabitacionesNecesarios ventana = new excepcionPasajerosHabitacionesNecesarios();
                 ventana.ShowDialog();
             }
-
-
-        }
-        private void buttonAgregarHabitacion_Click(object sender, EventArgs e)
-        {
-            viewCrearHabitacion ventana = new viewCrearHabitacion();
-            ventana.ShowDialog();
         }
         private void buttonAgregarPasajero_Click(object sender, EventArgs e)
         {
             viewCrearPasajero ventana = new viewCrearPasajero();
+            ventana.ShowDialog();
+        }
+
+        private void buttonAgregarHabitacion_Click_1(object sender, EventArgs e)
+        {
+            viewCrearHabitacion ventana = new viewCrearHabitacion();
             ventana.ShowDialog();
         }
     }
