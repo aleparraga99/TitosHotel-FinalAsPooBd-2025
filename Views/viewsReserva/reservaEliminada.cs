@@ -16,5 +16,10 @@ namespace Tito_s_Hotel
         {
             InitializeComponent();
         }
+
+        private void buttonOk_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

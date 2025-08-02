@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            buttonOk = new Button();
             SuspendLayout();
             // 
             // label1
@@ -40,11 +41,22 @@
             label1.TabIndex = 0;
             label1.Text = "Reserva eliminada";
             // 
+            // buttonOk
+            // 
+            buttonOk.Location = new Point(57, 67);
+            buttonOk.Name = "buttonOk";
+            buttonOk.Size = new Size(75, 23);
+            buttonOk.TabIndex = 1;
+            buttonOk.Text = "Ok";
+            buttonOk.UseVisualStyleBackColor = true;
+            buttonOk.Click += buttonOk_Click;
+            // 
             // reservaEliminada
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(203, 78);
+            ClientSize = new Size(218, 102);
+            Controls.Add(buttonOk);
             Controls.Add(label1);
             Name = "reservaEliminada";
             Text = "reservaEliminada";
@@ -55,5 +67,6 @@
         #endregion
 
         private Label label1;
+        private Button buttonOk;
     }
 }

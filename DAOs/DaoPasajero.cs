@@ -83,6 +83,40 @@ namespace Tito_s_Hotel.DAOs
                 comando.ExecuteNonQuery();
             }
         }
+        public Pasajero buscarPasajeroPorDni(int dni) {
+            using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
+            {
+                string query = $"SELECT * FROM Pasajero WHERE Dni = @Dni;";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                comando.Parameters.AddWithValue("Dni", dni);
+                if (conexion.State == ConnectionState.Closed)
+                {
+                    conexion.Open();
+                }
+                using (SqlDataReader reader = comando.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        Pasajero pasajeroEncontrado = new Pasajero {
+
+                            id = reader.GetInt32(reader.GetOrdinal("Id")),
+                            nombre = reader.GetString(reader.GetString("Nombre")),
+                            apellido = reader.GetString(reader.GetString("Apellido")),
+                            dni = reader.GetInt32(reader.GetOrdinal("Dni")),
+                            telefono = reader.GetInt32(reader.GetOrdinal("Telefono")),
+                            correo = reader.GetString(reader.GetString("Correo")),
+                            estado = reader.GetBoolean(reader.GetOrdinal("Estado"))
+
+                        };
+                        return pasajeroEncontrado;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+        }
         public List<Pasajero> buscarTodosLosPasajeros()
         {
 

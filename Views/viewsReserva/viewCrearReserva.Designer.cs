@@ -28,47 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            textBoxNumeroDeHabitacion = new TextBox();
+            textBoxDNIDelPasajero = new TextBox();
+            dateTimePickerCheckIn = new DateTimePicker();
+            dateTimePickerCheckOut = new DateTimePicker();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox3 = new TextBox();
+            textBoxAdelanto = new TextBox();
             label4 = new Label();
             label5 = new Label();
             buttonGuardarReserva = new Button();
             buttonCancelar = new Button();
+            label6 = new Label();
+            textBoxNumeroReserva = new TextBox();
             SuspendLayout();
             // 
-            // textBox1
+            // textBoxNumeroDeHabitacion
             // 
-            textBox1.Location = new Point(132, 22);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 0;
+            textBoxNumeroDeHabitacion.Location = new Point(132, 22);
+            textBoxNumeroDeHabitacion.Name = "textBoxNumeroDeHabitacion";
+            textBoxNumeroDeHabitacion.Size = new Size(100, 23);
+            textBoxNumeroDeHabitacion.TabIndex = 0;
             // 
-            // textBox2
+            // textBoxDNIDelPasajero
             // 
-            textBox2.Location = new Point(132, 64);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 1;
+            textBoxDNIDelPasajero.Location = new Point(132, 64);
+            textBoxDNIDelPasajero.Name = "textBoxDNIDelPasajero";
+            textBoxDNIDelPasajero.Size = new Size(100, 23);
+            textBoxDNIDelPasajero.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // dateTimePickerCheckIn
             // 
-            dateTimePicker1.Location = new Point(132, 110);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 2;
+            dateTimePickerCheckIn.Location = new Point(132, 110);
+            dateTimePickerCheckIn.Name = "dateTimePickerCheckIn";
+            dateTimePickerCheckIn.Size = new Size(200, 23);
+            dateTimePickerCheckIn.TabIndex = 2;
             // 
-            // dateTimePicker2
+            // dateTimePickerCheckOut
             // 
-            dateTimePicker2.Location = new Point(132, 139);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(200, 23);
-            dateTimePicker2.TabIndex = 3;
+            dateTimePickerCheckOut.Location = new Point(132, 139);
+            dateTimePickerCheckOut.Name = "dateTimePickerCheckOut";
+            dateTimePickerCheckOut.Size = new Size(200, 23);
+            dateTimePickerCheckOut.TabIndex = 3;
             // 
             // label1
             // 
@@ -97,12 +99,12 @@
             label3.TabIndex = 6;
             label3.Text = "Adelanto: $";
             // 
-            // textBox3
+            // textBoxAdelanto
             // 
-            textBox3.Location = new Point(132, 189);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 7;
+            textBoxAdelanto.Location = new Point(132, 189);
+            textBoxAdelanto.Name = "textBoxAdelanto";
+            textBoxAdelanto.Size = new Size(100, 23);
+            textBoxAdelanto.TabIndex = 7;
             // 
             // label4
             // 
@@ -142,23 +144,41 @@
             buttonCancelar.UseVisualStyleBackColor = true;
             buttonCancelar.Click += buttonCancelar_Click;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(246, 9);
+            label6.Name = "label6";
+            label6.Size = new Size(110, 15);
+            label6.TabIndex = 12;
+            label6.Text = "Numero de reserva:";
+            // 
+            // textBoxNumeroReserva
+            // 
+            textBoxNumeroReserva.Location = new Point(256, 30);
+            textBoxNumeroReserva.Name = "textBoxNumeroReserva";
+            textBoxNumeroReserva.Size = new Size(100, 23);
+            textBoxNumeroReserva.TabIndex = 13;
+            // 
             // viewCrearReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(368, 281);
+            Controls.Add(textBoxNumeroReserva);
+            Controls.Add(label6);
             Controls.Add(buttonCancelar);
             Controls.Add(buttonGuardarReserva);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(textBox3);
+            Controls.Add(textBoxAdelanto);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(dateTimePickerCheckOut);
+            Controls.Add(dateTimePickerCheckIn);
+            Controls.Add(textBoxDNIDelPasajero);
+            Controls.Add(textBoxNumeroDeHabitacion);
             Name = "viewCrearReserva";
             Text = "viewCrearReserva";
             ResumeLayout(false);
@@ -167,17 +187,19 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
+        private TextBox textBoxNumeroDeHabitacion;
+        private TextBox textBoxDNIDelPasajero;
+        private DateTimePicker dateTimePickerCheckIn;
+        private DateTimePicker dateTimePickerCheckOut;
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox textBoxAdelanto;
         private Label label4;
         private Label label5;
         private Button buttonGuardarReserva;
         private Button buttonCancelar;
+        private Label label6;
+        private TextBox textBoxNumeroReserva;
     }
 }

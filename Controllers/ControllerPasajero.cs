@@ -33,6 +33,10 @@ namespace Tito_s_Hotel.Controllers
             Pasajero oPasajero = new Pasajero(nombre, apellido, telefono, dni, correo);
             oDaoPasajero.eliminar(oPasajero);
         }
+        public Pasajero buscarPorDni(int dni) {
+            Pasajero pasajero = oDaoPasajero.buscarPasajeroPorDni(dni);
+            return pasajero;
+        }
         public void buscarTodasLosPasajeros(string nombre, string apellido, int telefono, int dni, string correo)
         {
             Pasajero oPasajero = new Pasajero(nombre, apellido, telefono, dni, correo);
