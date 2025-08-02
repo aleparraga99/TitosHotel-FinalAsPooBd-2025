@@ -16,5 +16,15 @@ namespace Tito_s_Hotel.Views.Pasajero
         {
             InitializeComponent();
         }
+
+        private void buttonNuevoPasajero_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonModificarPasajero_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

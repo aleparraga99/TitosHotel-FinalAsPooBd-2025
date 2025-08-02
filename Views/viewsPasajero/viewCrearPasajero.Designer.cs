@@ -161,7 +161,6 @@
             Controls.Add(labelNombre);
             Name = "viewCrearPasajero";
             Text = "ViewPasajero";
-            Load += ViewPasajero_Load;
             ResumeLayout(false);
             PerformLayout();
         }

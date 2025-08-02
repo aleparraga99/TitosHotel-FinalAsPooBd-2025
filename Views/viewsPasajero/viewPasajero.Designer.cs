@@ -61,6 +61,7 @@
             buttonModificarPasajero.TabIndex = 2;
             buttonModificarPasajero.Text = "Modificar";
             buttonModificarPasajero.UseVisualStyleBackColor = true;
+            buttonModificarPasajero.Click += buttonModificarPasajero_Click;
             // 
             // buttonEliminarPasajero
             // 
@@ -79,6 +80,7 @@
             buttonNuevoPasajero.TabIndex = 4;
             buttonNuevoPasajero.Text = "Agregar pasajero";
             buttonNuevoPasajero.UseVisualStyleBackColor = true;
+            buttonNuevoPasajero.Click += buttonNuevoPasajero_Click;
             // 
             // viewPasajero
             // 
