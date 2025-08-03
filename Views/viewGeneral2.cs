@@ -17,8 +17,8 @@ namespace Tito_s_Hotel.Views
 {
     public partial class viewGeneral2 : Form
     {
-        ControllerHabitacion oControllerHabitacion = new ControllerHabitacion(); 
-        ControllerPasajero oControllerPasajero = new ControllerPasajero();
+        ControllerHabitacion oControllerHabitacion = ControllerHabitacion.GetInstanciaDeControllerDeHabitacion();
+        ControllerPasajero oControllerPasajero = ControllerPasajero.GetInstanciaDeControllerdePasajero();
         public viewGeneral2()
         {
             InitializeComponent();
@@ -49,7 +49,6 @@ namespace Tito_s_Hotel.Views
             viewCrearPasajero ventana = new viewCrearPasajero();
             ventana.ShowDialog();
         }
-
         private void buttonAgregarHabitacion_Click_1(object sender, EventArgs e)
         {
             viewCrearHabitacion ventana = new viewCrearHabitacion();

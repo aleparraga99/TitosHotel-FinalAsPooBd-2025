@@ -12,11 +12,19 @@ namespace Tito_s_Hotel.Controllers
     public class ControllerHabitacion
     {
         private viewCrearHabitacion oViewCrearHabitacion;
+        private DaoHabitacion oDaoHabitacion = DaoHabitacion.GetDaoHabitacion();
 
         //SINGLENTON
-        private DaoHabitacion oDaoHabitacion = DaoHabitacion.GetDaoHabitacion();
-        public ControllerHabitacion()
+        private static ControllerHabitacion instanciaDeControllerHabitacion;
+        private ControllerHabitacion()
         {
+        }
+        public static ControllerHabitacion GetInstanciaDeControllerDeHabitacion() {
+            if (instanciaDeControllerHabitacion == null) {
+                instanciaDeControllerHabitacion = new ControllerHabitacion();
+                return instanciaDeControllerHabitacion;
+            }
+            return instanciaDeControllerHabitacion;
         }
 
         //Metodos de comportamiento

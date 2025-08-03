@@ -16,17 +16,17 @@ namespace Tito_s_Hotel.Views
     public partial class viewCrearHabitacion : Form
     {
         DaoHabitacion oDaoHabitacion = DaoHabitacion.GetDaoHabitacion();
-        ControllerHabitacion oControllerHabitacion;
+        ControllerHabitacion oControllerHabitacion = ControllerHabitacion.GetInstanciaDeControllerDeHabitacion();
+       
+        //Eventos
         public viewCrearHabitacion()
         {
             InitializeComponent();
         }
-
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             //Tags que identifican numericamente las opciones de camas single
