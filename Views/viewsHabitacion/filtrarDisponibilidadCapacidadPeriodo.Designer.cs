@@ -30,10 +30,10 @@
         {
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
+            textBoxCapacidad = new TextBox();
             label3 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            dateTimePickerIn = new DateTimePicker();
+            dateTimePickerOut = new DateTimePicker();
             buttonBuscar = new Button();
             dataGridViewListaDeHabitacionesDisponibles = new DataGridView();
             buttonVolver = new Button();
@@ -58,12 +58,12 @@
             label2.TabIndex = 1;
             label2.Text = "Check In:";
             // 
-            // textBox1
+            // textBoxCapacidad
             // 
-            textBox1.Location = new Point(116, 25);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(37, 23);
-            textBox1.TabIndex = 2;
+            textBoxCapacidad.Location = new Point(116, 25);
+            textBoxCapacidad.Name = "textBoxCapacidad";
+            textBoxCapacidad.Size = new Size(37, 23);
+            textBoxCapacidad.TabIndex = 2;
             // 
             // label3
             // 
@@ -74,19 +74,19 @@
             label3.TabIndex = 3;
             label3.Text = "Check Out:";
             // 
-            // dateTimePicker1
+            // dateTimePickerIn
             // 
-            dateTimePicker1.Location = new Point(106, 61);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(210, 23);
-            dateTimePicker1.TabIndex = 4;
+            dateTimePickerIn.Location = new Point(106, 61);
+            dateTimePickerIn.Name = "dateTimePickerIn";
+            dateTimePickerIn.Size = new Size(210, 23);
+            dateTimePickerIn.TabIndex = 4;
             // 
-            // dateTimePicker2
+            // dateTimePickerOut
             // 
-            dateTimePicker2.Location = new Point(116, 108);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(212, 23);
-            dateTimePicker2.TabIndex = 5;
+            dateTimePickerOut.Location = new Point(116, 108);
+            dateTimePickerOut.Name = "dateTimePickerOut";
+            dateTimePickerOut.Size = new Size(212, 23);
+            dateTimePickerOut.TabIndex = 5;
             // 
             // buttonBuscar
             // 
@@ -124,10 +124,10 @@
             Controls.Add(buttonVolver);
             Controls.Add(dataGridViewListaDeHabitacionesDisponibles);
             Controls.Add(buttonBuscar);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dateTimePickerOut);
+            Controls.Add(dateTimePickerIn);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxCapacidad);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "filtrarDisponibilidadCapacidadPeriodo";
@@ -141,10 +141,10 @@
 
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox textBoxCapacidad;
         private Label label3;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePickerIn;
+        private DateTimePicker dateTimePickerOut;
         private Button buttonBuscar;
         private DataGridView dataGridViewListaDeHabitacionesDisponibles;
         private Button buttonVolver;

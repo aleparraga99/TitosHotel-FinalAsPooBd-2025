@@ -49,7 +49,10 @@ namespace Tito_s_Hotel.Controllers
            return listaHabitacionesFiltradasPorDisponibilidad;
         }
         public List<Habitacion> verDisponibilidad(List<Habitacion> filtrarPorCapacidad, List<Habitacion> filtrarHabitacionesPorDisponibilidad) {
-            var listaDehabitacionesDisponibles = oDaoHabitacion.verDisponibilidadDeHabitacionesDentroDeUnPeriodoYCapacidad(filtrarPorCapacidad, filtrarHabitacionesPorDisponibilidad);
+            List<Habitacion> listaDehabitacionesDisponibles = oDaoHabitacion.verDisponibilidadDeHabitacionesDentroDeUnPeriodoYCapacidad(filtrarPorCapacidad, filtrarHabitacionesPorDisponibilidad);
+            if (listaDehabitacionesDisponibles == null) {
+                return new List<Habitacion>();
+            }
             return listaDehabitacionesDisponibles;
         }
        
