@@ -10,12 +10,20 @@ namespace Tito_s_Hotel.Controllers
 {
     public class ControllerReserva
     {
-        //SINGLENTON
         private DaoReserva oDaoReserva = DaoReserva.GetDaoReserva();
-        public ControllerReserva()
-        {
-            ControllerReserva oDaoReserva = new ControllerReserva();
+
+        //SINGLENTON
+        private static ControllerReserva instanciaControllerReserva;
+        private ControllerReserva() { 
         }
+        public static ControllerReserva GetInstanciaControllerReserva() {
+            if (instanciaControllerReserva == null) {
+                instanciaControllerReserva = new ControllerReserva();
+                return instanciaControllerReserva;
+            }
+            return instanciaControllerReserva;
+        }
+        
 
         //Metodos de comportamiento
         public int CalcularDiasTotales(DateTime checkIn, DateTime checkOut)
@@ -41,10 +49,10 @@ namespace Tito_s_Hotel.Controllers
             Reserva oReserva = new Reserva(numReserva, checkIn, checkOut, oPasajero, oHabitacion, adelanto);
             oDaoReserva.eliminar(oReserva);
         }
-        public void buscarTodasLasReservas(int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion, float adelanto)
+        public List<Reserva> buscarTodasLasReservas()
         {
-            Reserva oReserva = new Reserva(numReserva, checkIn, checkOut, oPasajero, oHabitacion, adelanto);
-            oDaoReserva.BuscarTodasLasReservas();
+            List<Reserva> todasLasReservas = oDaoReserva.BuscarTodasLasReservas();
+            return todasLasReservas;
         }
     }
 }

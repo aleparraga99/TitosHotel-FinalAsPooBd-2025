@@ -153,6 +153,7 @@ namespace Tito_s_Hotel.DAOs
         public List<Habitacion> buscarTodasLashabitaciones()
         {
             List<Habitacion> listaDeHabitaciones = new List<Habitacion>();
+            
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
                 string query = "SELECT * FROM Habitacion WHERE Estado = 1;";
@@ -160,30 +161,22 @@ namespace Tito_s_Hotel.DAOs
                 if (conexion.State == ConnectionState.Closed)
                 {
                     conexion.Open();
-
                 }
                 SqlDataReader lector = comando.ExecuteReader();
 
                 while (lector.Read())
                 {
-                    try
-                    {
-                        Habitacion habitacion = new Habitacion
-                        {
-                            id = lector.GetInt32(0),
-                            numero = lector.GetInt32(1),
-                            camasSingle = lector.GetInt32(2),
-                            camaDoble = lector.GetBoolean(3),
-                            precio = lector.GetFloat(4),
-                            estado = lector.GetBoolean(5)
-                        };
-                        listaDeHabitaciones.Add(habitacion);
-                    }
-                    catch
-                    {
+                    Habitacion habitacion = new Habitacion
 
-                    }
-
+                    {
+                        id = lector.GetInt32(0),
+                        numero = lector.GetInt32(1),
+                        camasSingle = lector.GetInt32(2),
+                        camaDoble = lector.GetBoolean(3),
+                        precio = lector.GetFloat(4),
+                        estado = lector.GetBoolean(5)
+                    };
+                    listaDeHabitaciones.Add(habitacion);
                 }
             }
             return listaDeHabitaciones;

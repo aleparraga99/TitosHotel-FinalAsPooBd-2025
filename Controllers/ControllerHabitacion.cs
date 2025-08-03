@@ -11,7 +11,6 @@ namespace Tito_s_Hotel.Controllers
 {
     public class ControllerHabitacion
     {
-        private viewCrearHabitacion oViewCrearHabitacion;
         private DaoHabitacion oDaoHabitacion = DaoHabitacion.GetDaoHabitacion();
 
         //SINGLENTON

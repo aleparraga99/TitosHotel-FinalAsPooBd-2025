@@ -18,6 +18,7 @@ namespace Tito_s_Hotel
     public partial class filtrarDisponibilidadCapacidadPeriodo : Form
     {
         private ControllerHabitacion oControllerHabitacion = ControllerHabitacion.GetInstanciaDeControllerDeHabitacion();
+        private ControllerReserva oControllerReserva = ControllerReserva.GetInstanciaControllerReserva();
         public filtrarDisponibilidadCapacidadPeriodo()
         {
             InitializeComponent();
@@ -26,19 +27,27 @@ namespace Tito_s_Hotel
         private void buttonBuscar_Click(object sender, EventArgs e) 
         {
             List<Habitacion> habitaciones = oControllerHabitacion.buscarTodasLasHabitaciones();
+            List<Reserva> reservas = oControllerReserva.buscarTodasLasReservas();
 
             int capacidadRequerida = int.Parse(textBoxCapacidad.Text); //Se captura la capacidad requerida
 
             if (0 < capacidadRequerida && capacidadRequerida <= 5) //Valida que sea una capacidad permitida en el modelo de negocio (violacion del OCP)
             {
-                //Se capturan las fechas
-                DateTime chekInRequerido = dateTimePickerIn.Value;
-                DateTime checkOutRequerido = dateTimePickerOut.Value;
+                List<Habitacion> habitacionesConCapacidadRequerida = oControllerHabitacion.filtrarPorCapacidad(capacidadRequerida);
+                if (reservas.Count == 0)
+                {
+                    dataGridViewListaDeHabitacionesDisponibles.DataSource = habitacionesConCapacidadRequerida;
+                }
+                else {
+                    //Se capturan las fechas
+                    DateTime chekInRequerido = dateTimePickerIn.Value;
+                    DateTime checkOutRequerido = dateTimePickerOut.Value;
 
-                //Se filtran las habitaciones solicitadas y se muestran el el dataGridView
-               List<Habitacion> lista1 = oControllerHabitacion.filtrarPorCapacidad(capacidadRequerida);
-               List<Habitacion> lista2 = oControllerHabitacion.filtrarHabitacionesPorDisponibilidad(chekInRequerido, checkOutRequerido);
-                dataGridViewListaDeHabitacionesDisponibles.DataSource = oControllerHabitacion.verDisponibilidad(lista1, lista2);
+                    //Se filtran las habitaciones solicitadas y se muestran el el dataGridView
+                    List<Habitacion> lista1 = oControllerHabitacion.filtrarPorCapacidad(capacidadRequerida);
+                    List<Habitacion> lista2 = oControllerHabitacion.filtrarHabitacionesPorDisponibilidad(chekInRequerido, checkOutRequerido);
+                    dataGridViewListaDeHabitacionesDisponibles.DataSource = oControllerHabitacion.verDisponibilidad(lista1, lista2);
+                }
             }
 
             else

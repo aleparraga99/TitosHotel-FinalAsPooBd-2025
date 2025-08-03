@@ -18,7 +18,7 @@ namespace Tito_s_Hotel.Models
         //Métodos de comportamiento
         public int calcularCapacidad()
         {
-            var capacidadPersonas = camasSingle;
+            int capacidadPersonas = camasSingle;
             if (camaDoble)
             {
                 capacidadPersonas += 2;
