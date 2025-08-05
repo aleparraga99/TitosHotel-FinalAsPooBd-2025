@@ -33,7 +33,7 @@ namespace Tito_s_Hotel.Views
         {
             List<Habitacion> habitaciones = oControllerHabitacion.buscarTodasLasHabitaciones();
             List<Models.Pasajero> pasajeros = oControllerPasajero.buscarTodosLosPasajeros();
-            if (habitaciones.Count == 0 && pasajeros.Count == 0)
+            if (habitaciones.Count > 0 && pasajeros.Count > 0)
             {
                 viewCrearReserva ventana = new viewCrearReserva();
                 ventana.ShowDialog();

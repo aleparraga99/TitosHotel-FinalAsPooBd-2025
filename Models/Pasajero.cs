@@ -21,7 +21,6 @@ namespace Tito_s_Hotel.Models
         {
             this.estado = true;
         }
-
         public Pasajero(string nombre)
         {
             this.estado = true;
@@ -62,8 +61,6 @@ namespace Tito_s_Hotel.Models
             this.dni = dni;
             this.correo = correo;
         }
-
-
 
         //ToString
         public override string ToString()

@@ -11,10 +11,10 @@ using Tito_s_Hotel.Models;
 
 namespace Tito_s_Hotel.DAOs
 {
-    public class DaoPasajero : IDao
+    public class DaoPasajero : IDao <Pasajero>
     {
         //SINGLENTON
-        private static DaoPasajero instanciaDaoPasajero;
+        private static DaoPasajero instanciaDeDaoPasajero;
         private DaoPasajero()
         {
 
@@ -22,11 +22,11 @@ namespace Tito_s_Hotel.DAOs
         public static DaoPasajero GetDaoPasajero()
 
         {
-            if (instanciaDaoPasajero == null)
+            if (instanciaDeDaoPasajero == null)
             {
-                instanciaDaoPasajero = new DaoPasajero();
+                instanciaDeDaoPasajero = new DaoPasajero();
             }
-            return instanciaDaoPasajero;
+            return instanciaDeDaoPasajero;
         }
 
         //CRUD

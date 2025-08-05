@@ -12,7 +12,7 @@ using Tito_s_Hotel.Models;
 
 namespace Tito_s_Hotel.DAOs
 {
-    internal class DaoHabitacion : IDao
+    internal class DaoHabitacion : IDao <Habitacion>
     {
         //SINGLENTON
         private static DaoHabitacion instanciaDaoHabitacion;

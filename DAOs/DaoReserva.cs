@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tito_s_Hotel.Conexion;
+using Tito_s_Hotel.Interfaces;
 using Tito_s_Hotel.Models;
 using Tito_s_Hotel.Views.viewsExcepciones;
 
 namespace Tito_s_Hotel.DAOs
 {
-    internal class DaoReserva
+    internal class DaoReserva : IDao <Reserva>
     {
         //SINGLENTON
         private static DaoReserva instanciaDaoReserva;
@@ -121,6 +122,5 @@ namespace Tito_s_Hotel.DAOs
             }
             return listaDeReservas;
         }
-
     }
 }

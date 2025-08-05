@@ -22,7 +22,6 @@ namespace Tito_s_Hotel.Models
         {
             this.estado = true;
         }
-
         public Reserva(int numReserva)
         {
             this.estado = true;
@@ -74,8 +73,6 @@ namespace Tito_s_Hotel.Models
             this.oHabitacion = oHabitacion;
             this.adelanto = adelanto;
         }
-
-
 
         //ToString
         public string ToString(Pasajero oPasajero, Habitacion oHabitacion)

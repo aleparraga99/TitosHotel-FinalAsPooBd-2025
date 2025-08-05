@@ -6,19 +6,20 @@ using System.Threading.Tasks;
 
 namespace Tito_s_Hotel.Interfaces
 {
-    internal interface IDao
+    internal interface IDao <T>
     {
-        public void crear()
+        public void crear(T entidad)
         {
         }
-        public void modificar()
+        public void modificar(T entidad)
         {
         }
-        public void eliminar()
+        public void eliminar(T entidad)
         {
         }
-        public void buscar()
+        public List<T> buscar()
         {
+            return new List<T>();
         }
     }
 }

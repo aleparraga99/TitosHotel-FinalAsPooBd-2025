@@ -27,6 +27,14 @@ namespace Tito_s_Hotel.Controllers
         }
 
         //Metodos de comportamiento
+        public int calcularCapacidad(int camasSingle, Boolean camaDoble) {
+            int capacidadPersonas = camasSingle;
+            if (camaDoble)
+            {
+                capacidadPersonas += 2;
+            }
+            return capacidadPersonas;
+        }
         public List<Habitacion> filtrarPorCapacidad(int capacidadRequerida)
 
         {
@@ -35,7 +43,9 @@ namespace Tito_s_Hotel.Controllers
             for (int i = 0; i < todasLasHabitaciones.Count; i++)
             {
                 Habitacion h = todasLasHabitaciones[i];
-                int capacidad = h.calcularCapacidad();
+                int camasSingleH = h.camasSingle;
+                bool camaDobleH = h.camaDoble;
+                int capacidad = calcularCapacidad(camasSingleH, camaDobleH);
                 if (capacidad == capacidadRequerida)
                 {
                     habitacionesFiltradasPorCapacidad.Add(h);
@@ -44,8 +54,8 @@ namespace Tito_s_Hotel.Controllers
             return habitacionesFiltradasPorCapacidad;
         }
         public List<Habitacion> filtrarHabitacionesPorDisponibilidad (DateTime checkInRequerido, DateTime checkOutRequerido) {
-           var listaHabitacionesFiltradasPorDisponibilidad = oDaoHabitacion.filtrarPorDisponibilidad(checkInRequerido, checkOutRequerido);
-           return listaHabitacionesFiltradasPorDisponibilidad;
+           var habitacionesFiltradasPorDisponibilidad = oDaoHabitacion.filtrarPorDisponibilidad(checkInRequerido, checkOutRequerido);
+           return habitacionesFiltradasPorDisponibilidad;
         }
         public List<Habitacion> verDisponibilidad(List<Habitacion> filtrarPorCapacidad, List<Habitacion> filtrarHabitacionesPorDisponibilidad) {
             List<Habitacion> listaDehabitacionesDisponibles = oDaoHabitacion.verDisponibilidadDeHabitacionesDentroDeUnPeriodoYCapacidad(filtrarPorCapacidad, filtrarHabitacionesPorDisponibilidad);
@@ -82,6 +92,5 @@ namespace Tito_s_Hotel.Controllers
             List<Habitacion> listaDeHabitaciones = oDaoHabitacion.buscarTodasLashabitaciones();
             return listaDeHabitaciones;
         }
-
     }
 }

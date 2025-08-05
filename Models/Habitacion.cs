@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tito_s_Hotel.Controllers;
 
 namespace Tito_s_Hotel.Models
 {
@@ -15,24 +16,12 @@ namespace Tito_s_Hotel.Models
         public float precio { get; set; }
         public bool estado { get; set; }
 
-        //Métodos de comportamiento
-        public int calcularCapacidad()
-        {
-            int capacidadPersonas = camasSingle;
-            if (camaDoble)
-            {
-                capacidadPersonas += 2;
-            }
-            return capacidadPersonas;
-        }
-
         //Constructores
         public Habitacion()
         {
 
             this.estado = true;
         }
-
         public Habitacion(int numero)
         {
             this.estado = true;

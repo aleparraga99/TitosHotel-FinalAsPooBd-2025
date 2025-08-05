@@ -16,7 +16,6 @@ namespace Tito_s_Hotel.Controllers
         private static ControllerPasajero instanciaDeControllerPasajero;
         private ControllerPasajero()
         {
-           
         }
         public static ControllerPasajero GetInstanciaDeControllerdePasajero() {
             if (instanciaDeControllerPasajero == null)
@@ -51,6 +50,5 @@ namespace Tito_s_Hotel.Controllers
             List<Pasajero> listaDePasajeros = oDaoPasajero.buscarTodosLosPasajeros();
             return listaDePasajeros;
         }
-
     }
 }

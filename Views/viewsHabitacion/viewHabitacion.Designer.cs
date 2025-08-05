@@ -53,6 +53,7 @@
             buttonModificarHabitacion.TabIndex = 1;
             buttonModificarHabitacion.Text = "Modificar";
             buttonModificarHabitacion.UseVisualStyleBackColor = true;
+            buttonModificarHabitacion.Click += buttonModificarHabitacion_Click;
             // 
             // buttonEliminarHabitacion
             // 

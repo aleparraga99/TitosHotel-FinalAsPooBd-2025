@@ -32,7 +32,10 @@
             label1 = new Label();
             buttonModificarPasajero = new Button();
             buttonEliminarPasajero = new Button();
-            buttonNuevoPasajero = new Button();
+            buttonAgregarPasajero = new Button();
+            buttonBuscarPasajeroPorDni = new Button();
+            label2 = new Label();
+            textBoxDNIPasajero = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -71,23 +74,53 @@
             buttonEliminarPasajero.TabIndex = 3;
             buttonEliminarPasajero.Text = "Eliminar";
             buttonEliminarPasajero.UseVisualStyleBackColor = true;
+            buttonEliminarPasajero.Click += buttonEliminarPasajero_Click;
             // 
-            // buttonNuevoPasajero
+            // buttonAgregarPasajero
             // 
-            buttonNuevoPasajero.Location = new Point(134, 258);
-            buttonNuevoPasajero.Name = "buttonNuevoPasajero";
-            buttonNuevoPasajero.Size = new Size(124, 23);
-            buttonNuevoPasajero.TabIndex = 4;
-            buttonNuevoPasajero.Text = "Agregar pasajero";
-            buttonNuevoPasajero.UseVisualStyleBackColor = true;
-            buttonNuevoPasajero.Click += buttonNuevoPasajero_Click;
+            buttonAgregarPasajero.Location = new Point(37, 249);
+            buttonAgregarPasajero.Name = "buttonAgregarPasajero";
+            buttonAgregarPasajero.Size = new Size(124, 23);
+            buttonAgregarPasajero.TabIndex = 4;
+            buttonAgregarPasajero.Text = "Agregar pasajero";
+            buttonAgregarPasajero.UseVisualStyleBackColor = true;
+            buttonAgregarPasajero.Click += buttonAgregarPasajero_Click;
+            // 
+            // buttonBuscarPasajeroPorDni
+            // 
+            buttonBuscarPasajeroPorDni.Location = new Point(351, 279);
+            buttonBuscarPasajeroPorDni.Name = "buttonBuscarPasajeroPorDni";
+            buttonBuscarPasajeroPorDni.Size = new Size(75, 23);
+            buttonBuscarPasajeroPorDni.TabIndex = 5;
+            buttonBuscarPasajeroPorDni.Text = "Buscar";
+            buttonBuscarPasajeroPorDni.UseVisualStyleBackColor = true;
+            buttonBuscarPasajeroPorDni.Click += buttonBuscarPasajeroPorDni_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(231, 253);
+            label2.Name = "label2";
+            label2.Size = new Size(89, 15);
+            label2.TabIndex = 6;
+            label2.Text = "Buscar por DNI:";
+            // 
+            // textBoxDNIPasajero
+            // 
+            textBoxDNIPasajero.Location = new Point(326, 250);
+            textBoxDNIPasajero.Name = "textBoxDNIPasajero";
+            textBoxDNIPasajero.Size = new Size(100, 23);
+            textBoxDNIPasajero.TabIndex = 7;
             // 
             // viewPasajero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(459, 307);
-            Controls.Add(buttonNuevoPasajero);
+            Controls.Add(textBoxDNIPasajero);
+            Controls.Add(label2);
+            Controls.Add(buttonBuscarPasajeroPorDni);
+            Controls.Add(buttonAgregarPasajero);
             Controls.Add(buttonEliminarPasajero);
             Controls.Add(buttonModificarPasajero);
             Controls.Add(label1);
@@ -105,6 +138,9 @@
         private Label label1;
         private Button buttonModificarPasajero;
         private Button buttonEliminarPasajero;
-        private Button buttonNuevoPasajero;
+        private Button buttonAgregarPasajero;
+        private Button buttonBuscarPasajeroPorDni;
+        private Label label2;
+        private TextBox textBoxDNIPasajero;
     }
 }

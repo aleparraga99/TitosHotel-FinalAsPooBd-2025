@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tito_s_Hotel.Controllers;
 
 namespace Tito_s_Hotel.Views
 {
     public partial class viewHabitacion : Form
     {
+        ControllerHabitacion oControllerHabitacion = ControllerHabitacion.GetInstanciaDeControllerDeHabitacion(); 
         public viewHabitacion()
         {
             InitializeComponent();
@@ -28,14 +30,16 @@ namespace Tito_s_Hotel.Views
             ventana.ShowDialog();
         }
 
-        private void dataGridViewListaDeHabitaciones(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void buttonEliminarHabitacion_Click(object sender, EventArgs e)
         {
+            //Capturar datos del dataGrid
+            //oControllerHabitacion.eliminar();
+        }
 
+        private void buttonModificarHabitacion_Click(object sender, EventArgs e)
+        {
+            //Capturar datos del dataGrid. Supongo que se tiene que abrir la ventana para cargar los datos
+            //oControllerHabitacion.modificar();
         }
     }
 }
