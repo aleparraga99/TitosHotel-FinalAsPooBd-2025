@@ -21,6 +21,11 @@ namespace Tito_s_Hotel.Models
         {
             this.estado = true;
         }
+        public Pasajero(int id)
+        {
+            this.estado = true;
+            this.id = id;
+        }
         public Pasajero(string nombre, string apellido, int telefono, int dni, string correo)
         {
             this.estado = true;
