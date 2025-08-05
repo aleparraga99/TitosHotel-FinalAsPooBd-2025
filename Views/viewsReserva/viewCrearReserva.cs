@@ -23,6 +23,7 @@ namespace Tito_s_Hotel.Views.viewsReserva
         }
         private void buttonGuardarReserva_Click(object sender, EventArgs e)
         {
+            //Validar que los campos esten completos
             //Se capturan los datos
             int numeroReserva = int.Parse(textBoxNumeroReserva.Text);
             int numeroHabitacion = int.Parse(textBoxNumeroDeHabitacion.Text);

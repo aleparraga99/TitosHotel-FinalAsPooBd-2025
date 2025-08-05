@@ -13,7 +13,7 @@ namespace Tito_s_Hotel.Views
 {
     public partial class viewHabitacion : Form
     {
-        ControllerHabitacion oControllerHabitacion = ControllerHabitacion.GetInstanciaDeControllerDeHabitacion(); 
+        ControllerHabitacion oControllerHabitacion = ControllerHabitacion.GetInstanciaDeControllerDeHabitacion();
         public viewHabitacion()
         {
             InitializeComponent();
@@ -40,6 +40,20 @@ namespace Tito_s_Hotel.Views
         {
             //Capturar datos del dataGrid. Supongo que se tiene que abrir la ventana para cargar los datos
             //oControllerHabitacion.modificar();
+        }
+
+        private void viewHabitacion_Load(object sender, EventArgs e)
+        {
+            buttonEliminarHabitacion.Enabled = false;
+            buttonModificarHabitacion.Enabled = false;
+            int listaDeHabitaciones = oControllerHabitacion.buscarTodasLasHabitaciones().Count;
+            if (listaDeHabitaciones != 0)
+            {
+                dataGridViewListaDeHabitaciones.DataSource = oControllerHabitacion.buscarTodasLasHabitaciones();
+            }
+            else {
+                dataGridViewListaDeHabitaciones.DataSource = null;
+            }
         }
     }
 }

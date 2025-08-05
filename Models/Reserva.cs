@@ -22,46 +22,6 @@ namespace Tito_s_Hotel.Models
         {
             this.estado = true;
         }
-        public Reserva(int numReserva)
-        {
-            this.estado = true;
-
-            this.numReserva = numReserva;
-        }
-        public Reserva(int numReserva, DateTime checkIn)
-        {
-            this.estado = true;
-
-            this.numReserva = numReserva;
-            this.checkIn = checkIn;
-        }
-        public Reserva(int numReserva, DateTime checkIn, DateTime checkOut)
-        {
-            this.estado = true;
-
-            this.numReserva = numReserva;
-            this.checkIn = checkIn;
-            this.checkOut = checkOut;
-        }
-        public Reserva(int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero)
-        {
-            this.estado = true;
-
-            this.numReserva = numReserva;
-            this.checkIn = checkIn;
-            this.checkOut = checkOut;
-            this.oPasajero = oPasajero;
-        }
-        public Reserva(int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion)
-        {
-            this.estado = true;
-
-            this.numReserva = numReserva;
-            this.checkIn = checkIn;
-            this.checkOut = checkOut;
-            this.oPasajero = oPasajero;
-            this.oHabitacion = oHabitacion;
-        }
         public Reserva(int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion, float adelanto)
         {
             this.estado = true;

@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dataGridViewListaDeHabitaciones = new DataGridView();
             buttonModificarHabitacion = new Button();
             buttonEliminarHabitacion = new Button();
             label1 = new Label();
             buttonVolver = new Button();
             buttonAgregarHabitacion = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewListaDeHabitaciones).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewListaDeHabitaciones
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 56);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(345, 192);
-            dataGridView1.TabIndex = 0;
+            dataGridViewListaDeHabitaciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewListaDeHabitaciones.Location = new Point(12, 56);
+            dataGridViewListaDeHabitaciones.Name = "dataGridViewListaDeHabitaciones";
+            dataGridViewListaDeHabitaciones.Size = new Size(345, 192);
+            dataGridViewListaDeHabitaciones.TabIndex = 0;
             // 
             // buttonModificarHabitacion
             // 
@@ -104,17 +104,18 @@
             Controls.Add(label1);
             Controls.Add(buttonEliminarHabitacion);
             Controls.Add(buttonModificarHabitacion);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridViewListaDeHabitaciones);
             Name = "viewHabitacion";
             Text = "viewHabitacion";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += viewHabitacion_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewListaDeHabitaciones).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewListaDeHabitaciones;
         private Button buttonModificarHabitacion;
         private Button buttonEliminarHabitacion;
         private Label label1;

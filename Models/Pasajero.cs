@@ -21,36 +21,6 @@ namespace Tito_s_Hotel.Models
         {
             this.estado = true;
         }
-        public Pasajero(string nombre)
-        {
-            this.estado = true;
-
-            this.nombre = nombre;
-        }
-        public Pasajero(string nombre, string apellido)
-        {
-            this.estado = true;
-
-            this.nombre = nombre;
-            this.apellido = apellido;
-        }
-        public Pasajero(string nombre, string apellido, int telefono)
-        {
-            this.estado = true;
-
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.telefono = telefono;
-        }
-        public Pasajero(string nombre, string apellido, int telefono, int dni)
-        {
-            this.estado = true;
-
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.telefono = telefono;
-            this.dni = dni;
-        }
         public Pasajero(string nombre, string apellido, int telefono, int dni, string correo)
         {
             this.estado = true;

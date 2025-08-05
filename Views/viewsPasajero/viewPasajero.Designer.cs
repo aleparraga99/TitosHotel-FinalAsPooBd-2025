@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dataGridViewListaDePasajeros = new DataGridView();
             label1 = new Label();
             buttonModificarPasajero = new Button();
             buttonEliminarPasajero = new Button();
@@ -36,16 +36,16 @@
             buttonBuscarPasajeroPorDni = new Button();
             label2 = new Label();
             textBoxDNIPasajero = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewListaDePasajeros).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewListaDePasajeros
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(37, 55);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(350, 150);
-            dataGridView1.TabIndex = 0;
+            dataGridViewListaDePasajeros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewListaDePasajeros.Location = new Point(37, 55);
+            dataGridViewListaDePasajeros.Name = "dataGridViewListaDePasajeros";
+            dataGridViewListaDePasajeros.Size = new Size(350, 150);
+            dataGridViewListaDePasajeros.TabIndex = 0;
             // 
             // label1
             // 
@@ -124,17 +124,18 @@
             Controls.Add(buttonEliminarPasajero);
             Controls.Add(buttonModificarPasajero);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridViewListaDePasajeros);
             Name = "viewPasajero";
             Text = "viewPasajero";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += viewPasajero_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewListaDePasajeros).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewListaDePasajeros;
         private Label label1;
         private Button buttonModificarPasajero;
         private Button buttonEliminarPasajero;
