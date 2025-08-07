@@ -118,9 +118,9 @@ namespace Tito_s_Hotel.DAOs
             }
         }
         public List<Pasajero> buscarTodosLosPasajeros()
-        {
-
+        { 
             List<Pasajero> listaDePasajeros = new List<Pasajero>();
+
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
                 string query = "SELECT * FROM Pasajero WHERE Estado = 1;";
@@ -133,27 +133,18 @@ namespace Tito_s_Hotel.DAOs
 
                 while (lector.Read())
                 {
-                    try
-                    {
                         Pasajero pasajero = new Pasajero
                         {
                             id = lector.GetInt32(0),
                             nombre = lector.GetString(1),
                             apellido = lector.GetString(2),
                             telefono = lector.GetInt32(3),
-                            dni = lector.GetInt32(4),
+                            //dni = lector.GetInt32(4),
                             correo = lector.GetString(5),
                             estado = lector.GetBoolean(6)
                         };
 
                         listaDePasajeros.Add(pasajero);
-                    }
-                    catch
-                    {
-
-                    }
-
-
                 }
             }
             return listaDePasajeros;

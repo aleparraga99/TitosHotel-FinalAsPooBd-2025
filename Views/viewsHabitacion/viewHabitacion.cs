@@ -61,10 +61,6 @@ namespace Tito_s_Hotel.Views
             else {
                 dataGridViewListaDeHabitaciones.DataSource = null;
             }
-
-            Habitacion oHabitacion = new Habitacion();
-            oHabitacion = (Habitacion)dataGridViewListaDeHabitaciones.DataSource;
-
         }
     }
 }

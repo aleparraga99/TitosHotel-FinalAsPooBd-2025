@@ -42,9 +42,9 @@
             // 
             // buttonVerDisponibilidad
             // 
-            buttonVerDisponibilidad.Location = new Point(12, 163);
+            buttonVerDisponibilidad.Location = new Point(23, 274);
             buttonVerDisponibilidad.Name = "buttonVerDisponibilidad";
-            buttonVerDisponibilidad.Size = new Size(135, 23);
+            buttonVerDisponibilidad.Size = new Size(134, 44);
             buttonVerDisponibilidad.TabIndex = 7;
             buttonVerDisponibilidad.Text = "Ver disponibilidad";
             buttonVerDisponibilidad.UseVisualStyleBackColor = true;
@@ -53,7 +53,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(36, 9);
+            label1.Location = new Point(56, 9);
             label1.Name = "label1";
             label1.Size = new Size(67, 15);
             label1.TabIndex = 6;
@@ -62,16 +62,16 @@
             // dataGridViewListaDeReservas
             // 
             dataGridViewListaDeReservas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewListaDeReservas.Location = new Point(183, 36);
+            dataGridViewListaDeReservas.Location = new Point(182, 49);
             dataGridViewListaDeReservas.Name = "dataGridViewListaDeReservas";
-            dataGridViewListaDeReservas.Size = new Size(377, 181);
+            dataGridViewListaDeReservas.Size = new Size(568, 213);
             dataGridViewListaDeReservas.TabIndex = 8;
             // 
             // buttonModificar
             // 
-            buttonModificar.Location = new Point(322, 239);
+            buttonModificar.Location = new Point(633, 280);
             buttonModificar.Name = "buttonModificar";
-            buttonModificar.Size = new Size(75, 23);
+            buttonModificar.Size = new Size(78, 32);
             buttonModificar.TabIndex = 9;
             buttonModificar.Text = "Modificar";
             buttonModificar.UseVisualStyleBackColor = true;
@@ -79,9 +79,9 @@
             // 
             // buttonEliminar
             // 
-            buttonEliminar.Location = new Point(198, 239);
+            buttonEliminar.Location = new Point(246, 280);
             buttonEliminar.Name = "buttonEliminar";
-            buttonEliminar.Size = new Size(75, 23);
+            buttonEliminar.Size = new Size(78, 32);
             buttonEliminar.TabIndex = 10;
             buttonEliminar.Text = "Eliminar";
             buttonEliminar.UseVisualStyleBackColor = true;
@@ -89,9 +89,9 @@
             // 
             // buttonHabitaciones
             // 
-            buttonHabitaciones.Location = new Point(21, 58);
+            buttonHabitaciones.Location = new Point(32, 63);
             buttonHabitaciones.Name = "buttonHabitaciones";
-            buttonHabitaciones.Size = new Size(94, 23);
+            buttonHabitaciones.Size = new Size(114, 41);
             buttonHabitaciones.TabIndex = 12;
             buttonHabitaciones.Text = "Habitaciones";
             buttonHabitaciones.UseVisualStyleBackColor = true;
@@ -99,9 +99,9 @@
             // 
             // buttonPasajeros
             // 
-            buttonPasajeros.Location = new Point(21, 118);
+            buttonPasajeros.Location = new Point(32, 129);
             buttonPasajeros.Name = "buttonPasajeros";
-            buttonPasajeros.Size = new Size(94, 23);
+            buttonPasajeros.Size = new Size(114, 41);
             buttonPasajeros.TabIndex = 13;
             buttonPasajeros.Text = "Pasajeros";
             buttonPasajeros.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(322, 9);
+            label2.Location = new Point(399, 9);
             label2.Name = "label2";
             label2.Size = new Size(92, 15);
             label2.TabIndex = 14;
@@ -118,9 +118,9 @@
             // 
             // buttonNuevaReserva
             // 
-            buttonNuevaReserva.Location = new Point(436, 239);
+            buttonNuevaReserva.Location = new Point(32, 192);
             buttonNuevaReserva.Name = "buttonNuevaReserva";
-            buttonNuevaReserva.Size = new Size(115, 23);
+            buttonNuevaReserva.Size = new Size(114, 41);
             buttonNuevaReserva.TabIndex = 15;
             buttonNuevaReserva.Text = "Nueva reserva";
             buttonNuevaReserva.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(590, 285);
+            ClientSize = new Size(800, 335);
             Controls.Add(buttonNuevaReserva);
             Controls.Add(label2);
             Controls.Add(buttonPasajeros);

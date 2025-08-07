@@ -95,6 +95,23 @@ namespace Tito_s_Hotel.DAOs
                     try
                     {
                         conexion.Open();
+                        SqlDataReader lector = comando.ExecuteReader();
+
+                        while (lector.Read())
+                        {
+                            Reserva reserva = new Reserva
+                            {
+                                id = lector.GetInt32(0),
+                                numReserva = lector.GetInt32(1),
+                                checkIn = lector.GetDateTime(2),
+                                checkOut = lector.GetDateTime(3),
+                                adelanto = lector.GetFloat(4),
+                                oHabitacion = new Habitacion { id = lector.GetInt32(5) },
+                                oPasajero = new Pasajero { id = lector.GetInt32(6) },
+                                estado = lector.GetBoolean(7)
+                            };
+                            listaDeReservas.Add(reserva);
+                        }
                     }
                     catch
                     {
@@ -102,23 +119,7 @@ namespace Tito_s_Hotel.DAOs
                     }
                 }
 
-                SqlDataReader lector = comando.ExecuteReader();
-
-                while (lector.Read())
-                {
-                    Reserva reserva = new Reserva
-                    {
-                        id = lector.GetInt32(0),
-                        numReserva = lector.GetInt32(1),
-                        checkIn = lector.GetDateTime(2),
-                        checkOut = lector.GetDateTime(3),
-                        adelanto = lector.GetFloat(4),
-                        oHabitacion = new Habitacion { id = lector.GetInt32(5) },
-                        oPasajero = new Pasajero { id = lector.GetInt32(6) },
-                        estado = lector.GetBoolean(7)
-                    };
-                    listaDeReservas.Add(reserva);
-                }
+                
             }
             return listaDeReservas;
         }
