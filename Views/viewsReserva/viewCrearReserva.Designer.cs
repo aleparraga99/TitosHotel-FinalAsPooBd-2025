@@ -46,7 +46,7 @@
             // 
             // textBoxNumeroDeHabitacion
             // 
-            textBoxNumeroDeHabitacion.Location = new Point(132, 22);
+            textBoxNumeroDeHabitacion.Location = new Point(132, 30);
             textBoxNumeroDeHabitacion.Name = "textBoxNumeroDeHabitacion";
             textBoxNumeroDeHabitacion.Size = new Size(100, 23);
             textBoxNumeroDeHabitacion.TabIndex = 0;
@@ -62,14 +62,14 @@
             // 
             dateTimePickerCheckIn.Location = new Point(132, 110);
             dateTimePickerCheckIn.Name = "dateTimePickerCheckIn";
-            dateTimePickerCheckIn.Size = new Size(200, 23);
+            dateTimePickerCheckIn.Size = new Size(224, 23);
             dateTimePickerCheckIn.TabIndex = 2;
             // 
             // dateTimePickerCheckOut
             // 
             dateTimePickerCheckOut.Location = new Point(132, 139);
             dateTimePickerCheckOut.Name = "dateTimePickerCheckOut";
-            dateTimePickerCheckOut.Size = new Size(200, 23);
+            dateTimePickerCheckOut.Size = new Size(224, 23);
             dateTimePickerCheckOut.TabIndex = 3;
             // 
             // label1
@@ -164,7 +164,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(368, 281);
+            ClientSize = new Size(387, 281);
             Controls.Add(textBoxNumeroReserva);
             Controls.Add(label6);
             Controls.Add(buttonCancelar);

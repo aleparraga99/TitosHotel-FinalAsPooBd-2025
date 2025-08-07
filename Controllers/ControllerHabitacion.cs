@@ -78,10 +78,9 @@ namespace Tito_s_Hotel.Controllers
             Habitacion oHabitacion = new Habitacion(numero, camasSingle, camaDoble, precio);
             oDaoHabitacion.modificar(oHabitacion);
         }
-        public void eliminar(int numero, int camasSingle, bool camaDoble, float precio)
+        public void eliminar(int id)
         {
-            Habitacion oHabitacion = new Habitacion(numero, camasSingle, camaDoble, precio);
-            oDaoHabitacion.eliminar(oHabitacion);
+            oDaoHabitacion.eliminar(id);
         }
         public Habitacion encontrarHabitacionPorNumero(int numero) {
             Habitacion habitacion = oDaoHabitacion.buscarHabitacionPorNumero(numero);

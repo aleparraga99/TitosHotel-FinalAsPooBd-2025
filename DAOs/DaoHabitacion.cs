@@ -103,7 +103,7 @@ namespace Tito_s_Hotel.DAOs
                 comando.ExecuteNonQuery();
             }
         }
-        public void eliminar(Habitacion oHabitacion)
+        public void eliminar(int id)
         {
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
@@ -113,7 +113,7 @@ namespace Tito_s_Hotel.DAOs
                 {
                     conexion.Open();
                 }
-                comando.Parameters.AddWithValue("@id", oHabitacion.id);
+                comando.Parameters.AddWithValue("@id", id);
                 comando.ExecuteNonQuery();
             }
         }

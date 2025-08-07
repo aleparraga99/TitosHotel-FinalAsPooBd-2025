@@ -57,5 +57,10 @@ namespace Tito_s_Hotel.Views.Pasajero
                 dataGridViewListaDePasajeros.DataSource = null;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

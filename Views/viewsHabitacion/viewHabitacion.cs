@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tito_s_Hotel.Controllers;
+using Tito_s_Hotel.Models;
+using Tito_s_Hotel.Views.viewsHabitacion;
 
 namespace Tito_s_Hotel.Views
 {
@@ -19,6 +21,7 @@ namespace Tito_s_Hotel.Views
             InitializeComponent();
         }
 
+        
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -32,12 +35,15 @@ namespace Tito_s_Hotel.Views
 
         private void buttonEliminarHabitacion_Click(object sender, EventArgs e)
         {
-            //Capturar datos del dataGrid
-            //oControllerHabitacion.eliminar();
+            Habitacion oHabitacion = new Habitacion();
+            oHabitacion = (Habitacion)dataGridViewListaDeHabitaciones.DataSource;
+            confirmacionEliminarHabitacion ventana = new confirmacionEliminarHabitacion(oHabitacion);
+            ventana.ShowDialog();
         }
 
         private void buttonModificarHabitacion_Click(object sender, EventArgs e)
         {
+           
             //Capturar datos del dataGrid. Supongo que se tiene que abrir la ventana para cargar los datos
             //oControllerHabitacion.modificar();
         }
@@ -46,6 +52,7 @@ namespace Tito_s_Hotel.Views
         {
             buttonEliminarHabitacion.Enabled = false;
             buttonModificarHabitacion.Enabled = false;
+
             int listaDeHabitaciones = oControllerHabitacion.buscarTodasLasHabitaciones().Count;
             if (listaDeHabitaciones != 0)
             {
@@ -54,6 +61,10 @@ namespace Tito_s_Hotel.Views
             else {
                 dataGridViewListaDeHabitaciones.DataSource = null;
             }
+
+            Habitacion oHabitacion = new Habitacion();
+            oHabitacion = (Habitacion)dataGridViewListaDeHabitaciones.DataSource;
+
         }
     }
 }
