@@ -173,7 +173,7 @@ namespace Tito_s_Hotel.DAOs
                         numero = lector.GetInt32(1),
                         camasSingle = lector.GetInt32(2),
                         camaDoble = lector.GetBoolean(3),
-                        precio = lector.GetFloat(4),
+                        //precio = lector.Get(4),
                         estado = lector.GetBoolean(5)
                     };
                     listaDeHabitaciones.Add(habitacion);

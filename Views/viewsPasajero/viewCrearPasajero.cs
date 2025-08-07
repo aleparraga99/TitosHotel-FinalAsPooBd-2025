@@ -17,7 +17,7 @@ namespace Tito_s_Hotel.Views
 {
     public partial class viewCrearPasajero : Form
     {
-        ControllerPasajero oControllerPasajero;
+        ControllerPasajero oControllerPasajero = ControllerPasajero.GetInstanciaDeControllerdePasajero();
         public viewCrearPasajero()
         {
             InitializeComponent();
@@ -37,7 +37,8 @@ namespace Tito_s_Hotel.Views
             string correo = textBoxStringCorreo.Text;
 
             //Se construye y crea el objeto Pasajero
-            oControllerPasajero.crear(nombre, apellido, dni, telefono, correo);
+            Models.Pasajero oPasajero = new Models.Pasajero();
+            oControllerPasajero.crear(oPasajero.nombre, oPasajero.apellido, oPasajero.telefono, oPasajero.dni, oPasajero.correo);
 
             //Se abre una ventana para informar que se guardo el pasajero
             confirmacionDePasajeroGuardado ventana = new confirmacionDePasajeroGuardado();

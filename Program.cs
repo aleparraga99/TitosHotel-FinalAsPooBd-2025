@@ -16,13 +16,7 @@ namespace Tito_s_Hotel
             DaoReserva oDaoReserva = DaoReserva.GetDaoReserva();
             List<Reserva> oReservas = oDaoReserva.BuscarTodasLasReservas();
             ApplicationConfiguration.Initialize();
-            if (oReservas.Count > 0)
-            {
                 Application.Run(new viewGeneral());
-            }
-            else {
-                Application.Run(new viewGeneral2());
-            }
         }
     }
 }

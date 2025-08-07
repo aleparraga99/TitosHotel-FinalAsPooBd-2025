@@ -21,10 +21,10 @@ namespace Tito_s_Hotel.Views.Pasajero
         }
         private void buttonModificarPasajero_Click(object sender, EventArgs e)
         {
-                Models.Pasajero pasajeroSeleccionado = (Models.Pasajero)dataGridViewListaDePasajeros.SelectedRows[0].DataBoundItem;
-                confirmarEliminacionDePasajero ventana = new confirmarEliminacionDePasajero(pasajeroSeleccionado);
-                ventana.ShowDialog();
-            
+            Models.Pasajero pasajeroSeleccionado = (Models.Pasajero)dataGridViewListaDePasajeros.SelectedRows[0].DataBoundItem;
+            confirmarEliminacionDePasajero ventana = new confirmarEliminacionDePasajero(pasajeroSeleccionado);
+            ventana.ShowDialog();
+
             //Capturar datos del dataGrid. Supongo que se tiene que mostrar la ventana para cargar los datos
             //oControllerPasajero.modificar();
         }
@@ -52,10 +52,10 @@ namespace Tito_s_Hotel.Views.Pasajero
             {
                 dataGridViewListaDePasajeros.DataSource = oControllerPasajero.buscarTodosLosPasajeros();
             }
-            else {
+            else
+            {
                 dataGridViewListaDePasajeros.DataSource = null;
             }
-            
         }
     }
 }

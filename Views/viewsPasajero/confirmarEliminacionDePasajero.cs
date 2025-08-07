@@ -14,12 +14,14 @@ namespace Tito_s_Hotel.Views.viewsPasajero
     public partial class confirmarEliminacionDePasajero : Form
     {
         ControllerPasajero oControllerPasajero = ControllerPasajero.GetInstanciaDeControllerdePasajero();
-        public confirmarEliminacionDePasajero()
+        public confirmarEliminacionDePasajero(Models.Pasajero oPasaejero)
         {
             InitializeComponent();
         }
-         
-            
-        
+
+        private void confirmarEliminacionDePasajero_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
