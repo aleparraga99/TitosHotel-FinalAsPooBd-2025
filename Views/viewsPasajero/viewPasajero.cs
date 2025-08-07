@@ -15,23 +15,24 @@ namespace Tito_s_Hotel.Views.Pasajero
     public partial class viewPasajero : Form
     {
         ControllerPasajero oControllerPasajero = ControllerPasajero.GetInstanciaDeControllerdePasajero();
+        private Models.Pasajero oPasajero;
         public viewPasajero()
         {
             InitializeComponent();
         }
         private void buttonModificarPasajero_Click(object sender, EventArgs e)
         {
-            Models.Pasajero pasajeroSeleccionado = (Models.Pasajero)dataGridViewListaDePasajeros.SelectedRows[0].DataBoundItem;
-            confirmarEliminacionDePasajero ventana = new confirmarEliminacionDePasajero(pasajeroSeleccionado);
-            ventana.ShowDialog();
+          
 
             //Capturar datos del dataGrid. Supongo que se tiene que mostrar la ventana para cargar los datos
             //oControllerPasajero.modificar();
         }
         private void buttonEliminarPasajero_Click(object sender, EventArgs e)
         {
-            //Tengo que seleccionar los datos del dataGrid
-            // oControllerPasajero.eliminar();
+            Models.Pasajero oPasajero = (Models.Pasajero)dataGridViewListaDePasajeros.SelectedRows[0].DataBoundItem;
+            confirmarEliminacionDePasajero ventana = new confirmarEliminacionDePasajero(oPasajero);
+            ventana.ShowDialog();
+
         }
         private void buttonAgregarPasajero_Click(object sender, EventArgs e)
         {

@@ -36,10 +36,9 @@ namespace Tito_s_Hotel.Controllers
             Pasajero oPasajero = new Pasajero(nombre, apellido, telefono, dni, correo);
             oDaoPasajero.modificar(oPasajero);
         }
-        public void eliminar(string nombre, string apellido, int telefono, int dni, string correo)
+        public void eliminar(int id)
         {
-            Pasajero oPasajero = new Pasajero(nombre, apellido, telefono, dni, correo);
-            oDaoPasajero.eliminar(oPasajero);
+            oDaoPasajero.eliminar(id);
         }
         public Pasajero buscarPorDni(int dni) {
             Pasajero pasajero = oDaoPasajero.buscarPasajeroPorDni(dni);

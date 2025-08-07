@@ -68,7 +68,7 @@ namespace Tito_s_Hotel.DAOs
             }
 
         }
-        public void eliminar(Pasajero oPasajero)
+        public void eliminar(int id)
         {
 
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
@@ -79,7 +79,7 @@ namespace Tito_s_Hotel.DAOs
                 {
                     conexion.Open();
                 }
-                comando.Parameters.AddWithValue("@id", oPasajero.id);
+                comando.Parameters.AddWithValue("@id", id);
                 comando.ExecuteNonQuery();
             }
         }
