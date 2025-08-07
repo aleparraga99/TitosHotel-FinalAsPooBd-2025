@@ -12,11 +12,15 @@ using Tito_s_Hotel.DAOs;
 using Tito_s_Hotel.Models;
 using Tito_s_Hotel.Views;
 using Tito_s_Hotel.Views.Pasajero;
+using Tito_s_Hotel.Views.viewsExcepciones;
+using Tito_s_Hotel.Views.viewsReserva;
 
 namespace Tito_s_Hotel
 {
     public partial class viewGeneral : Form
     {
+        ControllerHabitacion oControllerHabitacion = ControllerHabitacion.GetInstanciaDeControllerDeHabitacion();
+        ControllerPasajero oControllerPasajero = ControllerPasajero.GetInstanciaDeControllerdePasajero();
         private DaoReserva oDaoReserva = DaoReserva.GetDaoReserva();
         private viewCrearPasajero oViewPasajero;
         private List<Reserva> listaDeReservasEnDataGridView = new List<Reserva>();
@@ -83,7 +87,18 @@ namespace Tito_s_Hotel
         }
         private void buttonNuevaReserva_Click(object sender, EventArgs e)
         {
-
+            List<Habitacion> habitaciones = oControllerHabitacion.buscarTodasLasHabitaciones();
+            List<Models.Pasajero> pasajeros = oControllerPasajero.buscarTodosLosPasajeros();
+            if (habitaciones.Count > 0 && pasajeros.Count > 0)
+            {
+                viewCrearReserva ventana = new viewCrearReserva();
+                ventana.ShowDialog();
+            }
+            else
+            {
+                excepcionPasajerosHabitacionesNecesarios ventana = new excepcionPasajerosHabitacionesNecesarios();
+                ventana.ShowDialog();
+            }
         }
     }
 }
