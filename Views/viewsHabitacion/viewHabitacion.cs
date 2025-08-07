@@ -21,18 +21,15 @@ namespace Tito_s_Hotel.Views
             InitializeComponent();
         }
 
-        
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void buttonAgregarHabitacion_Click(object sender, EventArgs e)
         {
             viewCrearHabitacion ventana = new viewCrearHabitacion();
             ventana.ShowDialog();
         }
-
         private void buttonEliminarHabitacion_Click(object sender, EventArgs e)
         {
             Habitacion oHabitacion = new Habitacion();
@@ -40,14 +37,12 @@ namespace Tito_s_Hotel.Views
             confirmacionEliminarHabitacion ventana = new confirmacionEliminarHabitacion(oHabitacion);
             ventana.ShowDialog();
         }
-
         private void buttonModificarHabitacion_Click(object sender, EventArgs e)
         {
-           
-            //Capturar datos del dataGrid. Supongo que se tiene que abrir la ventana para cargar los datos
-            //oControllerHabitacion.modificar();
+            Habitacion oHabitacion = (Habitacion)dataGridViewListaDeHabitaciones.DataSource;
+            viewModificarHabitacion ventana = new viewModificarHabitacion(oHabitacion);
+            ventana.ShowDialog();
         }
-
         private void viewHabitacion_Load(object sender, EventArgs e)
         {
             buttonEliminarHabitacion.Enabled = false;
@@ -58,8 +53,28 @@ namespace Tito_s_Hotel.Views
             {
                 dataGridViewListaDeHabitaciones.DataSource = oControllerHabitacion.buscarTodasLasHabitaciones();
             }
-            else {
+            else
+            {
                 dataGridViewListaDeHabitaciones.DataSource = null;
+            }
+
+            dataGridViewListaDeHabitaciones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewListaDeHabitaciones.MultiSelect = false;
+            dataGridViewListaDeHabitaciones.ReadOnly = true;
+        }
+
+        private void dataGridViewListaDeHabitaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dataGridViewListaDeHabitaciones.SelectedRows.Count > 0)
+            {
+                buttonEliminarHabitacion.Enabled = true;
+                buttonModificarHabitacion.Enabled = true;
+            }
+            else
+            {
+                buttonEliminarHabitacion.Enabled = false;
+                buttonModificarHabitacion.Enabled = false;
             }
         }
     }

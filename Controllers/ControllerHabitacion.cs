@@ -73,9 +73,9 @@ namespace Tito_s_Hotel.Controllers
             // se tuvo que crear un nuevo constructor que no reciba id. 
             //seguramente se tendrá que hacer lo mismo para el resto de modelos
         }
-        public void modificar(int numero, int camasSingle, bool camaDoble, float precio)
+        public void modificar(int id, int numero, int camasSingle, bool camaDoble, float precio)
         {
-            Habitacion oHabitacion = new Habitacion(numero, camasSingle, camaDoble, precio);
+            Habitacion oHabitacion = new Habitacion(id, numero, camasSingle, camaDoble, precio);
             oDaoHabitacion.modificar(oHabitacion);
         }
         public void eliminar(int id)

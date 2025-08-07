@@ -206,7 +206,7 @@
             radioButtonCamaDoble0.Text = "0";
             radioButtonCamaDoble0.UseVisualStyleBackColor = true;
             // 
-            // ViewHabitacion
+            // viewCrearHabitacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -221,7 +221,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "ViewHabitacion";
+            Name = "viewCrearHabitacion";
             Text = "ViewHabitacion";
             groupBoxCamasSingle.ResumeLayout(false);
             groupBoxCamasSingle.PerformLayout();

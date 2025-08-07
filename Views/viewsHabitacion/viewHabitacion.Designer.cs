@@ -44,6 +44,7 @@
             dataGridViewListaDeHabitaciones.Name = "dataGridViewListaDeHabitaciones";
             dataGridViewListaDeHabitaciones.Size = new Size(642, 192);
             dataGridViewListaDeHabitaciones.TabIndex = 0;
+            dataGridViewListaDeHabitaciones.CellContentClick += dataGridViewListaDeHabitaciones_CellContentClick;
             // 
             // buttonModificarHabitacion
             // 

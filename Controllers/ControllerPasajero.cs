@@ -40,8 +40,8 @@ namespace Tito_s_Hotel.Controllers
         {
             oDaoPasajero.eliminar(id);
         }
-        public Pasajero buscarPorDni(int dni) {
-            Pasajero pasajero = oDaoPasajero.buscarPasajeroPorDni(dni);
+        public Pasajero buscarPorDni(int dniBuscado) {
+            Pasajero pasajero = oDaoPasajero.buscarPasajeroPorDni(dniBuscado);
             return pasajero;
         }
         public List<Pasajero> buscarTodosLosPasajeros()

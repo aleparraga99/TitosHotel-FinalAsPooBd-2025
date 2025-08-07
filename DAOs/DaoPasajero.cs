@@ -83,12 +83,12 @@ namespace Tito_s_Hotel.DAOs
                 comando.ExecuteNonQuery();
             }
         }
-        public Pasajero buscarPasajeroPorDni(int dni) {
+        public Pasajero buscarPasajeroPorDni(int dniBuscado) {
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
                 string query = $"SELECT * FROM Pasajero WHERE Dni = @Dni;";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                comando.Parameters.AddWithValue("Dni", dni);
+                comando.Parameters.AddWithValue("Dni", dniBuscado);
                 if (conexion.State == ConnectionState.Closed)
                 {
                     conexion.Open();

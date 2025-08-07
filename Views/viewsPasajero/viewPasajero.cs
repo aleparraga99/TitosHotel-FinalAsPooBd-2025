@@ -42,7 +42,17 @@ namespace Tito_s_Hotel.Views.Pasajero
         private void buttonBuscarPasajeroPorDni_Click(object sender, EventArgs e)
         {
             int dniBuscado = int.Parse(textBoxDNIPasajero.Text);
-            oControllerPasajero.buscarPorDni(dniBuscado);
+            Models.Pasajero pasajeroEncontrado = oControllerPasajero.buscarPorDni(dniBuscado);
+            if (pasajeroEncontrado != null)
+            {
+                dataGridViewListaDePasajeros.DataSource = pasajeroEncontrado;
+            }
+            else {
+                viewPasajeroNoEncontrado ventana = new viewPasajeroNoEncontrado();
+                ventana.ShowDialog();
+            }
+            
+            
         }
         private void viewPasajero_Load(object sender, EventArgs e)
         {

@@ -8,21 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tito_s_Hotel.Controllers;
-using Tito_s_Hotel.DAOs;
 using Tito_s_Hotel.Models;
 
-namespace Tito_s_Hotel.Views
+namespace Tito_s_Hotel.Views.viewsHabitacion
 {
-    public partial class viewCrearHabitacion : Form
+    public partial class viewModificarHabitacion : Form
     {
-        DaoHabitacion oDaoHabitacion = DaoHabitacion.GetDaoHabitacion();
         ControllerHabitacion oControllerHabitacion = ControllerHabitacion.GetInstanciaDeControllerDeHabitacion();
-
-        //Eventos
-        public viewCrearHabitacion()
+        private Habitacion habitacionParaModificar;
+        public viewModificarHabitacion(Habitacion oHabitacion)
         {
             InitializeComponent();
+            habitacionParaModificar = oHabitacion;
         }
+
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -70,7 +69,7 @@ namespace Tito_s_Hotel.Views
                 }
             }
 
-            oControllerHabitacion.crear(numero, cantidadDeCamasSingle, camaDoble, precioPorNoche);
+            oControllerHabitacion.modificar(habitacionParaModificar.id, numero, cantidadDeCamasSingle, camaDoble, precioPorNoche);
 
             //Se abre una ventana de confirmacion. Deberia agregar una forma de validar 
             //si realmente se guardo para poder confirmarlo
@@ -79,7 +78,5 @@ namespace Tito_s_Hotel.Views
 
             this.Close();
         }
-
-       
     }
 }

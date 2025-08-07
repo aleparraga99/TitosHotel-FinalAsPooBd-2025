@@ -35,6 +35,14 @@ namespace Tito_s_Hotel.Models
             this.camaDoble = camaDoble;
             this.precio = precio;
         }
+        public Habitacion(int id, int numero, int camasSingle, bool camaDoble, float precio)
+        {
+
+            this.numero = numero;
+            this.camasSingle = camasSingle;
+            this.camaDoble = camaDoble;
+            this.precio = precio;
+        }
 
         //ToString
         public override string ToString()
