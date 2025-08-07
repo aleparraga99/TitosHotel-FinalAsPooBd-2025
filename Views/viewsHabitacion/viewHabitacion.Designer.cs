@@ -34,6 +34,9 @@
             label1 = new Label();
             buttonVolver = new Button();
             buttonAgregarHabitacion = new Button();
+            buttonBuscar = new Button();
+            label2 = new Label();
+            textBoxBuscarPorNumero = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListaDeHabitaciones).BeginInit();
             SuspendLayout();
             // 
@@ -95,11 +98,40 @@
             buttonAgregarHabitacion.UseVisualStyleBackColor = true;
             buttonAgregarHabitacion.Click += buttonAgregarHabitacion_Click;
             // 
+            // buttonBuscar
+            // 
+            buttonBuscar.Location = new Point(729, 107);
+            buttonBuscar.Name = "buttonBuscar";
+            buttonBuscar.Size = new Size(75, 23);
+            buttonBuscar.TabIndex = 13;
+            buttonBuscar.Text = "Buscar";
+            buttonBuscar.UseVisualStyleBackColor = true;
+            buttonBuscar.Click += buttonBuscar_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(680, 69);
+            label2.Name = "label2";
+            label2.Size = new Size(111, 15);
+            label2.TabIndex = 14;
+            label2.Text = "Buscar por número:";
+            // 
+            // textBoxBuscarPorNumero
+            // 
+            textBoxBuscarPorNumero.Location = new Point(797, 69);
+            textBoxBuscarPorNumero.Name = "textBoxBuscarPorNumero";
+            textBoxBuscarPorNumero.Size = new Size(56, 23);
+            textBoxBuscarPorNumero.TabIndex = 15;
+            // 
             // viewHabitacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(867, 327);
+            Controls.Add(textBoxBuscarPorNumero);
+            Controls.Add(label2);
+            Controls.Add(buttonBuscar);
             Controls.Add(buttonAgregarHabitacion);
             Controls.Add(buttonVolver);
             Controls.Add(label1);
@@ -122,5 +154,8 @@
         private Label label1;
         private Button buttonVolver;
         private Button buttonAgregarHabitacion;
+        private Button buttonBuscar;
+        private Label label2;
+        private TextBox textBoxBuscarPorNumero;
     }
 }

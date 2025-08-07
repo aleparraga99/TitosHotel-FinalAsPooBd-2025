@@ -77,5 +77,22 @@ namespace Tito_s_Hotel.Views
                 buttonModificarHabitacion.Enabled = false;
             }
         }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            int numeroBuscado = int.Parse(textBoxBuscarPorNumero.Text);
+            Habitacion habitacionEncontarda = oControllerHabitacion.buscarPorNumero(numeroBuscado);
+            if (habitacionEncontarda != null)
+            {
+                dataGridViewListaDeHabitaciones.DataSource = habitacionEncontarda;
+            }
+            else {
+                viewHabitacionNoEncontrada ventana = new viewHabitacionNoEncontrada();
+                ventana.ShowDialog();
+            }
+            
+        }
+        
+        }
     }
-}
+

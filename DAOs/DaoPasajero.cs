@@ -66,11 +66,9 @@ namespace Tito_s_Hotel.DAOs
                 comando.Parameters.AddWithValue("@id", oPasajero.id);
                 comando.ExecuteNonQuery();
             }
-
         }
         public void eliminar(int id)
         {
-
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
                 string query = "UPDATE Pasajero SET Estado = 0 WHERE Id_pasajero = @id;";
@@ -99,11 +97,11 @@ namespace Tito_s_Hotel.DAOs
                     {
                         Pasajero pasajeroEncontrado = new Pasajero {
 
-                            id = reader.GetInt32(reader.GetOrdinal("Id")),
+                            id = reader.GetInt32(reader.GetOrdinal("Id_pasajero")),
                             nombre = reader.GetString(reader.GetString("Nombre")),
                             apellido = reader.GetString(reader.GetString("Apellido")),
-                            dni = reader.GetInt32(reader.GetOrdinal("Dni")),
                             telefono = reader.GetInt32(reader.GetOrdinal("Telefono")),
+                            //dni = reader.GetInt32(reader.GetOrdinal("Dni")),
                             correo = reader.GetString(reader.GetString("Correo")),
                             estado = reader.GetBoolean(reader.GetOrdinal("Estado"))
 

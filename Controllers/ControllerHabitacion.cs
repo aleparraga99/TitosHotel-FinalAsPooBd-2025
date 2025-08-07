@@ -86,6 +86,10 @@ namespace Tito_s_Hotel.Controllers
             Habitacion habitacion = oDaoHabitacion.buscarHabitacionPorNumero(numero);
             return habitacion;
         }
+        public Habitacion buscarPorNumero(int numeroBuscado) {
+            Habitacion habitacionEncontrada = oDaoHabitacion.buscarHabitacionPorNumero(numeroBuscado);
+            return habitacionEncontrada;
+        }
         public List<Habitacion> buscarTodasLasHabitaciones()
         {
             List<Habitacion> listaDeHabitaciones = oDaoHabitacion.buscarTodasLashabitaciones();
