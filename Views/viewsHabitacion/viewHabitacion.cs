@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tito_s_Hotel.Controllers;
 using Tito_s_Hotel.Models;
+using Tito_s_Hotel.Views.viewsExcepciones;
 using Tito_s_Hotel.Views.viewsHabitacion;
 
 namespace Tito_s_Hotel.Views
@@ -80,19 +81,31 @@ namespace Tito_s_Hotel.Views
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            int numeroBuscado = int.Parse(textBoxBuscarPorNumero.Text);
-            Habitacion habitacionEncontarda = oControllerHabitacion.buscarPorNumero(numeroBuscado);
-            if (habitacionEncontarda != null)
+            try
             {
-                dataGridViewListaDeHabitaciones.DataSource = habitacionEncontarda;
+                int numeroBuscado = int.Parse(textBoxBuscarPorNumero.Text);
+                Habitacion habitacionEncontrada = oControllerHabitacion.buscarPorNumero(numeroBuscado);
+                if (habitacionEncontrada != null)
+                {
+                    List<Habitacion> listaConHabitacionEncontrada = new List<Habitacion>();
+                    dataGridViewListaDeHabitaciones.DataSource = null;
+                    listaConHabitacionEncontrada.Add(habitacionEncontrada);
+                    dataGridViewListaDeHabitaciones.DataSource = listaConHabitacionEncontrada;
+                }
+                else
+                {
+                    viewHabitacionNoEncontrada ventana = new viewHabitacionNoEncontrada();
+                    ventana.ShowDialog();
+                }
             }
-            else {
-                viewHabitacionNoEncontrada ventana = new viewHabitacionNoEncontrada();
+
+            catch {
+                excepcionIngresarNumeroDeHabitacion ventana = new excepcionIngresarNumeroDeHabitacion();
                 ventana.ShowDialog();
             }
             
+            
         }
-        
         }
     }
 

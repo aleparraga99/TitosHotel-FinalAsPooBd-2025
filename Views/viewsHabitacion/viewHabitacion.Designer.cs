@@ -106,7 +106,7 @@
             buttonBuscar.TabIndex = 13;
             buttonBuscar.Text = "Buscar";
             buttonBuscar.UseVisualStyleBackColor = true;
-            buttonBuscar.Click += buttonBuscar_Click;
+            buttonBuscar.Click += this.buttonBuscar_Click;
             // 
             // label2
             // 

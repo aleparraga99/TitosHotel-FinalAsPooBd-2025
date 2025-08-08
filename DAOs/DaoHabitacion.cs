@@ -117,13 +117,13 @@ namespace Tito_s_Hotel.DAOs
                 comando.ExecuteNonQuery();
             }
         }
-        public Habitacion buscarHabitacionPorNumero(int numeroDeHabitacion)
+        public Habitacion buscarHabitacionPorNumero(int numeroBuscado)
         {
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
                 string query = $"SELECT * FROM Habitacion WHERE Numero = @Numero;";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                comando.Parameters.AddWithValue("Numero", numeroDeHabitacion);
+                comando.Parameters.AddWithValue("Numero", numeroBuscado);
                 if (conexion.State == ConnectionState.Closed)
                 {
                     conexion.Open();
@@ -134,11 +134,11 @@ namespace Tito_s_Hotel.DAOs
                     {
                         Habitacion habitacionEncontrada = new Habitacion()
                         {
-                            id = reader.GetInt32(reader.GetOrdinal("Id")),
+                            id = reader.GetInt32(reader.GetOrdinal("Id_habitacion")),
                             numero = reader.GetInt32(reader.GetOrdinal("Numero")),
                             camasSingle = reader.GetInt32(reader.GetOrdinal("CamasSingle")),
                             camaDoble = reader.GetBoolean(reader.GetOrdinal("CamaDoble")),
-                            precio = reader.GetFloat(reader.GetOrdinal("Precio")),
+                            precio = (float)reader.GetDouble(reader.GetOrdinal("Precio")),
                             estado = reader.GetBoolean(reader.GetOrdinal("Estado"))
                         };
                         return habitacionEncontrada;
