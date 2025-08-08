@@ -117,13 +117,13 @@ namespace Tito_s_Hotel.DAOs
                 comando.ExecuteNonQuery();
             }
         }
-        public Habitacion buscarHabitacionPorNumero(int numeroBuscado)
+        public Habitacion buscarHabitacionPorNumero(int numeroHabitacion)
         {
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
                 string query = $"SELECT * FROM Habitacion WHERE Numero = @Numero;";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                comando.Parameters.AddWithValue("Numero", numeroBuscado);
+                comando.Parameters.AddWithValue("Numero", numeroHabitacion);
                 if (conexion.State == ConnectionState.Closed)
                 {
                     conexion.Open();

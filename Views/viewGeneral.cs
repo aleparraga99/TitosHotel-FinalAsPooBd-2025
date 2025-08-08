@@ -32,13 +32,12 @@ namespace Tito_s_Hotel
         {
             buttonEliminar.Enabled = false;
             buttonModificar.Enabled = false;
-            listaDeReservasEnDataGridView = oDaoReserva.BuscarTodasLasReservas();
-            if (listaDeReservasEnDataGridView != null && listaDeReservasEnDataGridView.Any())
+            List<Reserva> todasLasReservas = oDaoReserva.BuscarTodasLasReservas();
+            if (todasLasReservas != null)
             {
-                dataGridViewListaDeReservas.DataSource = oDaoReserva.BuscarTodasLasReservas();
+                dataGridViewListaDeReservas.DataSource = todasLasReservas;
             }
-            else
-            {
+            else {
                 dataGridViewListaDeReservas.DataSource = null;
             }
         }

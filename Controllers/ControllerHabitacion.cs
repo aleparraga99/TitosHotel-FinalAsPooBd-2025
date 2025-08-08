@@ -82,12 +82,12 @@ namespace Tito_s_Hotel.Controllers
         {
             oDaoHabitacion.eliminar(id);
         }
-        public Habitacion encontrarHabitacionPorNumero(int numero) {
-            Habitacion habitacion = oDaoHabitacion.buscarHabitacionPorNumero(numero);
+        public Habitacion encontrarHabitacionPorNumero(int numeroHabitacion) {
+            Habitacion habitacion = oDaoHabitacion.buscarHabitacionPorNumero(numeroHabitacion);
             return habitacion;
         }
-        public Habitacion buscarPorNumero(int numeroBuscado) {
-            Habitacion habitacionEncontrada = oDaoHabitacion.buscarHabitacionPorNumero(numeroBuscado);
+        public Habitacion buscarPorNumero(int numeroHabitacion) {
+            Habitacion habitacionEncontrada = oDaoHabitacion.buscarHabitacionPorNumero(numeroHabitacion);
             return habitacionEncontrada;
         }
         public List<Habitacion> buscarTodasLasHabitaciones()

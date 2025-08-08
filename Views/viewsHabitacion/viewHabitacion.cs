@@ -83,8 +83,8 @@ namespace Tito_s_Hotel.Views
         {
             try
             {
-                int numeroBuscado = int.Parse(textBoxBuscarPorNumero.Text);
-                Habitacion habitacionEncontrada = oControllerHabitacion.buscarPorNumero(numeroBuscado);
+                int numeroHabitacion = int.Parse(textBoxBuscarPorNumero.Text);
+                Habitacion habitacionEncontrada = oControllerHabitacion.buscarPorNumero(numeroHabitacion);
                 if (habitacionEncontrada != null)
                 {
                     List<Habitacion> listaConHabitacionEncontrada = new List<Habitacion>();

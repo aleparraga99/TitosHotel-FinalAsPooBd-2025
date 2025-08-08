@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tito_s_Hotel.Controllers;
+using Tito_s_Hotel.Views.viewsExcepciones;
 using Tito_s_Hotel.Views.viewsPasajero;
 
 namespace Tito_s_Hotel.Views.Pasajero
@@ -41,18 +42,30 @@ namespace Tito_s_Hotel.Views.Pasajero
         }
         private void buttonBuscarPasajeroPorDni_Click(object sender, EventArgs e)
         {
-            int dniBuscado = int.Parse(textBoxDNIPasajero.Text);
-            Models.Pasajero pasajeroEncontrado = oControllerPasajero.buscarPorDni(dniBuscado);
-            if (pasajeroEncontrado != null)
+            try
             {
-                dataGridViewListaDePasajeros.DataSource = pasajeroEncontrado;
+                int dniBuscado = int.Parse(textBoxDNIPasajero.Text);
+                Models.Pasajero pasajeroEncontrado = oControllerPasajero.buscarPorDni(dniBuscado);
+                if (pasajeroEncontrado != null)
+                {
+                    List<Models.Pasajero> listaConPasajeroEncontrado = new List<Models.Pasajero>();
+                    dataGridViewListaDePasajeros.DataSource = null;
+                    listaConPasajeroEncontrado.Add(pasajeroEncontrado);
+                    dataGridViewListaDePasajeros.DataSource = listaConPasajeroEncontrado;
+                }
+                else
+                {
+                    viewPasajeroNoEncontrado ventana = new viewPasajeroNoEncontrado();
+                    ventana.ShowDialog();
+                }
             }
-            else {
-                viewPasajeroNoEncontrado ventana = new viewPasajeroNoEncontrado();
+            catch
+            {
+                excepcionIngresarNumeroDNI ventana = new excepcionIngresarNumeroDNI();
                 ventana.ShowDialog();
             }
-            
-            
+
+
         }
         private void viewPasajero_Load(object sender, EventArgs e)
         {

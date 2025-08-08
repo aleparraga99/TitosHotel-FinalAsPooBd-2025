@@ -43,7 +43,7 @@ namespace Tito_s_Hotel.DAOs
                 comando.Parameters.AddWithValue("@Nombre", oPasajero.nombre);
                 comando.Parameters.AddWithValue("@Apellido", oPasajero.apellido);
                 comando.Parameters.AddWithValue("@Telefono", oPasajero.telefono);
-                comando.Parameters.AddWithValue("@DNI", oPasajero.dni);
+                comando.Parameters.AddWithValue("@Dni", oPasajero.dni);
                 comando.Parameters.AddWithValue("@Correo", oPasajero.correo);
                 comando.ExecuteNonQuery();
             }
@@ -98,13 +98,12 @@ namespace Tito_s_Hotel.DAOs
                         Pasajero pasajeroEncontrado = new Pasajero {
 
                             id = reader.GetInt32(reader.GetOrdinal("Id_pasajero")),
-                            nombre = reader.GetString(reader.GetString("Nombre")),
-                            apellido = reader.GetString(reader.GetString("Apellido")),
+                            nombre = reader.GetString(reader.GetOrdinal("Nombre")),
+                            apellido = reader.GetString(reader.GetOrdinal("Apellido")),
                             telefono = reader.GetInt32(reader.GetOrdinal("Telefono")),
-                            //dni = reader.GetInt32(reader.GetOrdinal("Dni")),
-                            correo = reader.GetString(reader.GetString("Correo")),
+                            dni = reader.GetInt32(reader.GetOrdinal("Dni")),
+                            correo = reader.GetString(reader.GetOrdinal("Correo")),
                             estado = reader.GetBoolean(reader.GetOrdinal("Estado"))
-
                         };
                         return pasajeroEncontrado;
                     }

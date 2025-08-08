@@ -35,7 +35,7 @@ namespace Tito_s_Hotel.Views
             int dni = int.Parse(textBoxIntDni.Text);
             int telefono = int.Parse(textBoxIntTelefono.Text);
             string correo = textBoxStringCorreo.Text;
-
+       
             //Se construye y crea el objeto Pasajero
             Models.Pasajero oPasajero = new Models.Pasajero();
             oControllerPasajero.crear(oPasajero.nombre, oPasajero.apellido, oPasajero.telefono, oPasajero.dni, oPasajero.correo);

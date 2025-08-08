@@ -13,10 +13,11 @@ namespace Tito_s_Hotel
         [STAThread]
         static void Main()
         {
+            Application.SetCompatibleTextRenderingDefault(false);
+            ApplicationConfiguration.Initialize();
             DaoReserva oDaoReserva = DaoReserva.GetDaoReserva();
             List<Reserva> oReservas = oDaoReserva.BuscarTodasLasReservas();
-            ApplicationConfiguration.Initialize();
-                Application.Run(new viewGeneral());
+            Application.Run(new viewGeneral());
         }
     }
 }

@@ -53,23 +53,24 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(56, 9);
+            label1.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(32, 6);
             label1.Name = "label1";
-            label1.Size = new Size(67, 15);
+            label1.Size = new Size(124, 30);
             label1.TabIndex = 6;
             label1.Text = "Tito´s Hotel";
             // 
             // dataGridViewListaDeReservas
             // 
             dataGridViewListaDeReservas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewListaDeReservas.Location = new Point(182, 49);
+            dataGridViewListaDeReservas.Location = new Point(173, 49);
             dataGridViewListaDeReservas.Name = "dataGridViewListaDeReservas";
-            dataGridViewListaDeReservas.Size = new Size(568, 213);
+            dataGridViewListaDeReservas.Size = new Size(779, 230);
             dataGridViewListaDeReservas.TabIndex = 8;
             // 
             // buttonModificar
             // 
-            buttonModificar.Location = new Point(633, 280);
+            buttonModificar.Location = new Point(819, 299);
             buttonModificar.Name = "buttonModificar";
             buttonModificar.Size = new Size(78, 32);
             buttonModificar.TabIndex = 9;
@@ -79,7 +80,7 @@
             // 
             // buttonEliminar
             // 
-            buttonEliminar.Location = new Point(246, 280);
+            buttonEliminar.Location = new Point(246, 299);
             buttonEliminar.Name = "buttonEliminar";
             buttonEliminar.Size = new Size(78, 32);
             buttonEliminar.TabIndex = 10;
@@ -110,7 +111,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(399, 9);
+            label2.Location = new Point(515, 18);
             label2.Name = "label2";
             label2.Size = new Size(92, 15);
             label2.TabIndex = 14;
@@ -130,7 +131,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 335);
+            ClientSize = new Size(964, 346);
             Controls.Add(buttonNuevaReserva);
             Controls.Add(label2);
             Controls.Add(buttonPasajeros);

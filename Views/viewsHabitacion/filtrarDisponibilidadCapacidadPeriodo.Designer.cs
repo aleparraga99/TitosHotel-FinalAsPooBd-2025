@@ -43,7 +43,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(44, 28);
+            label1.Location = new Point(154, 34);
             label1.Name = "label1";
             label1.Size = new Size(66, 15);
             label1.TabIndex = 0;
@@ -52,7 +52,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(44, 67);
+            label2.Location = new Point(154, 75);
             label2.Name = "label2";
             label2.Size = new Size(56, 15);
             label2.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             // textBoxCapacidad
             // 
-            textBoxCapacidad.Location = new Point(116, 25);
+            textBoxCapacidad.Location = new Point(226, 31);
             textBoxCapacidad.Name = "textBoxCapacidad";
             textBoxCapacidad.Size = new Size(37, 23);
             textBoxCapacidad.TabIndex = 2;
@@ -68,7 +68,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(44, 114);
+            label3.Location = new Point(154, 122);
             label3.Name = "label3";
             label3.Size = new Size(66, 15);
             label3.TabIndex = 3;
@@ -76,21 +76,21 @@
             // 
             // dateTimePickerIn
             // 
-            dateTimePickerIn.Location = new Point(106, 61);
+            dateTimePickerIn.Location = new Point(216, 69);
             dateTimePickerIn.Name = "dateTimePickerIn";
             dateTimePickerIn.Size = new Size(210, 23);
             dateTimePickerIn.TabIndex = 4;
             // 
             // dateTimePickerOut
             // 
-            dateTimePickerOut.Location = new Point(116, 108);
+            dateTimePickerOut.Location = new Point(226, 116);
             dateTimePickerOut.Name = "dateTimePickerOut";
             dateTimePickerOut.Size = new Size(212, 23);
             dateTimePickerOut.TabIndex = 5;
             // 
             // buttonBuscar
             // 
-            buttonBuscar.Location = new Point(55, 323);
+            buttonBuscar.Location = new Point(71, 322);
             buttonBuscar.Name = "buttonBuscar";
             buttonBuscar.Size = new Size(75, 23);
             buttonBuscar.TabIndex = 6;
@@ -101,14 +101,14 @@
             // dataGridViewListaDeHabitacionesDisponibles
             // 
             dataGridViewListaDeHabitacionesDisponibles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewListaDeHabitacionesDisponibles.Location = new Point(23, 151);
+            dataGridViewListaDeHabitacionesDisponibles.Location = new Point(12, 156);
             dataGridViewListaDeHabitacionesDisponibles.Name = "dataGridViewListaDeHabitacionesDisponibles";
-            dataGridViewListaDeHabitacionesDisponibles.Size = new Size(338, 150);
+            dataGridViewListaDeHabitacionesDisponibles.Size = new Size(604, 150);
             dataGridViewListaDeHabitacionesDisponibles.TabIndex = 7;
             // 
             // buttonVolver
             // 
-            buttonVolver.Location = new Point(253, 323);
+            buttonVolver.Location = new Point(489, 322);
             buttonVolver.Name = "buttonVolver";
             buttonVolver.Size = new Size(75, 23);
             buttonVolver.TabIndex = 8;
@@ -120,7 +120,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(385, 364);
+            ClientSize = new Size(630, 366);
             Controls.Add(buttonVolver);
             Controls.Add(dataGridViewListaDeHabitacionesDisponibles);
             Controls.Add(buttonBuscar);
