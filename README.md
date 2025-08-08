@@ -4,9 +4,13 @@ El proyecto forma parte de la instancia de final del espacio curricular de Progr
 Se requiere un ABM para las reservas, además de otras entidades como las de Pasajero y Habitaciones (con sus respectivos ABM). Las entidades tienen que poseer su  propio CRUD
 
 // Características 
+El proyecto respeta una arquitectura Modelo - Vista - Controlador (MVC), siendo estas las capas principales además de una capa DAO para las respectivas entidades
 
 // Tecnologías
 Para este proyecto se utiliza el lenguage C# y el IDE Visual Studio. Además, para manejar la base de datos se usa SQL Server Management Studio
 
 // Instalación
-git clone 
+git clone https://github.com/aleparraga99/TitosHotel-FinalAsPooBd-2025.git
+
+// Configuración de la base de datos
+ SqlConnection conexion = new SqlConnection("Data source = DESKTOP-TQ8IRKU\\SQLEXPRESS; Initial Catalog = TitosHotel; Integrated security = true");
