@@ -26,12 +26,12 @@ namespace Tito_s_Hotel.Controllers
         }
 
         //CRUD
-        public void crear(string nombre, string apellido, string telefono, int dni, string correo)
+        public void crear(string nombre, string apellido, string telefono, string dni, string correo)
         {
             Pasajero oPasajero = new Pasajero(nombre, apellido, telefono, dni, correo);
             oDaoPasajero.crear(oPasajero);
         }
-        public void modificar(string nombre, string apellido, string telefono, int dni, string correo)
+        public void modificar(string nombre, string apellido, string telefono,string dni, string correo)
         {
             Pasajero oPasajero = new Pasajero(nombre, apellido, telefono, dni, correo);
             oDaoPasajero.modificar(oPasajero);

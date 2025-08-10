@@ -33,7 +33,7 @@ namespace Tito_s_Hotel.Views
             //Se capturan los datos
             string nombre = textBoxStringNombre.Text;
             string apellido = textBoxStringApellido.Text;
-            int dni = int.Parse(textBoxIntDni.Text);
+            string dni = textBoxStringDni.Text;
             string telefono = textBoxStringTelefono.Text;
             string correo = textBoxStringCorreo.Text;
        

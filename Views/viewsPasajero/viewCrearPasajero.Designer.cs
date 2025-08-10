@@ -35,7 +35,7 @@
             labelCorreo = new Label();
             textBoxStringNombre = new TextBox();
             textBoxStringApellido = new TextBox();
-            textBoxIntDni = new TextBox();
+            textBoxStringDni = new TextBox();
             textBoxStringTelefono = new TextBox();
             textBoxStringCorreo = new TextBox();
             buttonGuardar = new Button();
@@ -101,12 +101,12 @@
             textBoxStringApellido.Size = new Size(100, 23);
             textBoxStringApellido.TabIndex = 6;
             // 
-            // textBoxIntDni
+            // textBoxStringDni
             // 
-            textBoxIntDni.Location = new Point(127, 93);
-            textBoxIntDni.Name = "textBoxIntDni";
-            textBoxIntDni.Size = new Size(100, 23);
-            textBoxIntDni.TabIndex = 7;
+            textBoxStringDni.Location = new Point(127, 93);
+            textBoxStringDni.Name = "textBoxStringDni";
+            textBoxStringDni.Size = new Size(100, 23);
+            textBoxStringDni.TabIndex = 7;
             // 
             // textBoxStringTelefono
             // 
@@ -151,7 +151,7 @@
             Controls.Add(buttonGuardar);
             Controls.Add(textBoxStringCorreo);
             Controls.Add(textBoxStringTelefono);
-            Controls.Add(textBoxIntDni);
+            Controls.Add(textBoxStringDni);
             Controls.Add(textBoxStringApellido);
             Controls.Add(textBoxStringNombre);
             Controls.Add(labelCorreo);
@@ -174,7 +174,7 @@
         private Label labelCorreo;
         private TextBox textBoxStringNombre;
         private TextBox textBoxStringApellido;
-        private TextBox textBoxIntDni;
+        private TextBox textBoxStringDni;
         private TextBox textBoxStringTelefono;
         private TextBox textBoxStringCorreo;
         private Button buttonGuardar;
