@@ -12,7 +12,7 @@ namespace Tito_s_Hotel.Models
         public string nombre { get; set; }
         public string apellido { get; set; }
         public int dni { get; set; }
-        public int telefono { get; set; }
+        public string telefono { get; set; }
         public string correo { get; set; }
         public bool estado { get; set; }
 
@@ -26,7 +26,7 @@ namespace Tito_s_Hotel.Models
             this.estado = true;
             this.id = id;
         }
-        public Pasajero(string nombre, string apellido, int telefono, int dni, string correo)
+        public Pasajero(string nombre, string apellido, string telefono, int dni, string correo)
         {
             this.estado = true;
 

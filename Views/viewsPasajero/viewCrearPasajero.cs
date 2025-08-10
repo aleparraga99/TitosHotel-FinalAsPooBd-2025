@@ -34,14 +34,11 @@ namespace Tito_s_Hotel.Views
             string nombre = textBoxStringNombre.Text;
             string apellido = textBoxStringApellido.Text;
             int dni = int.Parse(textBoxIntDni.Text);
-            if (!int.TryParse(textBoxIntTelefono.Text, out int telefono))
-            {
-                return;
-            }
+            //guardar el telefono como string
             string correo = textBoxStringCorreo.Text;
        
             //Se construye y crea el objeto Pasajero
-            Models.Pasajero oPasajero = new Models.Pasajero();
+            Models.Pasajero oPasajero = new Models.Pasajero(nombre, apellido, telefono, dni, correo);
             oControllerPasajero.crear(oPasajero.nombre, oPasajero.apellido, oPasajero.telefono, oPasajero.dni, oPasajero.correo);
 
             //Se abre una ventana para informar que se guardo el pasajero

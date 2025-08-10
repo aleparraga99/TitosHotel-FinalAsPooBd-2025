@@ -100,7 +100,7 @@ namespace Tito_s_Hotel.DAOs
                             id = reader.GetInt32(reader.GetOrdinal("Id_pasajero")),
                             nombre = reader.GetString(reader.GetOrdinal("Nombre")),
                             apellido = reader.GetString(reader.GetOrdinal("Apellido")),
-                            telefono = reader.GetInt32(reader.GetOrdinal("Telefono")),
+                            telefono = reader.GetString(reader.GetOrdinal("Telefono")),
                             dni = reader.GetInt32(reader.GetOrdinal("Dni")),
                             correo = reader.GetString(reader.GetOrdinal("Correo")),
                             estado = reader.GetBoolean(reader.GetOrdinal("Estado"))
@@ -135,7 +135,7 @@ namespace Tito_s_Hotel.DAOs
                             id = lector.GetInt32(0),
                             nombre = lector.GetString(1),
                             apellido = lector.GetString(2),
-                            telefono = lector.GetInt32(3),
+                            telefono = lector.GetString(3),
                             //dni = lector.GetInt32(4),
                             correo = lector.GetString(5),
                             estado = lector.GetBoolean(6)
