@@ -34,7 +34,7 @@ namespace Tito_s_Hotel.Views
             string nombre = textBoxStringNombre.Text;
             string apellido = textBoxStringApellido.Text;
             int dni = int.Parse(textBoxIntDni.Text);
-            //guardar el telefono como string
+            string telefono = textBoxStringTelefono.Text;
             string correo = textBoxStringCorreo.Text;
        
             //Se construye y crea el objeto Pasajero

@@ -36,7 +36,7 @@
             textBoxStringNombre = new TextBox();
             textBoxStringApellido = new TextBox();
             textBoxIntDni = new TextBox();
-            textBoxIntTelefono = new TextBox();
+            textBoxStringTelefono = new TextBox();
             textBoxStringCorreo = new TextBox();
             buttonGuardar = new Button();
             buttonCancelar = new Button();
@@ -108,12 +108,12 @@
             textBoxIntDni.Size = new Size(100, 23);
             textBoxIntDni.TabIndex = 7;
             // 
-            // textBoxIntTelefono
+            // textBoxStringTelefono
             // 
-            textBoxIntTelefono.Location = new Point(127, 122);
-            textBoxIntTelefono.Name = "textBoxIntTelefono";
-            textBoxIntTelefono.Size = new Size(100, 23);
-            textBoxIntTelefono.TabIndex = 8;
+            textBoxStringTelefono.Location = new Point(127, 122);
+            textBoxStringTelefono.Name = "textBoxStringTelefono";
+            textBoxStringTelefono.Size = new Size(100, 23);
+            textBoxStringTelefono.TabIndex = 8;
             // 
             // textBoxStringCorreo
             // 
@@ -150,7 +150,7 @@
             Controls.Add(buttonCancelar);
             Controls.Add(buttonGuardar);
             Controls.Add(textBoxStringCorreo);
-            Controls.Add(textBoxIntTelefono);
+            Controls.Add(textBoxStringTelefono);
             Controls.Add(textBoxIntDni);
             Controls.Add(textBoxStringApellido);
             Controls.Add(textBoxStringNombre);
@@ -175,7 +175,7 @@
         private TextBox textBoxStringNombre;
         private TextBox textBoxStringApellido;
         private TextBox textBoxIntDni;
-        private TextBox textBoxIntTelefono;
+        private TextBox textBoxStringTelefono;
         private TextBox textBoxStringCorreo;
         private Button buttonGuardar;
         private Button buttonCancelar;
