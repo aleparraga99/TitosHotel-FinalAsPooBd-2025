@@ -36,7 +36,7 @@
             buttonBuscarPasajeroPorDni = new Button();
             label2 = new Label();
             textBoxDNIPasajero = new TextBox();
-            button1 = new Button();
+            buttonVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListaDePasajeros).BeginInit();
             SuspendLayout();
             // 
@@ -47,6 +47,7 @@
             dataGridViewListaDePasajeros.Name = "dataGridViewListaDePasajeros";
             dataGridViewListaDePasajeros.Size = new Size(630, 177);
             dataGridViewListaDePasajeros.TabIndex = 0;
+            dataGridViewListaDePasajeros.CellContentClick += dataGridViewListaDePasajeros_CellContentClick;
             // 
             // label1
             // 
@@ -113,22 +114,22 @@
             textBoxDNIPasajero.Size = new Size(125, 23);
             textBoxDNIPasajero.TabIndex = 7;
             // 
-            // button1
+            // buttonVolver
             // 
-            button1.Location = new Point(763, 251);
-            button1.Name = "button1";
-            button1.Size = new Size(104, 49);
-            button1.TabIndex = 8;
-            button1.Text = "Volver";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            buttonVolver.Location = new Point(763, 251);
+            buttonVolver.Name = "buttonVolver";
+            buttonVolver.Size = new Size(104, 49);
+            buttonVolver.TabIndex = 8;
+            buttonVolver.Text = "Volver";
+            buttonVolver.UseVisualStyleBackColor = true;
+            buttonVolver.Click += buttonVolver_Click;
             // 
             // viewPasajero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(885, 312);
-            Controls.Add(button1);
+            Controls.Add(buttonVolver);
             Controls.Add(textBoxDNIPasajero);
             Controls.Add(label2);
             Controls.Add(buttonBuscarPasajeroPorDni);
@@ -155,6 +156,6 @@
         private Button buttonBuscarPasajeroPorDni;
         private Label label2;
         private TextBox textBoxDNIPasajero;
-        private Button button1;
+        private Button buttonVolver;
     }
 }

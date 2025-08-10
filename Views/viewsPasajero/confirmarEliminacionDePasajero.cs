@@ -31,5 +31,9 @@ namespace Tito_s_Hotel.Views.viewsPasajero
             this.Close();
         }
 
+        private void buttonConfirmar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

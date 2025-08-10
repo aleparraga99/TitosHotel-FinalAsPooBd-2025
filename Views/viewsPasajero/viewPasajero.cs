@@ -16,14 +16,15 @@ namespace Tito_s_Hotel.Views.Pasajero
     public partial class viewPasajero : Form
     {
         ControllerPasajero oControllerPasajero = ControllerPasajero.GetInstanciaDeControllerdePasajero();
-        private Models.Pasajero oPasajero;
+        private Models.Pasajero pasajeroSeleccionado = null;
+        private bool cargandoFormulario = true;
         public viewPasajero()
         {
             InitializeComponent();
         }
         private void buttonModificarPasajero_Click(object sender, EventArgs e)
         {
-          
+
 
             //Capturar datos del dataGrid. Supongo que se tiene que mostrar la ventana para cargar los datos
             //oControllerPasajero.modificar();
@@ -65,26 +66,66 @@ namespace Tito_s_Hotel.Views.Pasajero
                 ventana.ShowDialog();
             }
 
+            dataGridViewListaDePasajeros.SelectionChanged += dataGridViewListaDePasajeros_SelectionChanged;
+            cargandoFormulario = false;
 
+        }
+        private void buttonVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void dataGridViewListaDePasajeros_SelectionChanged(object sender, EventArgs e)
+        {
+
+            if (cargandoFormulario) return;
+
+            if (dataGridViewListaDePasajeros.CurrentRow != null)
+            {
+                pasajeroSeleccionado = (Models.Pasajero)dataGridViewListaDePasajeros.CurrentRow.DataBoundItem;
+                buttonEliminarPasajero.Enabled = true;
+                buttonModificarPasajero.Enabled = true;
+            }
+            else
+            {
+                pasajeroSeleccionado = null;
+                buttonEliminarPasajero.Enabled = false;
+                buttonModificarPasajero.Enabled = false;
+            }
         }
         private void viewPasajero_Load(object sender, EventArgs e)
         {
+            //Se inhabilitan los botones y se configura el dataGrd
             buttonEliminarPasajero.Enabled = false;
             buttonModificarPasajero.Enabled = false;
-            int listaDePasajeros = oControllerPasajero.buscarTodosLosPasajeros().Count;
-            if (listaDePasajeros != 0)
+            dataGridViewListaDePasajeros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewListaDePasajeros.MultiSelect = false;
+            dataGridViewListaDePasajeros.ReadOnly = true;
+
+            //Se trae la lista de todos los pasajeros cargados
+            List<Models.Pasajero> listaDePasajeros = oControllerPasajero.buscarTodosLosPasajeros();
+            if (listaDePasajeros.Count > 0)
             {
-                dataGridViewListaDePasajeros.DataSource = oControllerPasajero.buscarTodosLosPasajeros();
+                dataGridViewListaDePasajeros.DataSource = listaDePasajeros;
             }
             else
             {
                 dataGridViewListaDePasajeros.DataSource = null;
             }
-        }
 
-        private void button1_Click(object sender, EventArgs e)
+            cargandoFormulario = false;
+        }
+        private void dataGridViewListaDePasajeros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.Close();
+            if(dataGridViewListaDePasajeros.SelectedRows.Count > 0)
+            {
+                buttonEliminarPasajero.Enabled = true;
+                buttonModificarPasajero.Enabled = true;
+            }
+            else
+            {
+                buttonEliminarPasajero.Enabled = false;
+                buttonModificarPasajero.Enabled = false;
+            }
         }
     }
 }

@@ -28,12 +28,16 @@ namespace Tito_s_Hotel.Views
             this.Close();
         }
 
-        private void buttonGuardar_Click(object sender, EventArgs e) //Se capturan los datos
+        private void buttonGuardar_Click(object sender, EventArgs e) 
         {
+            //Se capturan los datos
             string nombre = textBoxStringNombre.Text;
             string apellido = textBoxStringApellido.Text;
             int dni = int.Parse(textBoxIntDni.Text);
-            int telefono = int.Parse(textBoxIntTelefono.Text);
+            if (!int.TryParse(textBoxIntTelefono.Text, out int telefono))
+            {
+                return;
+            }
             string correo = textBoxStringCorreo.Text;
        
             //Se construye y crea el objeto Pasajero

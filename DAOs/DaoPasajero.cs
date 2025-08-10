@@ -84,7 +84,7 @@ namespace Tito_s_Hotel.DAOs
         public Pasajero buscarPasajeroPorDni(int dniBuscado) {
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
-                string query = $"SELECT * FROM Pasajero WHERE Dni = @Dni;";
+                string query = $"SELECT * FROM Pasajero WHERE Dni = @Dni AND Estado = 1;";
                 SqlCommand comando = new SqlCommand(query, conexion);
                 comando.Parameters.AddWithValue("Dni", dniBuscado);
                 if (conexion.State == ConnectionState.Closed)

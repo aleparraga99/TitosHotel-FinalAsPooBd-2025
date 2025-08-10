@@ -50,6 +50,7 @@
             buttonConfirmar.TabIndex = 1;
             buttonConfirmar.Text = "Confirmar";
             buttonConfirmar.UseVisualStyleBackColor = true;
+            buttonConfirmar.Click += buttonConfirmar_Click;
             // 
             // buttonCancelar
             // 
