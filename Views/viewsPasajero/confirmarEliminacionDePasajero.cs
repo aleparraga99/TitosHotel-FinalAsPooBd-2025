@@ -21,11 +21,6 @@ namespace Tito_s_Hotel.Views.viewsPasajero
             pasajeroParaEliminar = oPasaejero;
         }
 
-        private void confirmarEliminacionDePasajero_Load(object sender, EventArgs e)
-        {
-            oControllerPasajero.eliminar(pasajeroParaEliminar.id);
-        }
-
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -33,7 +28,8 @@ namespace Tito_s_Hotel.Views.viewsPasajero
 
         private void buttonConfirmar_Click(object sender, EventArgs e)
         {
-
+            oControllerPasajero.eliminar(pasajeroParaEliminar.id);
+            this.Close();
         }
     }
 }

@@ -116,22 +116,27 @@ namespace Tito_s_Hotel.Views
         }
         private void dataGridViewListaDeHabitaciones_SelectionChanged(object sender, EventArgs e)
         {
-                if (cargandoFormulario) return;
+            if (cargandoFormulario) return;
 
-                if (dataGridViewListaDeHabitaciones.CurrentRow != null)
-                {
-                    habitacionSeleccionada = (Habitacion)dataGridViewListaDeHabitaciones.CurrentRow.DataBoundItem;
-                    buttonEliminarHabitacion.Enabled = true;
-                    buttonModificarHabitacion.Enabled = true;
-                }
-                else
-                {
-                    habitacionSeleccionada = null;
-                    buttonEliminarHabitacion.Enabled = false;
-                    buttonModificarHabitacion.Enabled = false;
-                }
+            if (dataGridViewListaDeHabitaciones.CurrentRow != null)
+            {
+                habitacionSeleccionada = (Habitacion)dataGridViewListaDeHabitaciones.CurrentRow.DataBoundItem;
+                buttonEliminarHabitacion.Enabled = true;
+                buttonModificarHabitacion.Enabled = true;
+            }
+            else
+            {
+                habitacionSeleccionada = null;
+                buttonEliminarHabitacion.Enabled = false;
+                buttonModificarHabitacion.Enabled = false;
+            }
         }
-       
+
+        private void buttonRefrescar_Click(object sender, EventArgs e)
+        {
+            List<Habitacion> listaDeHabitaciones = oControllerHabitacion.buscarTodasLasHabitaciones();
+            dataGridViewListaDeHabitaciones.DataSource = listaDeHabitaciones;
+        }
     }
 }
 

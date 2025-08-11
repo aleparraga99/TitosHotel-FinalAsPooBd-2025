@@ -46,14 +46,14 @@
             // 
             // textBoxNumeroDeHabitacion
             // 
-            textBoxNumeroDeHabitacion.Location = new Point(132, 30);
+            textBoxNumeroDeHabitacion.Location = new Point(149, 32);
             textBoxNumeroDeHabitacion.Name = "textBoxNumeroDeHabitacion";
             textBoxNumeroDeHabitacion.Size = new Size(100, 23);
             textBoxNumeroDeHabitacion.TabIndex = 0;
             // 
             // textBoxDNIDelPasajero
             // 
-            textBoxDNIDelPasajero.Location = new Point(132, 64);
+            textBoxDNIDelPasajero.Location = new Point(149, 66);
             textBoxDNIDelPasajero.Name = "textBoxDNIDelPasajero";
             textBoxDNIDelPasajero.Size = new Size(100, 23);
             textBoxDNIDelPasajero.TabIndex = 1;
@@ -109,7 +109,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(30, 64);
+            label4.Location = new Point(47, 66);
             label4.Name = "label4";
             label4.Size = new Size(96, 15);
             label4.TabIndex = 8;
@@ -118,7 +118,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(43, 30);
+            label5.Location = new Point(60, 32);
             label5.Name = "label5";
             label5.Size = new Size(68, 15);
             label5.TabIndex = 9;
@@ -147,17 +147,17 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(246, 9);
+            label6.Location = new Point(265, 32);
             label6.Name = "label6";
             label6.Size = new Size(110, 15);
             label6.TabIndex = 12;
-            label6.Text = "Numero de reserva:";
+            label6.Text = "Numero de reserva:\r\n";
             // 
             // textBoxNumeroReserva
             // 
-            textBoxNumeroReserva.Location = new Point(256, 30);
+            textBoxNumeroReserva.Location = new Point(299, 50);
             textBoxNumeroReserva.Name = "textBoxNumeroReserva";
-            textBoxNumeroReserva.Size = new Size(100, 23);
+            textBoxNumeroReserva.Size = new Size(57, 23);
             textBoxNumeroReserva.TabIndex = 13;
             // 
             // viewCrearReserva

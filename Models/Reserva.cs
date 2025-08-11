@@ -14,7 +14,7 @@ namespace Tito_s_Hotel.Models
         public DateTime checkOut { get; set; }
         public Pasajero oPasajero { get; set; }
         public Habitacion oHabitacion { get; set; }
-        public float adelanto { get; set; }
+        public double adelanto { get; set; }
         public bool estado { get; set; }
 
         //Constructores
@@ -26,7 +26,7 @@ namespace Tito_s_Hotel.Models
             this.estado = true;
             this.id = id;
         }
-        public Reserva(int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion, float adelanto)
+        public Reserva(int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion, double adelanto)
         {
             this.estado = true;
 

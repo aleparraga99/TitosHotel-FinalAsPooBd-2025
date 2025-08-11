@@ -12,7 +12,7 @@ using Tito_s_Hotel.Views.viewsExcepciones;
 
 namespace Tito_s_Hotel.DAOs
 {
-    internal class DaoReserva : IDao <Reserva>
+    internal class DaoReserva : IDao<Reserva>
     {
         //SINGLENTON
         private static DaoReserva instanciaDaoReserva;
@@ -46,7 +46,6 @@ namespace Tito_s_Hotel.DAOs
                 comando.Parameters.AddWithValue("@Id_habitacion", oReserva.oHabitacion.id);
                 comando.Parameters.AddWithValue("@Id_pasajero", oReserva.oPasajero.id);
                 comando.ExecuteNonQuery();
-
             }
         }
         public void modificar(Reserva oReserva)
@@ -92,36 +91,32 @@ namespace Tito_s_Hotel.DAOs
                 SqlCommand comando = new SqlCommand(query, conexion);
                 if (conexion.State == ConnectionState.Closed)
                 {
-                    try
-                    {
-                        conexion.Open();
-                        SqlDataReader lector = comando.ExecuteReader();
-
-                        while (lector.Read())
-                        {
-                            Reserva reserva = new Reserva
-                            {
-                                id = lector.GetInt32(0),
-                                numReserva = lector.GetInt32(1),
-                                checkIn = lector.GetDateTime(2),
-                                checkOut = lector.GetDateTime(3),
-                                adelanto = lector.GetFloat(4),
-                                oHabitacion = new Habitacion { id = lector.GetInt32(5) },
-                                oPasajero = new Pasajero { id = lector.GetInt32(6) },
-                                estado = lector.GetBoolean(7)
-                            };
-                            listaDeReservas.Add(reserva);
-                        }
-                    }
-                    catch
-                    {
-                        excepcionConexionBaseDeDatos ventana = new excepcionConexionBaseDeDatos();
-                    }
+                    conexion.Open();
                 }
 
-                
-            }
+                    SqlDataReader lector = comando.ExecuteReader();
+
+                    while (lector.Read())
+                    {
+                        Reserva reserva = new Reserva
+                        {
+                            id = lector.GetInt32(0),
+                            numReserva = lector.GetInt32(1),
+                            checkIn = lector.GetDateTime(2),
+                            checkOut = lector.GetDateTime(3),
+                            adelanto = lector.GetDouble(4),
+                            //oHabitacion = new Habitacion { id = lector.GetInt32(5) },
+                            //oPasajero = new Pasajero { id = lector.GetInt32(6) },
+                            estado = lector.GetBoolean(7)
+                        };
+                        listaDeReservas.Add(reserva);
+                    }
+
+                }
+
             return listaDeReservas;
         }
+            
+        }
     }
-}
+

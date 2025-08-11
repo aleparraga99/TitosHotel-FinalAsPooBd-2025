@@ -123,7 +123,7 @@ namespace Tito_s_Hotel.DAOs
             {
                 string query = $"SELECT * FROM Habitacion WHERE Numero = @Numero;";
                 SqlCommand comando = new SqlCommand(query, conexion);
-                comando.Parameters.AddWithValue("Numero", numeroHabitacion);
+                comando.Parameters.AddWithValue("@Numero", numeroHabitacion);
                 if (conexion.State == ConnectionState.Closed)
                 {
                     conexion.Open();
@@ -173,7 +173,7 @@ namespace Tito_s_Hotel.DAOs
                         numero = lector.GetInt32(1),
                         camasSingle = lector.GetInt32(2),
                         camaDoble = lector.GetBoolean(3),
-                        //precio = lector.Get(4),
+                        precio = (float)lector.GetDouble(4),
                         estado = lector.GetBoolean(5)
                     };
                     listaDeHabitaciones.Add(habitacion);

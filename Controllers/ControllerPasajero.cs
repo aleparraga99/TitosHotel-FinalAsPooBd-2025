@@ -44,6 +44,7 @@ namespace Tito_s_Hotel.Controllers
             Pasajero pasajero = oDaoPasajero.buscarPasajeroPorDni(dniBuscado);
             return pasajero;
         }
+      
         public List<Pasajero> buscarTodosLosPasajeros()
         {
             List<Pasajero> listaDePasajeros = oDaoPasajero.buscarTodosLosPasajeros();

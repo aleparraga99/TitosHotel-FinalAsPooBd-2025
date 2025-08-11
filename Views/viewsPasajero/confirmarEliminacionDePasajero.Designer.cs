@@ -72,7 +72,6 @@
             Controls.Add(label1);
             Name = "confirmarEliminacionDePasajero";
             Text = "confirmarEliminacionDePasajero";
-            Load += confirmarEliminacionDePasajero_Load;
             ResumeLayout(false);
             PerformLayout();
         }

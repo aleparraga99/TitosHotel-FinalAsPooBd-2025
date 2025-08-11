@@ -81,7 +81,8 @@ namespace Tito_s_Hotel.DAOs
                 comando.ExecuteNonQuery();
             }
         }
-        public Pasajero buscarPasajeroPorDni(int dniBuscado) {
+        public Pasajero buscarPasajeroPorDni(int dniBuscado)
+        {
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
                 string query = $"SELECT * FROM Pasajero WHERE Dni = @Dni AND Estado = 1;";
@@ -95,7 +96,8 @@ namespace Tito_s_Hotel.DAOs
                 {
                     if (reader.Read())
                     {
-                        Pasajero pasajeroEncontrado = new Pasajero {
+                        Pasajero pasajeroEncontrado = new Pasajero
+                        {
 
                             id = reader.GetInt32(reader.GetOrdinal("Id_pasajero")),
                             nombre = reader.GetString(reader.GetOrdinal("Nombre")),
@@ -140,7 +142,6 @@ namespace Tito_s_Hotel.DAOs
                             correo = lector.GetString(5),
                             estado = lector.GetBoolean(6)
                         };
-
                         listaDePasajeros.Add(pasajero);
                 }
             }

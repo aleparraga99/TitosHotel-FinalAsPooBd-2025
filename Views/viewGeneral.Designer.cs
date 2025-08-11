@@ -37,6 +37,7 @@
             buttonPasajeros = new Button();
             label2 = new Label();
             buttonNuevaReserva = new Button();
+            buttonRefrescar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListaDeReservas).BeginInit();
             SuspendLayout();
             // 
@@ -127,11 +128,23 @@
             buttonNuevaReserva.UseVisualStyleBackColor = true;
             buttonNuevaReserva.Click += buttonNuevaReserva_Click;
             // 
+            // buttonRefrescar
+            // 
+            buttonRefrescar.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonRefrescar.Location = new Point(173, 288);
+            buttonRefrescar.Name = "buttonRefrescar";
+            buttonRefrescar.Size = new Size(42, 46);
+            buttonRefrescar.TabIndex = 16;
+            buttonRefrescar.Text = "🔄";
+            buttonRefrescar.UseVisualStyleBackColor = true;
+            buttonRefrescar.Click += buttonRefrescar_Click;
+            // 
             // viewGeneral
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(964, 346);
+            Controls.Add(buttonRefrescar);
             Controls.Add(buttonNuevaReserva);
             Controls.Add(label2);
             Controls.Add(buttonPasajeros);
@@ -160,5 +173,6 @@
         private Button buttonPasajeros;
         private Label label2;
         private Button buttonNuevaReserva;
+        private Button buttonRefrescar;
     }
 }

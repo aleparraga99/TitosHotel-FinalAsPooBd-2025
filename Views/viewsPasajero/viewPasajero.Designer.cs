@@ -37,6 +37,7 @@
             label2 = new Label();
             textBoxDNIPasajero = new TextBox();
             buttonVolver = new Button();
+            buttonRefrescar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListaDePasajeros).BeginInit();
             SuspendLayout();
             // 
@@ -124,11 +125,23 @@
             buttonVolver.UseVisualStyleBackColor = true;
             buttonVolver.Click += buttonVolver_Click;
             // 
+            // buttonRefrescar
+            // 
+            buttonRefrescar.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonRefrescar.Location = new Point(613, 240);
+            buttonRefrescar.Name = "buttonRefrescar";
+            buttonRefrescar.Size = new Size(42, 46);
+            buttonRefrescar.TabIndex = 18;
+            buttonRefrescar.Text = "🔄";
+            buttonRefrescar.UseVisualStyleBackColor = true;
+            buttonRefrescar.Click += buttonRefrescar_Click;
+            // 
             // viewPasajero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(885, 312);
+            Controls.Add(buttonRefrescar);
             Controls.Add(buttonVolver);
             Controls.Add(textBoxDNIPasajero);
             Controls.Add(label2);
@@ -157,5 +170,6 @@
         private Label label2;
         private TextBox textBoxDNIPasajero;
         private Button buttonVolver;
+        private Button buttonRefrescar;
     }
 }

@@ -37,6 +37,7 @@
             buttonBuscar = new Button();
             label2 = new Label();
             textBoxBuscarPorNumero = new TextBox();
+            buttonRefrescar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListaDeHabitaciones).BeginInit();
             SuspendLayout();
             // 
@@ -124,11 +125,23 @@
             textBoxBuscarPorNumero.Size = new Size(56, 23);
             textBoxBuscarPorNumero.TabIndex = 15;
             // 
+            // buttonRefrescar
+            // 
+            buttonRefrescar.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonRefrescar.Location = new Point(612, 258);
+            buttonRefrescar.Name = "buttonRefrescar";
+            buttonRefrescar.Size = new Size(42, 46);
+            buttonRefrescar.TabIndex = 17;
+            buttonRefrescar.Text = "🔄";
+            buttonRefrescar.UseVisualStyleBackColor = true;
+            buttonRefrescar.Click += buttonRefrescar_Click;
+            // 
             // viewHabitacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(867, 327);
+            Controls.Add(buttonRefrescar);
             Controls.Add(textBoxBuscarPorNumero);
             Controls.Add(label2);
             Controls.Add(buttonBuscar);
@@ -157,5 +170,6 @@
         private Button buttonBuscar;
         private Label label2;
         private TextBox textBoxBuscarPorNumero;
+        private Button buttonRefrescar;
     }
 }

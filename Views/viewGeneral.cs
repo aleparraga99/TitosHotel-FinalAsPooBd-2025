@@ -21,6 +21,7 @@ namespace Tito_s_Hotel
     {
         ControllerHabitacion oControllerHabitacion = ControllerHabitacion.GetInstanciaDeControllerDeHabitacion();
         ControllerPasajero oControllerPasajero = ControllerPasajero.GetInstanciaDeControllerdePasajero();
+        ControllerReserva oContollerReserva = ControllerReserva.GetInstanciaControllerReserva();
         private DaoReserva oDaoReserva = DaoReserva.GetDaoReserva();
         private viewCrearPasajero oViewPasajero;
         private List<Reserva> listaDeReservasEnDataGridView = new List<Reserva>();
@@ -32,12 +33,17 @@ namespace Tito_s_Hotel
         {
             buttonEliminar.Enabled = false;
             buttonModificar.Enabled = false;
-            List<Reserva> todasLasReservas = oDaoReserva.BuscarTodasLasReservas();
+            dataGridViewListaDeReservas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewListaDeReservas.MultiSelect = false;
+            dataGridViewListaDeReservas.ReadOnly = true;
+
+            List<Reserva> todasLasReservas = oContollerReserva.buscarTodasLasReservas();
             if (todasLasReservas != null)
             {
                 dataGridViewListaDeReservas.DataSource = todasLasReservas;
             }
-            else {
+            else
+            {
                 dataGridViewListaDeReservas.DataSource = null;
             }
         }
@@ -98,6 +104,12 @@ namespace Tito_s_Hotel
                 excepcionPasajerosHabitacionesNecesarios ventana = new excepcionPasajerosHabitacionesNecesarios();
                 ventana.ShowDialog();
             }
+        }
+
+        private void buttonRefrescar_Click(object sender, EventArgs e)
+        {
+            List<Reserva> todasLasReservas = oContollerReserva.buscarTodasLasReservas();
+            dataGridViewListaDeReservas.DataSource = todasLasReservas;
         }
     }
 }

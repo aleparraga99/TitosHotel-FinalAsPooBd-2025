@@ -116,7 +116,7 @@ namespace Tito_s_Hotel.Views.Pasajero
         }
         private void dataGridViewListaDePasajeros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dataGridViewListaDePasajeros.SelectedRows.Count > 0)
+            if (dataGridViewListaDePasajeros.SelectedRows.Count > 0)
             {
                 buttonEliminarPasajero.Enabled = true;
                 buttonModificarPasajero.Enabled = true;
@@ -126,6 +126,12 @@ namespace Tito_s_Hotel.Views.Pasajero
                 buttonEliminarPasajero.Enabled = false;
                 buttonModificarPasajero.Enabled = false;
             }
+        }
+
+        private void buttonRefrescar_Click(object sender, EventArgs e)
+        {
+            List<Models.Pasajero> listaDePasajeros = oControllerPasajero.buscarTodosLosPasajeros();
+            dataGridViewListaDePasajeros.DataSource = listaDePasajeros;
         }
     }
 }
