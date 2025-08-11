@@ -24,15 +24,20 @@ namespace Tito_s_Hotel.Views
             InitializeComponent();
         }
 
+        //Boton VOLVER
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        //Boton AGREGAR HABITACION
         private void buttonAgregarHabitacion_Click(object sender, EventArgs e)
         {
             viewCrearHabitacion ventana = new viewCrearHabitacion();
             ventana.ShowDialog();
         }
+
+        //Boton ELIMINAR
         private void buttonEliminarHabitacion_Click(object sender, EventArgs e)
         {
             if (habitacionSeleccionada != null)
@@ -41,6 +46,8 @@ namespace Tito_s_Hotel.Views
                 ventana.ShowDialog();
             }
         }
+
+        //Boton MODIFICAR
         private void buttonModificarHabitacion_Click(object sender, EventArgs e)
         {
             if (habitacionSeleccionada != null)
@@ -49,6 +56,8 @@ namespace Tito_s_Hotel.Views
                 ventana.ShowDialog();
             }
         }
+
+        //Boton BUSCAR
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             try
@@ -77,6 +86,8 @@ namespace Tito_s_Hotel.Views
 
 
         }
+
+        //Se cargan los elementos de la ventana
         private void viewHabitacion_Load(object sender, EventArgs e)
         {
             //Se inhabilitan los botones y se configura el dataGrid
@@ -103,6 +114,7 @@ namespace Tito_s_Hotel.Views
 
             cargandoFormulario = false;
         }
+
         private void dataGridViewListaDeHabitaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridViewListaDeHabitaciones.SelectedRows.Count > 0)

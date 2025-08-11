@@ -16,9 +16,12 @@ namespace Tito_s_Hotel
     public partial class confirmarEliminacionDeReserva : Form
     {
         ControllerReserva oControllerReserva = ControllerReserva.GetInstanciaControllerReserva();
+        private Reserva reservaParaEliminar;
         public confirmarEliminacionDeReserva(Reserva reservaSeleccionada)
         {
             InitializeComponent();
+            reservaParaEliminar = reservaSeleccionada;
+           
         }
         private void buttonCancelarEliminacionDeReserva_Click(object sender, EventArgs e)
         {
@@ -27,7 +30,7 @@ namespace Tito_s_Hotel
 
         private void buttonConfirmarEliminarDeReserva_Click(object sender, EventArgs e)
         {
-            //oControllerReserva.eliminar();
+            oControllerReserva.eliminar(reservaParaEliminar.id);
             this.Close();
         }
     }

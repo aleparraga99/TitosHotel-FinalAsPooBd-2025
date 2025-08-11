@@ -68,17 +68,17 @@ namespace Tito_s_Hotel.DAOs
                 comando.ExecuteNonQuery();
             }
         }
-        public void eliminar(Reserva oReserva)
+        public void eliminar(int id)
         {
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
-                string query = "UPDATE Reserva SET Estado = 0 WHERE Id_Reserva = @id;";
+                string query = "UPDATE Reserva SET Estado = 0 WHERE Id = @id;";
                 SqlCommand comando = new SqlCommand(query, conexion);
                 if (conexion.State == ConnectionState.Closed)
                 {
                     conexion.Open();
                 }
-                comando.Parameters.AddWithValue("@id", oReserva.id);
+                comando.Parameters.AddWithValue("@id", id);
                 comando.ExecuteNonQuery();
             }
         }

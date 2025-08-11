@@ -27,8 +27,9 @@ namespace Tito_s_Hotel
         //private DaoReserva oDaoReserva = DaoReserva.GetDaoReserva();
         private viewCrearPasajero oViewPasajero;
         private List<Reserva> listaDeReservasEnDataGridView = new List<Reserva>();
-        private bool cargandoFormulario = true;
-        Reserva reservaSeleccionada = null; //Cumple la funcion de "Bandera"
+        private bool cargandoFormulario = true; //Cumple la funcion de "Bandera"
+
+        private Reserva reservaSeleccionada = null; 
         public viewGeneral()
         {
             InitializeComponent();
@@ -85,9 +86,8 @@ namespace Tito_s_Hotel
         //Boton ELIMINAR
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            if (dataGridViewListaDeReservas.SelectedRows.Count > 0)
+            if (reservaSeleccionada != null)
             {
-                Reserva reservaSeleccionada = (Reserva)dataGridViewListaDeReservas.SelectedRows[0].DataBoundItem;
                 confirmarEliminacionDeReserva ventana = new confirmarEliminacionDeReserva(reservaSeleccionada);
                 ventana.ShowDialog();
             }
