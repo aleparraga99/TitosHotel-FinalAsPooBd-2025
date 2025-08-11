@@ -15,13 +15,88 @@ namespace Tito_s_Hotel.Views.Pasajero
 {
     public partial class viewPasajero : Form
     {
+        //Se llama a la CONTROLADORA de Pasajero (SINGLENTON)
         ControllerPasajero oControllerPasajero = ControllerPasajero.GetInstanciaDeControllerdePasajero();
+       
+        //ATRIBUTOS
         private Models.Pasajero pasajeroSeleccionado = null;
-        private bool cargandoFormulario = true;
+        private bool cargandoFormulario = true; //Cumple la funcion de "Bandera"
+
+        //CONSTRUCTOR
         public viewPasajero()
         {
             InitializeComponent();
         }
+
+
+
+        //Se cargan los elementos de la ventana
+        private void viewPasajero_Load(object sender, EventArgs e)
+        {
+            //Se inhabilitan los botones y se configura el dataGrd
+            buttonEliminarPasajero.Enabled = false;
+            buttonModificarPasajero.Enabled = false;
+            dataGridViewListaDePasajeros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewListaDePasajeros.MultiSelect = false;
+            dataGridViewListaDePasajeros.ReadOnly = true;
+
+            //Se trae la lista de todos los pasajeros cargados
+            List<Models.Pasajero> listaDePasajeros = oControllerPasajero.buscarTodosLosPasajeros();
+            if (listaDePasajeros.Count > 0)
+            {
+                dataGridViewListaDePasajeros.DataSource = listaDePasajeros;
+            }
+            else
+            {
+                dataGridViewListaDePasajeros.DataSource = null;
+            }
+
+            cargandoFormulario = false;
+        }
+
+        //Detecta si hay alguna fila seleccionada y captura el Pasajero seleccionada y habilita los botones ELIMINAR y MODIFICAR si asi es
+        private void dataGridViewListaDePasajeros_SelectionChanged(object sender, EventArgs e)
+        {
+
+            if (cargandoFormulario) return;
+
+            if (dataGridViewListaDePasajeros.CurrentRow != null)
+            {
+                pasajeroSeleccionado = (Models.Pasajero)dataGridViewListaDePasajeros.CurrentRow.DataBoundItem;
+                buttonEliminarPasajero.Enabled = true;
+                buttonModificarPasajero.Enabled = true;
+            }
+            else
+            {
+                pasajeroSeleccionado = null;
+                buttonEliminarPasajero.Enabled = false;
+                buttonModificarPasajero.Enabled = false;
+            }
+        }
+
+        //Se habilitan los botones de ELIMINAR y MODIFICAR cuando se selecciona alguna Pasajero de la lista
+        private void dataGridViewListaDePasajeros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        {
+            if (dataGridViewListaDePasajeros.SelectedRows.Count > 0)
+            {
+                buttonEliminarPasajero.Enabled = true;
+                buttonModificarPasajero.Enabled = true;
+            }
+            else
+            {
+                buttonEliminarPasajero.Enabled = false;
+                buttonModificarPasajero.Enabled = false;
+            }
+        }
+
+
+
+        // BOTONES //
+
+
+
+        //MODIFICAR
         private void buttonModificarPasajero_Click(object sender, EventArgs e)
         {
 
@@ -29,6 +104,8 @@ namespace Tito_s_Hotel.Views.Pasajero
             //Capturar datos del dataGrid. Supongo que se tiene que mostrar la ventana para cargar los datos
             //oControllerPasajero.modificar();
         }
+
+        //ELIMINAR
         private void buttonEliminarPasajero_Click(object sender, EventArgs e)
         {
             Models.Pasajero oPasajero = (Models.Pasajero)dataGridViewListaDePasajeros.SelectedRows[0].DataBoundItem;
@@ -36,11 +113,15 @@ namespace Tito_s_Hotel.Views.Pasajero
             ventana.ShowDialog();
 
         }
+
+        //AGREGAR PASAJERO
         private void buttonAgregarPasajero_Click(object sender, EventArgs e)
         {
             viewCrearPasajero ventana = new viewCrearPasajero();
             ventana.ShowDialog();
         }
+
+        //BUSCAR
         private void buttonBuscarPasajeroPorDni_Click(object sender, EventArgs e)
         {
             try
@@ -70,64 +151,14 @@ namespace Tito_s_Hotel.Views.Pasajero
             cargandoFormulario = false;
 
         }
+
+        //VOLVER
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private void dataGridViewListaDePasajeros_SelectionChanged(object sender, EventArgs e)
-        {
-
-            if (cargandoFormulario) return;
-
-            if (dataGridViewListaDePasajeros.CurrentRow != null)
-            {
-                pasajeroSeleccionado = (Models.Pasajero)dataGridViewListaDePasajeros.CurrentRow.DataBoundItem;
-                buttonEliminarPasajero.Enabled = true;
-                buttonModificarPasajero.Enabled = true;
-            }
-            else
-            {
-                pasajeroSeleccionado = null;
-                buttonEliminarPasajero.Enabled = false;
-                buttonModificarPasajero.Enabled = false;
-            }
-        }
-        private void viewPasajero_Load(object sender, EventArgs e)
-        {
-            //Se inhabilitan los botones y se configura el dataGrd
-            buttonEliminarPasajero.Enabled = false;
-            buttonModificarPasajero.Enabled = false;
-            dataGridViewListaDePasajeros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewListaDePasajeros.MultiSelect = false;
-            dataGridViewListaDePasajeros.ReadOnly = true;
-
-            //Se trae la lista de todos los pasajeros cargados
-            List<Models.Pasajero> listaDePasajeros = oControllerPasajero.buscarTodosLosPasajeros();
-            if (listaDePasajeros.Count > 0)
-            {
-                dataGridViewListaDePasajeros.DataSource = listaDePasajeros;
-            }
-            else
-            {
-                dataGridViewListaDePasajeros.DataSource = null;
-            }
-
-            cargandoFormulario = false;
-        }
-        private void dataGridViewListaDePasajeros_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridViewListaDePasajeros.SelectedRows.Count > 0)
-            {
-                buttonEliminarPasajero.Enabled = true;
-                buttonModificarPasajero.Enabled = true;
-            }
-            else
-            {
-                buttonEliminarPasajero.Enabled = false;
-                buttonModificarPasajero.Enabled = false;
-            }
-        }
-
+       
+        //REFRESCAR
         private void buttonRefrescar_Click(object sender, EventArgs e)
         {
             List<Models.Pasajero> listaDePasajeros = oControllerPasajero.buscarTodosLosPasajeros();

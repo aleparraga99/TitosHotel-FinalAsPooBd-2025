@@ -16,28 +16,102 @@ namespace Tito_s_Hotel.Views
 {
     public partial class viewHabitacion : Form
     {
+        //Se llama a la CONTROLADORA de Habitacion (SINGLENTON)
         ControllerHabitacion oControllerHabitacion = ControllerHabitacion.GetInstanciaDeControllerDeHabitacion();
+       
+        //ATRIBUTOS
         private Habitacion habitacionSeleccionada = null;
-        private bool cargandoFormulario = true;
+        private bool cargandoFormulario = true; //Cumple la funcion de "Bandera"
+       
+        //CONSTRUCTOR
         public viewHabitacion()
         {
             InitializeComponent();
         }
 
-        //Boton VOLVER
+        //Se cargan los elementos de la ventana
+        private void viewHabitacion_Load(object sender, EventArgs e)
+        {
+            //Se inhabilitan los botones y se configura el dataGrid
+            buttonEliminarHabitacion.Enabled = false;
+            buttonModificarHabitacion.Enabled = false;
+            dataGridViewListaDeHabitaciones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewListaDeHabitaciones.MultiSelect = false;
+            dataGridViewListaDeHabitaciones.ReadOnly = true;
+
+            //Se obtienen las habitaciones
+            List<Habitacion> listaDeHabitaciones = oControllerHabitacion.buscarTodasLasHabitaciones();
+
+            //Se cargan las habitaciones al dataGrid
+            if (listaDeHabitaciones.Count > 0)
+            {
+                dataGridViewListaDeHabitaciones.DataSource = listaDeHabitaciones;
+            }
+            else
+            {
+                dataGridViewListaDeHabitaciones.DataSource = null;
+            }
+
+            dataGridViewListaDeHabitaciones.SelectionChanged += dataGridViewListaDeHabitaciones_SelectionChanged;
+
+            cargandoFormulario = false;
+        }
+        
+        //Se habilitan los botones de ELIMINAR y MODIFICAR cuando se selecciona alguna Habitacion de la lista
+        private void dataGridViewListaDeHabitaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewListaDeHabitaciones.SelectedRows.Count > 0)
+            {
+                buttonEliminarHabitacion.Enabled = true;
+                buttonModificarHabitacion.Enabled = true;
+            }
+            else
+            {
+                buttonEliminarHabitacion.Enabled = false;
+                buttonModificarHabitacion.Enabled = false;
+            }
+        }
+
+        //Detecta si hay alguna fila seleccionada y captura la Habitacion seleccionada y habilita los botones ELIMINAR y MODIFICAR si asi es
+        private void dataGridViewListaDeHabitaciones_SelectionChanged(object sender, EventArgs e)
+        {
+            if (cargandoFormulario) return;
+
+            if (dataGridViewListaDeHabitaciones.CurrentRow != null)
+            {
+                habitacionSeleccionada = (Habitacion)dataGridViewListaDeHabitaciones.CurrentRow.DataBoundItem;
+                buttonEliminarHabitacion.Enabled = true;
+                buttonModificarHabitacion.Enabled = true;
+            }
+            else
+            {
+                habitacionSeleccionada = null;
+                buttonEliminarHabitacion.Enabled = false;
+                buttonModificarHabitacion.Enabled = false;
+            }
+        }
+
+
+
+
+        // BOTONES //
+
+
+
+        //VOLVER
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        //Boton AGREGAR HABITACION
+        //AGREGAR HABITACION
         private void buttonAgregarHabitacion_Click(object sender, EventArgs e)
         {
             viewCrearHabitacion ventana = new viewCrearHabitacion();
             ventana.ShowDialog();
         }
 
-        //Boton ELIMINAR
+        //ELIMINAR
         private void buttonEliminarHabitacion_Click(object sender, EventArgs e)
         {
             if (habitacionSeleccionada != null)
@@ -87,66 +161,7 @@ namespace Tito_s_Hotel.Views
 
         }
 
-        //Se cargan los elementos de la ventana
-        private void viewHabitacion_Load(object sender, EventArgs e)
-        {
-            //Se inhabilitan los botones y se configura el dataGrid
-            buttonEliminarHabitacion.Enabled = false;
-            buttonModificarHabitacion.Enabled = false;
-            dataGridViewListaDeHabitaciones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewListaDeHabitaciones.MultiSelect = false;
-            dataGridViewListaDeHabitaciones.ReadOnly = true;
-
-            //Se obtienen las habitaciones
-            List<Habitacion> listaDeHabitaciones = oControllerHabitacion.buscarTodasLasHabitaciones();
-
-            //Se cargan las habitaciones al dataGrid
-            if (listaDeHabitaciones.Count > 0)
-            {
-                dataGridViewListaDeHabitaciones.DataSource = listaDeHabitaciones;
-            }
-            else
-            {
-                dataGridViewListaDeHabitaciones.DataSource = null;
-            }
-
-            dataGridViewListaDeHabitaciones.SelectionChanged += dataGridViewListaDeHabitaciones_SelectionChanged;
-
-            cargandoFormulario = false;
-        }
-
-        private void dataGridViewListaDeHabitaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridViewListaDeHabitaciones.SelectedRows.Count > 0)
-            {
-                buttonEliminarHabitacion.Enabled = true;
-                buttonModificarHabitacion.Enabled = true;
-            }
-            else
-            {
-                buttonEliminarHabitacion.Enabled = false;
-                buttonModificarHabitacion.Enabled = false;
-            }
-        }
-        private void dataGridViewListaDeHabitaciones_SelectionChanged(object sender, EventArgs e)
-        {
-            if (cargandoFormulario) return;
-
-            if (dataGridViewListaDeHabitaciones.CurrentRow != null)
-            {
-                habitacionSeleccionada = (Habitacion)dataGridViewListaDeHabitaciones.CurrentRow.DataBoundItem;
-                buttonEliminarHabitacion.Enabled = true;
-                buttonModificarHabitacion.Enabled = true;
-            }
-            else
-            {
-                habitacionSeleccionada = null;
-                buttonEliminarHabitacion.Enabled = false;
-                buttonModificarHabitacion.Enabled = false;
-            }
-        }
-
-        //BOTON DE REFRESCAR : Actualiza la lista del dataGrid
+        //REFRESCAR
         private void buttonRefrescar_Click(object sender, EventArgs e)
         {
             List<Habitacion> listaDeHabitaciones = oControllerHabitacion.buscarTodasLasHabitaciones();

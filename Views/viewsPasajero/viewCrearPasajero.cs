@@ -17,18 +17,29 @@ namespace Tito_s_Hotel.Views
 {
     public partial class viewCrearPasajero : Form
     {
+        //Se llama a la CONTROLADORA de Pasajero (SINGLENTON)
         ControllerPasajero oControllerPasajero = ControllerPasajero.GetInstanciaDeControllerdePasajero();
+       
+        //CONSTRUCTOR
         public viewCrearPasajero()
         {
             InitializeComponent();
         }
-        
+
+
+
+        // BOTONES // 
+
+
+
+        // CANCELAR
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void buttonGuardar_Click(object sender, EventArgs e) 
+        //GUARDAR
+        private void buttonGuardar_Click(object sender, EventArgs e)
         {
             //Se capturan los datos
             string nombre = textBoxStringNombre.Text;
@@ -36,7 +47,7 @@ namespace Tito_s_Hotel.Views
             string dni = textBoxStringDni.Text;
             string telefono = textBoxStringTelefono.Text;
             string correo = textBoxStringCorreo.Text;
-       
+
             //Se construye y crea el objeto Pasajero
             Models.Pasajero oPasajero = new Models.Pasajero(nombre, apellido, telefono, dni, correo);
             oControllerPasajero.crear(oPasajero.nombre, oPasajero.apellido, oPasajero.telefono, oPasajero.dni, oPasajero.correo);

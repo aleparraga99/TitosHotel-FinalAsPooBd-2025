@@ -16,13 +16,24 @@ namespace Tito_s_Hotel.Views.viewsReserva
 {
     public partial class viewCrearReserva : Form
     {
+        //Se llama a las CONTROLADORAS de Habotacion, Pasajero y Reserva (SINGLENTON)
         ControllerReserva oControllerReserva = ControllerReserva.GetInstanciaControllerReserva();
         ControllerHabitacion oControllerHabitacion = ControllerHabitacion.GetInstanciaDeControllerDeHabitacion();
         ControllerPasajero oControllerPasajero = ControllerPasajero.GetInstanciaDeControllerdePasajero();
+       
+        //CONSTRUCTOR
         public viewCrearReserva()
         {
             InitializeComponent();
         }
+
+
+
+        // BOTONES //
+
+
+
+        //GUARDAR
         private void buttonGuardarReserva_Click(object sender, EventArgs e)
         {
             //Se capturan los datos
@@ -47,6 +58,8 @@ namespace Tito_s_Hotel.Views.viewsReserva
 
             this.Close();
         }
+
+        //CANCELAR
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();

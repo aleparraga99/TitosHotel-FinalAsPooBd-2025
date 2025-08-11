@@ -17,15 +17,25 @@ namespace Tito_s_Hotel
 {
     public partial class filtrarDisponibilidadCapacidadPeriodo : Form
     {
+        //Se llaman a las CONTROLADORAS de Reserva y Habitacion (SINGLENTON)
         private ControllerHabitacion oControllerHabitacion = ControllerHabitacion.GetInstanciaDeControllerDeHabitacion();
         private ControllerReserva oControllerReserva = ControllerReserva.GetInstanciaControllerReserva();
+        
+        //CONSTRUCTOR
         public filtrarDisponibilidadCapacidadPeriodo()
         {
             InitializeComponent();
         }
 
+
+
+        // BOTONES // 
+
+
+        //BUSCAR
         private void buttonBuscar_Click(object sender, EventArgs e) 
         {
+            //Se generan las listas de Reservas y Habitaciones
             List<Habitacion> habitaciones = oControllerHabitacion.buscarTodasLasHabitaciones();
             List<Reserva> reservas = oControllerReserva.buscarTodasLasReservas();
 
@@ -39,6 +49,7 @@ namespace Tito_s_Hotel
                     dataGridViewListaDeHabitacionesDisponibles.DataSource = habitacionesConCapacidadRequerida;
                 }
                 else {
+
                     //Se capturan las fechas
                     DateTime chekInRequerido = dateTimePickerIn.Value;
                     DateTime checkOutRequerido = dateTimePickerOut.Value;
@@ -56,6 +67,8 @@ namespace Tito_s_Hotel
                 ventana.ShowDialog();
             }
         }
+
+        //VOLVER
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             this.Close();

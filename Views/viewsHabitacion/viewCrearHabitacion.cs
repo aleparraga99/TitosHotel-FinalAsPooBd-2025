@@ -15,18 +15,27 @@ namespace Tito_s_Hotel.Views
 {
     public partial class viewCrearHabitacion : Form
     {
-        DaoHabitacion oDaoHabitacion = DaoHabitacion.GetDaoHabitacion();
+        //Se llama a la CONTROLADORA de Habitacion (SINGLENTON)
         ControllerHabitacion oControllerHabitacion = ControllerHabitacion.GetInstanciaDeControllerDeHabitacion();
 
-        //Eventos
+        //CONSTRUCTOR
         public viewCrearHabitacion()
         {
             InitializeComponent();
         }
+
+
+
+        // BOTONES //
+
+
+        //CANCELAR
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        //GUARDAR
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             //Tags que identifican numericamente las opciones de camas single
@@ -79,7 +88,5 @@ namespace Tito_s_Hotel.Views
 
             this.Close();
         }
-
-       
     }
 }
