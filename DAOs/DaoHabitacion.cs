@@ -28,7 +28,7 @@ namespace Tito_s_Hotel.DAOs
             return instanciaDaoHabitacion;
         }
 
-        //Métodos de comportamiento
+        //METODOS DE COMPORTAMIENTO
         public List<Habitacion> filtrarPorDisponibilidad(DateTime checkInRequerido, DateTime checkOutRequerido)
         {
             List<Habitacion> habitacionesDisponiblesDentroDeUnPeriodo = new List<Habitacion>();

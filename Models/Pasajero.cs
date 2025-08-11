@@ -8,6 +8,7 @@ namespace Tito_s_Hotel.Models
 {
     public class Pasajero
     {
+        //ATRIBUTOS
         public int id { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
@@ -16,7 +17,7 @@ namespace Tito_s_Hotel.Models
         public string correo { get; set; }
         public bool estado { get; set; }
 
-        //Constructores
+        //CONSTRUCTORES
         public Pasajero()
         {
             this.estado = true;

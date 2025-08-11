@@ -8,6 +8,7 @@ namespace Tito_s_Hotel.Models
 {
     public class Reserva
     {
+        //ATRIBUTOS
         public int id { get; set; }
         public int numReserva { get; set; }
         public DateTime checkIn { get; set; }
@@ -17,7 +18,7 @@ namespace Tito_s_Hotel.Models
         public double adelanto { get; set; }
         public bool estado { get; set; }
 
-        //Constructores
+        //CONSTRUCTORES
         public Reserva()
         {
             this.estado = true;

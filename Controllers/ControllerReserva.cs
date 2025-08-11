@@ -23,9 +23,8 @@ namespace Tito_s_Hotel.Controllers
             }
             return instanciaControllerReserva;
         }
-        
 
-        //Metodos de comportamiento
+        //METODOS DE COMPORTAMIENTO
         public int CalcularDiasTotales(DateTime checkIn, DateTime checkOut)
         {
             TimeSpan diferencia = checkOut - checkIn;

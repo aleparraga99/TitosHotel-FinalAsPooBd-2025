@@ -9,6 +9,7 @@ namespace Tito_s_Hotel.Models
 {
     public class Habitacion
     {
+        //ATRIBUTOS
         public int id { get; set; }
         public int numero { get; set; }
         public int camasSingle { get; set; }
@@ -16,7 +17,7 @@ namespace Tito_s_Hotel.Models
         public float precio { get; set; }
         public bool estado { get; set; }
 
-        //Constructores
+        //CONSTRUCTORES
         public Habitacion()
         {
 

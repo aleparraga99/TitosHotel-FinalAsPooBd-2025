@@ -26,7 +26,7 @@ namespace Tito_s_Hotel.Controllers
             return instanciaDeControllerHabitacion;
         }
 
-        //Metodos de comportamiento
+        //METODOS DE COMPORTAMIENTO
         public int calcularCapacidad(int camasSingle, Boolean camaDoble) {
             int capacidadPersonas = camasSingle;
             if (camaDoble)
@@ -70,8 +70,6 @@ namespace Tito_s_Hotel.Controllers
         {
             Habitacion oHabitacion = new Habitacion(numero, camasSingle, camaDoble, precio);
             oDaoHabitacion.crear(oHabitacion);
-            // se tuvo que crear un nuevo constructor que no reciba id. 
-            //seguramente se tendrá que hacer lo mismo para el resto de modelos
         }
         public void modificar(int id, int numero, int camasSingle, bool camaDoble, float precio)
         {
