@@ -86,8 +86,10 @@ namespace Tito_s_Hotel.Views
             dataGridViewListaDeHabitaciones.MultiSelect = false;
             dataGridViewListaDeHabitaciones.ReadOnly = true;
 
-            //Se obtienen las habitaciones y se cargan al dataGrid
+            //Se obtienen las habitaciones
             List<Habitacion> listaDeHabitaciones = oControllerHabitacion.buscarTodasLasHabitaciones();
+
+            //Se cargan las habitaciones al dataGrid
             if (listaDeHabitaciones.Count > 0)
             {
                 dataGridViewListaDeHabitaciones.DataSource = listaDeHabitaciones;
@@ -132,6 +134,7 @@ namespace Tito_s_Hotel.Views
             }
         }
 
+        //BOTON DE REFRESCAR : Actualiza la lista del dataGrid
         private void buttonRefrescar_Click(object sender, EventArgs e)
         {
             List<Habitacion> listaDeHabitaciones = oControllerHabitacion.buscarTodasLasHabitaciones();

@@ -68,6 +68,7 @@
             dataGridViewListaDeReservas.Name = "dataGridViewListaDeReservas";
             dataGridViewListaDeReservas.Size = new Size(779, 230);
             dataGridViewListaDeReservas.TabIndex = 8;
+            dataGridViewListaDeReservas.CellContentClick += dataGridViewListaDeReservas_CellContentClick;
             // 
             // buttonModificar
             // 

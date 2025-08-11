@@ -27,8 +27,8 @@ namespace Tito_s_Hotel
 
         private void buttonConfirmarEliminarDeReserva_Click(object sender, EventArgs e)
         {
-            //Tengo que enviar lo atributos del objeto seleccionado
             //oControllerReserva.eliminar();
+            this.Close();
         }
     }
 }

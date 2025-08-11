@@ -44,9 +44,8 @@ namespace Tito_s_Hotel.Controllers
             Reserva oReserva = new Reserva(numReserva, checkIn, checkOut, oPasajero, oHabitacion, adelanto);
             oDaoReserva.modificar(oReserva);
         }
-        public void eliminar(int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion, double adelanto)
+        public void eliminar(Reserva oReserva)
         {
-            Reserva oReserva = new Reserva(numReserva, checkIn, checkOut, oPasajero, oHabitacion, adelanto);
             oDaoReserva.eliminar(oReserva);
         }
         public List<Reserva> buscarTodasLasReservas()

@@ -19,16 +19,21 @@ namespace Tito_s_Hotel
 {
     public partial class viewGeneral : Form
     {
+        //Se llaman a las instancias de las CONTROLLERS (SINGLENTON)
         ControllerHabitacion oControllerHabitacion = ControllerHabitacion.GetInstanciaDeControllerDeHabitacion();
         ControllerPasajero oControllerPasajero = ControllerPasajero.GetInstanciaDeControllerdePasajero();
         ControllerReserva oContollerReserva = ControllerReserva.GetInstanciaControllerReserva();
-        private DaoReserva oDaoReserva = DaoReserva.GetDaoReserva();
+
+        //private DaoReserva oDaoReserva = DaoReserva.GetDaoReserva();
         private viewCrearPasajero oViewPasajero;
         private List<Reserva> listaDeReservasEnDataGridView = new List<Reserva>();
+        private bool cargandoFormulario = true;
+        Reserva reservaSeleccionada = null; //Cumple la funcion de "Bandera"
         public viewGeneral()
         {
             InitializeComponent();
         }
+        //Se cargan los elemenetos al abrirse la ventana
         private void viewGeneral_Load(object sender, EventArgs e)
         {
             buttonEliminar.Enabled = false;
@@ -37,7 +42,10 @@ namespace Tito_s_Hotel
             dataGridViewListaDeReservas.MultiSelect = false;
             dataGridViewListaDeReservas.ReadOnly = true;
 
+            //Se buscan las Reservas y se cargan a una lista 
             List<Reserva> todasLasReservas = oContollerReserva.buscarTodasLasReservas();
+
+            //Se carga la lista de Reservas al dataGridView
             if (todasLasReservas != null)
             {
                 dataGridViewListaDeReservas.DataSource = todasLasReservas;
@@ -46,7 +54,13 @@ namespace Tito_s_Hotel
             {
                 dataGridViewListaDeReservas.DataSource = null;
             }
+
+            dataGridViewListaDeReservas.SelectionChanged += dataGridViewListaDeReservas_SelectionChanged;
+
+            cargandoFormulario = false;
         }
+
+        //Se habilitan los botones de ELIMINAR y MODIFICAR cuando se selecciona alguna Reserva de la lista
         private void seleccionDeFilaDataGridViewListaDeReservas(object sender, EventArgs e)
         {
             if (dataGridViewListaDeReservas.SelectedRows.Count > 0)
@@ -60,11 +74,15 @@ namespace Tito_s_Hotel
                 buttonEliminar.Enabled = false;
             }
         }
+
+        //Boton VER DISPONIBILIDAD : Abre la ventana para filtrar Habitaciones
         private void buttonVerDisponibilidad_Click(object sender, EventArgs e)
         {
             filtrarDisponibilidadCapacidadPeriodo ventana = new filtrarDisponibilidadCapacidadPeriodo();
             ventana.ShowDialog();
         }
+
+        //Boton ELIMINAR
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             if (dataGridViewListaDeReservas.SelectedRows.Count > 0)
@@ -74,22 +92,29 @@ namespace Tito_s_Hotel
                 ventana.ShowDialog();
             }
         }
+
+        //Boton MODIFICAR
         private void buttonModificar_Click(object sender, EventArgs e)
         {
             Reserva reservaSeleccionada = (Reserva)dataGridViewListaDeReservas.SelectedRows[0].DataBoundItem;
-            oDaoReserva.modificar(reservaSeleccionada);
-
+           // oContollerReserva.modificar(reservaSeleccionada.id,);
         }
+
+        //Boton HABITACIONES : Lleva a la ventana del menu de Habitaciones
         private void buttonHabitaciones_Click(object sender, EventArgs e)
         {
             viewHabitacion ventana = new viewHabitacion();
             ventana.ShowDialog();
         }
+
+        //Boton MODIFICAR : Lleva a la ventana del menu de Pasajeros
         private void buttonPasajeros_Click(object sender, EventArgs e)
         {
             viewPasajero ventana = new viewPasajero();
             ventana.ShowDialog();
         }
+
+        //Boton NUEVA RESERVA
         private void buttonNuevaReserva_Click(object sender, EventArgs e)
         {
             List<Habitacion> habitaciones = oControllerHabitacion.buscarTodasLasHabitaciones();
@@ -106,10 +131,42 @@ namespace Tito_s_Hotel
             }
         }
 
+        //Boton REFRESCAR
         private void buttonRefrescar_Click(object sender, EventArgs e)
         {
             List<Reserva> todasLasReservas = oContollerReserva.buscarTodasLasReservas();
             dataGridViewListaDeReservas.DataSource = todasLasReservas;
         }
+
+        
+        private void dataGridViewListaDeReservas_SelectionChanged(object sender, EventArgs e)
+        {
+            if (cargandoFormulario) return;
+            if (dataGridViewListaDeReservas.CurrentRow != null)
+            {
+                reservaSeleccionada = (Reserva)dataGridViewListaDeReservas.CurrentRow.DataBoundItem;
+                buttonEliminar.Enabled = true;
+                buttonModificar.Enabled = true;
+            }
+            else
+            {
+                reservaSeleccionada = null;
+                buttonModificar.Enabled = false;
+                buttonEliminar.Enabled = false;
+            }
+        }
+        private void dataGridViewListaDeReservas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewListaDeReservas.SelectedRows.Count > 0)
+            {
+                buttonEliminar.Enabled = true;
+                buttonModificar.Enabled = true;
+            }
+            else {
+                buttonModificar.Enabled = true;
+                buttonEliminar.Enabled = true;
+            }
+        }
     }
 }
+
