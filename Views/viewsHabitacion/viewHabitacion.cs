@@ -56,21 +56,6 @@ namespace Tito_s_Hotel.Views
 
             cargandoFormulario = false;
         }
-        
-        //Se habilitan los botones de ELIMINAR y MODIFICAR cuando se selecciona alguna Habitacion de la lista
-        private void dataGridViewListaDeHabitaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridViewListaDeHabitaciones.SelectedRows.Count > 0)
-            {
-                buttonEliminarHabitacion.Enabled = true;
-                buttonModificarHabitacion.Enabled = true;
-            }
-            else
-            {
-                buttonEliminarHabitacion.Enabled = false;
-                buttonModificarHabitacion.Enabled = false;
-            }
-        }
 
         //Detecta si hay alguna fila seleccionada y captura la Habitacion seleccionada y habilita los botones ELIMINAR y MODIFICAR si asi es
         private void dataGridViewListaDeHabitaciones_SelectionChanged(object sender, EventArgs e)
@@ -90,7 +75,21 @@ namespace Tito_s_Hotel.Views
                 buttonModificarHabitacion.Enabled = false;
             }
         }
-
+        
+        //Se habilitan los botones de ELIMINAR y MODIFICAR cuando se selecciona alguna Habitacion de la lista
+        private void dataGridViewListaDeHabitaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewListaDeHabitaciones.SelectedRows.Count > 0)
+            {
+                buttonEliminarHabitacion.Enabled = true;
+                buttonModificarHabitacion.Enabled = true;
+            }
+            else
+            {
+                buttonEliminarHabitacion.Enabled = false;
+                buttonModificarHabitacion.Enabled = false;
+            }
+        }
 
 
 

@@ -82,13 +82,15 @@ namespace Tito_s_Hotel.Views.viewsHabitacion
                     camaDoble = true;
                 }
             }
-            Habitacion oHabitacion = new Habitacion() {
+            Habitacion oHabitacion = new Habitacion()
+            {
                 id = habitacionParaModificar.id,
                 numero = numero,
                 camasSingle = cantidadDeCamasSingle,
                 camaDoble = camaDoble,
                 precio = precioPorNoche
             };
+
             oControllerHabitacion.modificar(oHabitacion);
 
             viewCambiosGuardados ventana = new viewCambiosGuardados();

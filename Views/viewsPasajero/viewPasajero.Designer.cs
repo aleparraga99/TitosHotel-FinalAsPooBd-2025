@@ -61,7 +61,7 @@
             // 
             // buttonModificarPasajero
             // 
-            buttonModificarPasajero.Location = new Point(136, 251);
+            buttonModificarPasajero.Location = new Point(450, 247);
             buttonModificarPasajero.Name = "buttonModificarPasajero";
             buttonModificarPasajero.Size = new Size(102, 39);
             buttonModificarPasajero.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             // buttonEliminarPasajero
             // 
-            buttonEliminarPasajero.Location = new Point(474, 251);
+            buttonEliminarPasajero.Location = new Point(93, 247);
             buttonEliminarPasajero.Name = "buttonEliminarPasajero";
             buttonEliminarPasajero.Size = new Size(90, 39);
             buttonEliminarPasajero.TabIndex = 3;

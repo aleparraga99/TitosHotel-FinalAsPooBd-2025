@@ -17,9 +17,9 @@ namespace Tito_s_Hotel.Views.Pasajero
     {
         //Se llama a la CONTROLADORA de Pasajero (SINGLENTON)
         ControllerPasajero oControllerPasajero = ControllerPasajero.GetInstanciaDeControllerdePasajero();
-       
+
         //ATRIBUTOS
-        private Models.Pasajero pasajeroSeleccionado = null;
+        private Models.Pasajero pasajeroSeleccionado;
         private bool cargandoFormulario = true; //Cumple la funcion de "Bandera"
 
         //CONSTRUCTOR
@@ -27,7 +27,6 @@ namespace Tito_s_Hotel.Views.Pasajero
         {
             InitializeComponent();
         }
-
 
 
         //Se cargan los elementos de la ventana
@@ -51,10 +50,12 @@ namespace Tito_s_Hotel.Views.Pasajero
                 dataGridViewListaDePasajeros.DataSource = null;
             }
 
+            dataGridViewListaDePasajeros.SelectionChanged += dataGridViewListaDePasajeros_SelectionChanged;
+
             cargandoFormulario = false;
         }
 
-        //Detecta si hay alguna fila seleccionada y captura el Pasajero seleccionada y habilita los botones ELIMINAR y MODIFICAR si asi es
+        //Se habilitan los botones de ELIMINAR y MODIFICAR cuando se selecciona alguna Pasajero de la lista
         private void dataGridViewListaDePasajeros_SelectionChanged(object sender, EventArgs e)
         {
 
@@ -74,7 +75,7 @@ namespace Tito_s_Hotel.Views.Pasajero
             }
         }
 
-        //Se habilitan los botones de ELIMINAR y MODIFICAR cuando se selecciona alguna Pasajero de la lista
+        //Detecta si hay alguna fila seleccionada y captura el Pasajero seleccionada y habilita los botones ELIMINAR y MODIFICAR si asi es
         private void dataGridViewListaDePasajeros_CellContentClick(object sender, DataGridViewCellEventArgs e)
 
         {
@@ -99,10 +100,12 @@ namespace Tito_s_Hotel.Views.Pasajero
         //MODIFICAR
         private void buttonModificarPasajero_Click(object sender, EventArgs e)
         {
-
-
-            //Capturar datos del dataGrid. Supongo que se tiene que mostrar la ventana para cargar los datos
-            //oControllerPasajero.modificar();
+            if (pasajeroSeleccionado != null)
+            { 
+              pasajeroSeleccionado = (Models.Pasajero)dataGridViewListaDePasajeros.CurrentRow.DataBoundItem;
+                viewModificarPasajero ventana = new viewModificarPasajero(pasajeroSeleccionado);
+                ventana.ShowDialog();
+            }
         }
 
         //ELIMINAR
@@ -157,7 +160,7 @@ namespace Tito_s_Hotel.Views.Pasajero
         {
             this.Close();
         }
-       
+
         //REFRESCAR
         private void buttonRefrescar_Click(object sender, EventArgs e)
         {
