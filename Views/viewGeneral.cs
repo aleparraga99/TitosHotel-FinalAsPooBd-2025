@@ -27,7 +27,7 @@ namespace Tito_s_Hotel
         //ATRIBUTOS
         private bool cargandoFormulario = true; //Cumple la funcion de "Bandera"
         private List<Reserva> listaDeReservasEnDataGridView = new List<Reserva>();
-        private Reserva reservaSeleccionada = null; 
+        private Reserva reservaSeleccionada; 
 
         //CONSTRUCTOR
         public viewGeneral()
@@ -40,6 +40,7 @@ namespace Tito_s_Hotel
         //Se cargan los elemenetos al abrirse la ventana
         private void viewGeneral_Load(object sender, EventArgs e)
         {
+            //Se inhabilitan los botones y se configura el dataGrid
             buttonEliminar.Enabled = false;
             buttonModificar.Enabled = false;
             dataGridViewListaDeReservas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -65,16 +66,11 @@ namespace Tito_s_Hotel
             cargandoFormulario = false;
         }
 
-
-
-       
         //Detecta si hay alguna fila seleccionada y captura la Reserva seleccionada y habilita los botones ELIMINAR y MODIFICAR si asi es
         private void dataGridViewListaDeReservas_SelectionChanged(object sender, EventArgs e)
         {
-            if (cargandoFormulario)
-            {
-                return; 
-            }
+            if (cargandoFormulario) return;
+            
             if (dataGridViewListaDeReservas.CurrentRow != null)
             {
                 reservaSeleccionada = (Reserva)dataGridViewListaDeReservas.CurrentRow.DataBoundItem;
@@ -109,14 +105,15 @@ namespace Tito_s_Hotel
         //  BOTONES //
 
 
-        //HABITACIONES : Lleva a la ventana del menu de Habitaciones
+
+        //HABITACIONES
         private void buttonHabitaciones_Click(object sender, EventArgs e)
         {
             viewHabitacion ventana = new viewHabitacion();
             ventana.ShowDialog();
         }
 
-        //PASAJEROS : Lleva a la ventana del menu de Pasajeros
+        //PASAJEROS
         private void buttonPasajeros_Click(object sender, EventArgs e)
         {
             viewPasajero ventana = new viewPasajero();
@@ -167,8 +164,13 @@ namespace Tito_s_Hotel
         //MODIFICAR
         private void buttonModificar_Click(object sender, EventArgs e)
         {
-            Reserva reservaSeleccionada = (Reserva)dataGridViewListaDeReservas.SelectedRows[0].DataBoundItem;
-            // oContollerReserva.modificar(reservaSeleccionada.id,);
+            if (reservaSeleccionada != null) 
+            {
+                Reserva reservaSeleccionada = (Reserva)dataGridViewListaDeReservas.CurrentRow.DataBoundItem;
+                viewModificarReserva ventana = new viewModificarReserva(reservaSeleccionada);
+                ventana.ShowDialog();
+            }
+            
         }
     }
 }
