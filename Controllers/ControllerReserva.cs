@@ -10,6 +10,7 @@ namespace Tito_s_Hotel.Controllers
 {
     public class ControllerReserva
     {
+        //Se llama al DAO de Reserva (SINGLENTON)
         private DaoReserva oDaoReserva = DaoReserva.GetDaoReserva();
 
         //SINGLENTON
@@ -38,9 +39,8 @@ namespace Tito_s_Hotel.Controllers
             Reserva oReserva = new Reserva(numReserva, checkIn, checkOut, oPasajero, oHabitacion, adelanto);
             oDaoReserva.crear(oReserva);
         }
-        public void modificar(int numReserva, DateTime checkIn, DateTime checkOut, Pasajero oPasajero, Habitacion oHabitacion, double adelanto)
-        {
-            Reserva oReserva = new Reserva(numReserva, checkIn, checkOut, oPasajero, oHabitacion, adelanto);
+        public void modificar(Reserva oReserva)
+        { 
             oDaoReserva.modificar(oReserva);
         }
         public void eliminar(int id)

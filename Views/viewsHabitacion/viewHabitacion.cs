@@ -121,17 +121,18 @@ namespace Tito_s_Hotel.Views
             }
         }
 
-        //Boton MODIFICAR
+        //MODIFICAR
         private void buttonModificarHabitacion_Click(object sender, EventArgs e)
         {
             if (habitacionSeleccionada != null)
             {
+                habitacionSeleccionada = (Habitacion)dataGridViewListaDeHabitaciones.CurrentRow.DataBoundItem;
                 viewModificarHabitacion ventana = new viewModificarHabitacion(habitacionSeleccionada);
                 ventana.ShowDialog();
             }
         }
 
-        //Boton BUSCAR
+        //BUSCAR
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             try

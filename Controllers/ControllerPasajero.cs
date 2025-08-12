@@ -31,9 +31,8 @@ namespace Tito_s_Hotel.Controllers
             Pasajero oPasajero = new Pasajero(nombre, apellido, telefono, dni, correo);
             oDaoPasajero.crear(oPasajero);
         }
-        public void modificar(string nombre, string apellido, string telefono,string dni, string correo)
-        {
-            Pasajero oPasajero = new Pasajero(nombre, apellido, telefono, dni, correo);
+        public void modificar(Models.Pasajero oPasajero)
+        { 
             oDaoPasajero.modificar(oPasajero);
         }
         public void eliminar(int id)

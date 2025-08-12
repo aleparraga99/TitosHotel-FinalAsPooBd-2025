@@ -11,6 +11,7 @@ using Tito_s_Hotel.Models;
 
 namespace Tito_s_Hotel.DAOs
 {
+    //Se llama al DAO de Pasajero (SINGLENTON)
     public class DaoPasajero : IDao <Pasajero>
     {
         //SINGLENTON

@@ -52,7 +52,7 @@
             // 
             groupBoxCamaDoble.Controls.Add(radioButtonCamaDoble1);
             groupBoxCamaDoble.Controls.Add(radioButtonCamaDoble0);
-            groupBoxCamaDoble.Location = new Point(337, 94);
+            groupBoxCamaDoble.Location = new Point(328, 67);
             groupBoxCamaDoble.Name = "groupBoxCamaDoble";
             groupBoxCamaDoble.Size = new Size(91, 45);
             groupBoxCamaDoble.TabIndex = 25;
@@ -86,7 +86,7 @@
             groupBoxCamasSingle.Controls.Add(radioButtonCamasSingle2);
             groupBoxCamasSingle.Controls.Add(radioButtonCamasSingle1);
             groupBoxCamasSingle.Controls.Add(radioButtonCamasSingle0);
-            groupBoxCamasSingle.Location = new Point(343, 42);
+            groupBoxCamasSingle.Location = new Point(334, 15);
             groupBoxCamasSingle.Name = "groupBoxCamasSingle";
             groupBoxCamasSingle.Size = new Size(176, 46);
             groupBoxCamasSingle.TabIndex = 24;
@@ -138,25 +138,27 @@
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Location = new Point(326, 200);
+            buttonCancelar.Location = new Point(317, 173);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(106, 44);
             buttonCancelar.TabIndex = 23;
             buttonCancelar.Text = "Cancelar";
             buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.Click += buttonCancelar_Click_1;
             // 
             // buttonGuardar
             // 
-            buttonGuardar.Location = new Point(117, 200);
+            buttonGuardar.Location = new Point(108, 173);
             buttonGuardar.Name = "buttonGuardar";
             buttonGuardar.Size = new Size(106, 44);
             buttonGuardar.TabIndex = 22;
-            buttonGuardar.Text = "Guardar";
+            buttonGuardar.Text = "Guardar cambios";
             buttonGuardar.UseVisualStyleBackColor = true;
+            buttonGuardar.Click += buttonGuardar_Click_1;
             // 
             // textBoxPrecioPorNoche
             // 
-            textBoxPrecioPorNoche.Location = new Point(152, 114);
+            textBoxPrecioPorNoche.Location = new Point(143, 87);
             textBoxPrecioPorNoche.Name = "textBoxPrecioPorNoche";
             textBoxPrecioPorNoche.Size = new Size(71, 23);
             textBoxPrecioPorNoche.TabIndex = 21;
@@ -164,7 +166,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(256, 115);
+            label4.Location = new Point(247, 88);
             label4.Name = "label4";
             label4.Size = new Size(75, 15);
             label4.TabIndex = 20;
@@ -172,7 +174,7 @@
             // 
             // textBoxNumero
             // 
-            textBoxNumero.Location = new Point(94, 59);
+            textBoxNumero.Location = new Point(85, 32);
             textBoxNumero.Name = "textBoxNumero";
             textBoxNumero.Size = new Size(52, 23);
             textBoxNumero.TabIndex = 19;
@@ -180,7 +182,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(37, 118);
+            label3.Location = new Point(28, 91);
             label3.Name = "label3";
             label3.Size = new Size(109, 15);
             label3.TabIndex = 18;
@@ -189,7 +191,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(256, 59);
+            label2.Location = new Point(247, 32);
             label2.Name = "label2";
             label2.Size = new Size(81, 15);
             label2.TabIndex = 17;
@@ -198,7 +200,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(37, 62);
+            label1.Location = new Point(28, 35);
             label1.Name = "label1";
             label1.Size = new Size(54, 15);
             label1.TabIndex = 16;
@@ -208,7 +210,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(556, 286);
+            ClientSize = new Size(558, 233);
             Controls.Add(groupBoxCamaDoble);
             Controls.Add(groupBoxCamasSingle);
             Controls.Add(buttonCancelar);

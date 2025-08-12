@@ -52,7 +52,7 @@ namespace Tito_s_Hotel.DAOs
         {
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
-                string query = "UPDATE Reserva SET NumeroReserva  = @NumeroReserva, CheckIn = @CheckIn, CheckOut = @CheckOut, Adelanto = @Adelanto, Id_habitacion = @Id_habitacion, Id_pasajero = @Id_pasajero WHERE Id_reserva = @id;";
+                string query = "UPDATE Reserva SET NumeroReserva  = @NumeroReserva, CheckIn = @CheckIn, CheckOut = @CheckOut, Adelanto = @Adelanto, Id_habitacion = @Id_habitacion, Id_pasajero = @Id_pasajero WHERE Id = @id;";
                 SqlCommand comando = new SqlCommand(query, conexion);
                 if (conexion.State == ConnectionState.Closed)
                 {

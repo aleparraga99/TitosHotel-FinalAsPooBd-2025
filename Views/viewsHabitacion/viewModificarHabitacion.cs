@@ -14,19 +14,33 @@ namespace Tito_s_Hotel.Views.viewsHabitacion
 {
     public partial class viewModificarHabitacion : Form
     {
+        //Se llama a la CONTROLADORA de Habitacion (SINGLENTON)
         ControllerHabitacion oControllerHabitacion = ControllerHabitacion.GetInstanciaDeControllerDeHabitacion();
+        
+        //ATRIBUTOS
         private Habitacion habitacionParaModificar;
-        public viewModificarHabitacion(Habitacion oHabitacion)
+
+        //CONSTRUCTOR
+        public viewModificarHabitacion(Habitacion habitacionSeleccionada)
         {
             InitializeComponent();
-            habitacionParaModificar = oHabitacion;
+            habitacionParaModificar = habitacionSeleccionada;
         }
 
-        private void buttonCancelar_Click(object sender, EventArgs e)
+
+
+        // BOTONES //
+
+
+
+        //CANCELAR
+        private void buttonCancelar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
-        private void buttonGuardar_Click(object sender, EventArgs e)
+
+        //GUARDAR
+        private void buttonGuardar_Click_1(object sender, EventArgs e)
         {
             //Tags que identifican numericamente las opciones de camas single
             radioButtonCamasSingle0.Tag = 0;
@@ -68,12 +82,16 @@ namespace Tito_s_Hotel.Views.viewsHabitacion
                     camaDoble = true;
                 }
             }
+            Habitacion oHabitacion = new Habitacion() {
+                id = habitacionParaModificar.id,
+                numero = numero,
+                camasSingle = cantidadDeCamasSingle,
+                camaDoble = camaDoble,
+                precio = precioPorNoche
+            };
+            oControllerHabitacion.modificar(oHabitacion);
 
-            oControllerHabitacion.modificar(habitacionParaModificar.id, numero, cantidadDeCamasSingle, camaDoble, precioPorNoche);
-
-            //Se abre una ventana de confirmacion. Deberia agregar una forma de validar 
-            //si realmente se guardo para poder confirmarlo
-            confirmacionDeHabitacionGuardadaView ventana = new confirmacionDeHabitacionGuardadaView();
+            viewCambiosGuardados ventana = new viewCambiosGuardados();
             ventana.ShowDialog();
 
             this.Close();

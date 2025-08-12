@@ -11,6 +11,7 @@ namespace Tito_s_Hotel.Controllers
 {
     public class ControllerHabitacion
     {
+        //Se llama al DAO de Habitacion (SINGLENTON)
         private DaoHabitacion oDaoHabitacion = DaoHabitacion.GetDaoHabitacion();
 
         //SINGLENTON
@@ -71,9 +72,8 @@ namespace Tito_s_Hotel.Controllers
             Habitacion oHabitacion = new Habitacion(numero, camasSingle, camaDoble, precio);
             oDaoHabitacion.crear(oHabitacion);
         }
-        public void modificar(int id, int numero, int camasSingle, bool camaDoble, float precio)
+        public void modificar(Habitacion oHabitacion)
         {
-            Habitacion oHabitacion = new Habitacion(id, numero, camasSingle, camaDoble, precio);
             oDaoHabitacion.modificar(oHabitacion);
         }
         public void eliminar(int id)
