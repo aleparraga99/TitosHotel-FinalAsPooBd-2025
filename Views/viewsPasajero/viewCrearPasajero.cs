@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Tito_s_Hotel.Controllers;
 using Tito_s_Hotel.DAOs;
 using Tito_s_Hotel.Models;
+using Tito_s_Hotel.Views.viewsHabitacion;
 using Tito_s_Hotel.Views.viewsPasajero;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -41,22 +42,40 @@ namespace Tito_s_Hotel.Views
         //GUARDAR
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            //Se capturan los datos
-            string nombre = textBoxStringNombre.Text;
-            string apellido = textBoxStringApellido.Text;
-            string dni = textBoxStringDni.Text;
-            string telefono = textBoxStringTelefono.Text;
-            string correo = textBoxStringCorreo.Text;
+            try
+            {
+                if (string.IsNullOrEmpty(textBoxStringNombre.Text) || string.IsNullOrEmpty(textBoxStringApellido.Text) || string.IsNullOrEmpty(textBoxStringDni.Text) || string.IsNullOrEmpty(textBoxStringTelefono.Text) || string.IsNullOrEmpty(textBoxStringCorreo.Text))
+                {
+                    viewCompletarCamposAgregarPasajero window = new viewCompletarCamposAgregarPasajero();
+                    window.ShowDialog();
+                }
+                else
+                {
+                    //Se capturan los datos
+                    string nombre = textBoxStringNombre.Text;
+                    string apellido = textBoxStringApellido.Text;
+                    string dni = textBoxStringDni.Text;
+                    string telefono = textBoxStringTelefono.Text;
+                    string correo = textBoxStringCorreo.Text;
 
-            //Se construye y crea el objeto Pasajero
-            Models.Pasajero oPasajero = new Models.Pasajero(nombre, apellido, telefono, dni, correo);
-            oControllerPasajero.crear(oPasajero.nombre, oPasajero.apellido, oPasajero.telefono, oPasajero.dni, oPasajero.correo);
 
-            //Se abre una ventana para informar que se guardo el pasajero
-            confirmacionDePasajeroGuardado ventana = new confirmacionDePasajeroGuardado();
-            ventana.ShowDialog();
+                    //Se construye y crea el objeto Pasajero
+                    Models.Pasajero oPasajero = new Models.Pasajero(nombre, apellido, telefono, dni, correo);
+                    oControllerPasajero.crear(oPasajero.nombre, oPasajero.apellido, oPasajero.telefono, oPasajero.dni, oPasajero.correo);
 
-            this.Close();
-        }
+                    //Se abre una ventana para informar que se guardo el pasajero
+                    confirmacionDePasajeroGuardado ventana = new confirmacionDePasajeroGuardado();
+                    ventana.ShowDialog();
+
+                    this.Close();
+                }
+            }
+            catch {
+
+                viewCompletarPasajeroConDatosValidos ventana = new viewCompletarPasajeroConDatosValidos();
+                ventana.ShowDialog();
+            }
+            }
+        
     }
 }

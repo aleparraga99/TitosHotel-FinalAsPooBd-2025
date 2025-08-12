@@ -36,28 +36,40 @@ namespace Tito_s_Hotel.Views.viewsReserva
         //GUARDAR
         private void buttonGuardarReserva_Click(object sender, EventArgs e)
         {
-            //Se capturan los datos
-            int numeroReserva = int.Parse(textBoxNumeroReserva.Text);
-            int numeroHabitacion = int.Parse(textBoxNumeroDeHabitacion.Text);
-            int DNI = int.Parse(textBoxDNIDelPasajero.Text); 
-            float adelanto = float.Parse(textBoxAdelanto.Text);
-            DateTime checkIn = dateTimePickerCheckIn.Value;
-            DateTime checkOut = dateTimePickerCheckOut.Value;
-            if (string.IsNullOrEmpty(textBoxNumeroReserva.Text) || string.IsNullOrEmpty(textBoxNumeroDeHabitacion.Text) || string.IsNullOrEmpty(textBoxDNIDelPasajero.Text) || string.IsNullOrEmpty(textBoxAdelanto.Text)){
-                viewCompletarCampos ventanaCampos = new viewCompletarCampos();
-                ventanaCampos.ShowDialog();
+            try
+            {
+                if (string.IsNullOrEmpty(textBoxNumeroReserva.Text) || string.IsNullOrEmpty(textBoxNumeroDeHabitacion.Text) || string.IsNullOrEmpty(textBoxDNIDelPasajero.Text) || string.IsNullOrEmpty(textBoxAdelanto.Text))
+                {
+                    viewCompletarCampos ventanaCampos = new viewCompletarCampos();
+                    ventanaCampos.ShowDialog();
+                }
+                else
+                {
+                    //Se capturan los datos
+                    int numeroReserva = int.Parse(textBoxNumeroReserva.Text);
+                    int numeroHabitacion = int.Parse(textBoxNumeroDeHabitacion.Text);
+                    int DNI = int.Parse(textBoxDNIDelPasajero.Text);
+                    float adelanto = float.Parse(textBoxAdelanto.Text);
+                    DateTime checkIn = dateTimePickerCheckIn.Value;
+                    DateTime checkOut = dateTimePickerCheckOut.Value;
+                  
+
+                    Habitacion oHabitacion = (Habitacion)oControllerHabitacion.encontrarHabitacionPorNumero(numeroHabitacion);
+                    Models.Pasajero oPasajero = (Models.Pasajero)oControllerPasajero.buscarPorDni(DNI);
+
+                    oControllerReserva.crear(numeroReserva, checkIn, checkOut, oPasajero, oHabitacion, adelanto);
+
+                    confirmacionDeReservaGuardadaView ventana = new confirmacionDeReservaGuardadaView();
+                    ventana.ShowDialog();
+
+                    this.Close();
+                }
             }
-
-            Habitacion oHabitacion = (Habitacion)oControllerHabitacion.encontrarHabitacionPorNumero(numeroHabitacion);
-            Models.Pasajero oPasajero = (Models.Pasajero)oControllerPasajero.buscarPorDni(DNI);
-
-            oControllerReserva.crear(numeroReserva, checkIn, checkOut, oPasajero, oHabitacion, adelanto);
-
-            confirmacionDeReservaGuardadaView ventana = new confirmacionDeReservaGuardadaView();
-            ventana.ShowDialog();
-
-            this.Close();
-        }
+            catch {
+                viewIngresarDatosValidos ventana = new viewIngresarDatosValidos();
+                ventana.ShowDialog();
+            }
+            }
 
         //CANCELAR
         private void buttonCancelar_Click(object sender, EventArgs e)

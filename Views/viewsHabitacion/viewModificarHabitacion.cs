@@ -52,6 +52,7 @@ namespace Tito_s_Hotel.Views.viewsHabitacion
             radioButtonCamaDoble0.Tag = 0;
             radioButtonCamaDoble1.Tag = 1;
 
+            
             //Se capturan los datos de los textBoxes
             int numero = int.Parse(textBoxNumero.Text);
             int precioPorNoche = int.Parse(textBoxPrecioPorNoche.Text);

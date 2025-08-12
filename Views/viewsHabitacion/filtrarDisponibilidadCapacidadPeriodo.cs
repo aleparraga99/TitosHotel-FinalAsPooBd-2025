@@ -20,7 +20,7 @@ namespace Tito_s_Hotel
         //Se llaman a las CONTROLADORAS de Reserva y Habitacion (SINGLENTON)
         private ControllerHabitacion oControllerHabitacion = ControllerHabitacion.GetInstanciaDeControllerDeHabitacion();
         private ControllerReserva oControllerReserva = ControllerReserva.GetInstanciaControllerReserva();
-        
+
         //CONSTRUCTOR
         public filtrarDisponibilidadCapacidadPeriodo()
         {
@@ -33,7 +33,7 @@ namespace Tito_s_Hotel
 
 
         //BUSCAR
-        private void buttonBuscar_Click(object sender, EventArgs e) 
+        private void buttonBuscar_Click(object sender, EventArgs e)
         {
             //Se generan las listas de Reservas y Habitaciones
             List<Habitacion> habitaciones = oControllerHabitacion.buscarTodasLasHabitaciones();
@@ -48,16 +48,18 @@ namespace Tito_s_Hotel
                 {
                     dataGridViewListaDeHabitacionesDisponibles.DataSource = habitacionesConCapacidadRequerida;
                 }
-                else {
+                else
+                {
 
                     //Se capturan las fechas
                     DateTime chekInRequerido = dateTimePickerIn.Value;
                     DateTime checkOutRequerido = dateTimePickerOut.Value;
 
-                    //Se filtran las habitaciones solicitadas y se muestran el el dataGridView
+                    //Se filtran las habitaciones solicitadas y se muestran en el dataGridView
                     List<Habitacion> lista1 = oControllerHabitacion.filtrarPorCapacidad(capacidadRequerida);
                     List<Habitacion> lista2 = oControllerHabitacion.filtrarHabitacionesPorDisponibilidad(chekInRequerido, checkOutRequerido);
-                    dataGridViewListaDeHabitacionesDisponibles.DataSource = oControllerHabitacion.verDisponibilidad(lista1, lista2);
+                    List<Habitacion> listaDeDisponibilidad = (List<Habitacion>)oControllerHabitacion.verDisponibilidad(lista1, lista2);
+                    dataGridViewListaDeHabitacionesDisponibles.DataSource = listaDeDisponibilidad;
                 }
             }
 
