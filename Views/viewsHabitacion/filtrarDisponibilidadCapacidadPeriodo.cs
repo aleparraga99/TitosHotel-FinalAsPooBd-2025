@@ -49,15 +49,14 @@ namespace Tito_s_Hotel
                     dataGridViewListaDeHabitacionesDisponibles.DataSource = habitacionesConCapacidadRequerida;
                 }
                 else
-                {
-
+                { 
                     //Se capturan las fechas
                     DateTime chekInRequerido = dateTimePickerIn.Value;
                     DateTime checkOutRequerido = dateTimePickerOut.Value;
 
                     //Se filtran las habitaciones solicitadas y se muestran en el dataGridView
-                    List<Habitacion> lista1 = oControllerHabitacion.filtrarPorCapacidad(capacidadRequerida);
-                    List<Habitacion> lista2 = oControllerHabitacion.filtrarHabitacionesPorDisponibilidad(chekInRequerido, checkOutRequerido);
+                    List<Habitacion> lista1 = (List<Habitacion>)oControllerHabitacion.filtrarPorCapacidad(capacidadRequerida);
+                    List<Habitacion> lista2 = (List<Habitacion>)oControllerHabitacion.filtrarHabitacionesPorDisponibilidad(chekInRequerido, checkOutRequerido);
                     List<Habitacion> listaDeDisponibilidad = (List<Habitacion>)oControllerHabitacion.verDisponibilidad(lista1, lista2);
                     dataGridViewListaDeHabitacionesDisponibles.DataSource = listaDeDisponibilidad;
                 }

@@ -34,7 +34,7 @@ namespace Tito_s_Hotel.DAOs
             List<Habitacion> habitacionesDisponiblesDentroDeUnPeriodo = new List<Habitacion>();
             using (SqlConnection conexion = BDTitosHotel.obtenerConexion())
             {
-                string query = "SELECT * FROM Habitacion h WHERE NOT EXISTS (SELECT 1 FROM Reserva r  WHERE r.Id = h.Id_habitacion AND r.CheckIn <= @CheckOutRequerido AND r.CheckOut > @CheckInRequerido);";
+                string query = "SELECT * FROM Habitacion h WHERE NOT EXISTS (SELECT 1 FROM Reserva r WHERE r.Id_habitacion = h.Id_habitacion AND r.CheckIn <= @CheckOutRequerido AND r.CheckOut > @CheckInRequerido);";
                 SqlCommand comando = new SqlCommand(query, conexion);
                 comando.Parameters.AddWithValue("@CheckInRequerido", checkInRequerido);
                 comando.Parameters.AddWithValue("@CheckOutRequerido", checkOutRequerido);
